@@ -1,6 +1,6 @@
 set laststatus=2
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'fhof_ll_cs',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'filename' ] ]
@@ -19,7 +19,7 @@ function! LightlineModified()
   if &filetype == "help"
     return ""
   elseif &modified
-    return "+"
+    return ""
   elseif &modifiable
     return ""
   else

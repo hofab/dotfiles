@@ -41,6 +41,7 @@ hi Function             ctermfg=27
 hi Macro                ctermfg=73
 hi PreProc              ctermfg=178 term=NONE
 hi Constant             ctermfg=5
+hi ErrorMsg             ctermfg=196 ctermbg=NONE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SYNTAX HIGHLIGHTING
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
