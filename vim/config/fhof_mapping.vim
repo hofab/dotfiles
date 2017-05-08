@@ -1,6 +1,6 @@
 " custom mapping to my liking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <C-K> <C-W>K
-map <C-H> <C-W>H
-map <C-L> <C-W>L
-map <C-J> <C-W>J
+map <C-K> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
+map <C-J> <C-W>j
