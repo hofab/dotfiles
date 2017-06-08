@@ -29,6 +29,7 @@ set ruler
 " wrapping is a problem more often than not.
 set nowrap
 set ff=unix
+set showcmd
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPING
@@ -46,7 +47,6 @@ nnoremap <C-]> g<C-]>
 
 " Auto completion
 "imap <tab> <C-p>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " DOXYGEN
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -79,8 +79,8 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Allow the mouse to be used for selecting
 " :set mouse=""     Disable all mouse behaviour.
-" :set mouse=a      Enable all mouse behaviour (the default).
-" :set mouse+=v     Enable visual mode (v)
+set mouse=a     " Enable all mouse behaviour (the default).
+"set mouse+=v    "  Enable visual mode (v)
 " :set mouse-=c     Disable mouse in command mode.
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
