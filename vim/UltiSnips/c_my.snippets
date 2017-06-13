@@ -1,2 +1,53 @@
 priority 0
+# WESCAM specific c templates
+snippet wifel "Wescam if statement"
+if(${1:!statement}) {
+    ${VISUAL:CODE}
+}
+else {
+    ${VISUAL:CODE}
+}
+endsnippet
 
+snippet wmlog "WESCAM moduleLogError"
+moduleLogError(${1:moduleAddr},"${1:%s}\n"${1/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$2${1/([^%]|%%)*(%.)?.*/(?2:\);)/}
+endsnippet
+
+snippet wfunc
+/**************************************************************************//**
+ *
+ * @ingroup ${4:none}
+ *
+ * ${5:A brief description}
+ *
+ * ${6:Detailed description}
+`!p
+arguments = t[3].split(', ')
+snip.rv = " *"
+for argument in arguments:
+    snip += ' * @param {}'.format(argument)
+snip += ' * @returns {}'.format(t[1])
+snip += ' *'
+`
+ *****************************************************************************/
+${1:void} ${2:foo}(${3:args}) {
+    ${7:code}
+}
+endsnippet
+
+snippet tds
+/**
+ * ${1:Brief description}
+ */
+typedef struct {
+    ${3:type}   ${4:name};
+} ${2:foo_t}
+endsnippet
+
+snippet enum
+/**
+ * ${1:Brief description}
+ */
+enum {
+    ${2:namel},
+};
