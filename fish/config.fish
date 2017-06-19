@@ -38,9 +38,11 @@ abbr --add gcf      'git commit --fixup'
 abbr --add gca      'git commit --amend'
 abbr --add gdt      'git difftool'
 abbr --add gru      'git config --get remote.origin.url'
-abbr --add gp       'git push -f'
+abbr --add gp       'git push --force-with-lease'
 abbr --add grd      'git push origin --delete'
 abbr --add gr       'git reset HEAD'
+abbr --add gdlc     'git reset --hard HEAD^'
+abbr --add gdrc     'git revert HEAD'
 
 #shell shortcuts
 abbr --add c        'clear'
