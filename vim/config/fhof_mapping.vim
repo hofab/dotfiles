@@ -14,4 +14,5 @@ map ;h :hsplit <CR>
 
 " cutom inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map ;lc $a<TAB>/**<  */<ESC>2hi
+"doxygen line comment
+map ;dc $a<TAB>/**<  */<ESC>2hi
