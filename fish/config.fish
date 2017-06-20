@@ -43,13 +43,20 @@ abbr --add grd      'git push origin --delete'
 abbr --add gr       'git reset HEAD'
 abbr --add gdlc     'git reset --hard HEAD^'
 abbr --add gdrc     'git revert HEAD'
+abbr --add gcl      'git clone'
 
 #shell shortcuts
-abbr --add c        'clear'
+abbr c              'clear'
 abbr > file.txt 2>&1 'infi'
 abbr rr             'rm -ir'
 abbr rd             'rm -id'
 abbr rf             'rm -rf'
+
+#useful stuff
+abbr efc            'nvim ~/dotfiles/fish/config.fish'
+abbr cdl            'cd ~/Downloads'
+abbr cmx            'cd ~/mx-dev.git'
+abbr cmxf           'cd ~/mx-fork.git'
 
 #merge history of several fish instances
 abbr --add mhi      'history --merge'
