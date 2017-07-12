@@ -47,12 +47,12 @@ abbr --add gca      'git commit --amend'
 abbr --add gdt      'git difftool'
 abbr --add gru      'git config --get remote.origin.url'
 abbr --add gp       'git push --force-with-lease'
-abbr --add grd      'git push origin --delete'
+abbr --add grd      'git push origin --delete' #delete remote branch
 abbr --add gpl      'git pull'
-abbr --add gr       'git reset HEAD'
-abbr --add gdlc     'git reset --hard HEAD^'
-abbr --add grc      'git reset --hard'
-abbr --add gdrc     'git revert HEAD'
+abbr --add gr       'git reset HEAD' #throw away any local changes
+abbr --add gdlc     'git reset --hard HEAD^' #throw away the last commit
+abbr --add grc      'git reset --hard' #throw away everything after commit
+abbr --add gdrc     'git revert HEAD' #revert changes of specified commit
 abbr --add gcl      'git clone'
 
 #shell shortcuts
@@ -62,7 +62,7 @@ abbr rr             'rm -ir'
 abbr rd             'rm -id'
 abbr rf             'rm -rf'
 abbr rA             'rm -rf *'
-abbr sah            'll | ag .hex'
+abbr llh            'ls -Al *.hex'
 
 #ninja shortcuts
 abbr nc             'ninja clean'
@@ -74,6 +74,7 @@ abbr mca            'make cleanall'
 #useful stuff
 abbr efc            'nvim ~/dotfiles/fish/config.fish'
 abbr evrc           'nvim ~/dotfiles/.vimrc'
+abbr evm            'nvim ~/dotfiles/vim/config/fhof_mapping.vim'
 abbr cdl            'cd ~/Downloads'
 abbr cmx            'cd ~/mx-dev.git'
 abbr cmxf           'cd ~/mx-fork.git'

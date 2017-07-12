@@ -9,12 +9,16 @@ map <C-J> <C-W>j
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map ;; :w <CR>
 map ;t :tabe <CR>
-map ;v :vsplit <CR>
-map ;h :hsplit <CR>
-"no search highlighting until next search
+map ;h :split <CR>
+" no search highlighting until next search
 map ;s :noh <CR>
+" paste yanked text over word
+map ;v ciw<C-r>0<ESC>
+" copy word to clipboard
+nnoremap <F4> "+yiw
+vnoremap <F4> "+y
 
-" cutom inputs
+" custom inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "doxygen line comment
 map ;dc $a<TAB>/**<  */<ESC>2hi
