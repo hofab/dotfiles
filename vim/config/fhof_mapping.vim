@@ -11,6 +11,8 @@ map ;; :w <CR>
 map ;t :tabe <CR>
 map ;v :vsplit <CR>
 map ;h :hsplit <CR>
+"no search highlighting until next search
+map ;s :noh <CR>
 
 " cutom inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

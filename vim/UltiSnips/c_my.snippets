@@ -13,6 +13,10 @@ snippet wmlog "WESCAM moduleLogError"
 moduleLogError(${1:moduleAddr},"${1:%s}\n"${1/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$2${1/([^%]|%%)*(%.)?.*/(?2:\);)/}
 endsnippet
 
+snippet swlog "WESCAM moduleLogError"
+moduleLogError(${1:moduleAddr},"_LINE_: ${2:value}");
+endsnippet
+
 snippet wfunc
 /**************************************************************************//**
  *
