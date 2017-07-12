@@ -54,7 +54,7 @@ abbr --add gdlc     'git reset --hard HEAD^' #throw away the last commit
 abbr --add grc      'git reset --hard' #throw away everything after commit
 abbr --add gdrc     'git revert HEAD' #revert changes of specified commit
 abbr --add gcl      'git clone'
-
+abbr --add gDab     'git branch -D (git for-each-ref --format="%(refname:short)" | ag )'
 #shell shortcuts
 abbr c              'clear'
 abbr > file.txt 2>&1 'infi'
