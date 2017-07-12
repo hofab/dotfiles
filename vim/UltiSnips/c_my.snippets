@@ -9,6 +9,12 @@ else {
 }
 endsnippet
 
+snippet wif "Wescam if statement"
+if(${1:!statement}) {
+    ${2:CODE}
+}
+endsnippet
+
 snippet wmlog "WESCAM moduleLogError"
 moduleLogError(${1:moduleAddr},"${1:%s}\n"${1/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$2${1/([^%]|%%)*(%.)?.*/(?2:\);)/}
 endsnippet
@@ -64,5 +70,5 @@ snippet cc
 endsnippet
 
 snippet lc
-/* ${1:Breif} */
+/* ${1:Brief} */
 endsnippet

@@ -20,5 +20,7 @@ vnoremap <F4> "+y
 
 " custom inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"doxygen line comment
+" doxygen line comment
 map ;dc $a<TAB>/**<  */<ESC>2hi
+" surround code with if-statement
+vmap ;if d<ESC>iif(){<CR>}<ESC>kpk3li
