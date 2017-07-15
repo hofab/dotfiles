@@ -3,7 +3,8 @@ let g:lightline = {
       \ 'colorscheme': 'fhof_ll_cs',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'filename' ] ]
+      \             [ 'fugitive'] ],
+      \   'right': [ [ 'filename']],
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightlineFugitive',
