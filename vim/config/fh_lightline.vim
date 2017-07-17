@@ -20,7 +20,7 @@ function! LightlineModified()
   if &filetype == "help"
     return ""
   elseif &modified
-    return ""
+    return "  "
   elseif &modifiable
     return ""
   else
@@ -48,6 +48,6 @@ endfunction
 
 function! LightlineFilename()
   return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
-       \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
-       \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+       \ ('' != LightlineModified() ? LightlineModified() : '') .
+       \ ('' != expand('%:t') ? expand('%:t') : '[No Name]')
 endfunction
