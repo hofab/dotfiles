@@ -13,3 +13,5 @@ set __fish_git_prompt_char_upstream_behind '↓'
 
 set fish_prompt_pwd_dir_length 1
 set theme_project_dir_length 1
+
+source "$HOME/.config/fish/completions/abbrs.fish"
