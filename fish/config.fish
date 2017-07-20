@@ -14,4 +14,10 @@ set __fish_git_prompt_char_upstream_behind '↓'
 set fish_prompt_pwd_dir_length 1
 set theme_project_dir_length 1
 
+# reference: https://gist.github.com/netmute/6761892
+# make Vim the default editor
+set --export EDITOR "nvim -f"
+# make Vim usable with git
+set --export GIT_EDITOR "nvim -f"
+
 source "$HOME/.config/fish/completions/abbrs.fish"
