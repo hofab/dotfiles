@@ -1,0 +1,106 @@
+
+[user]
+	name = Fabian Hof
+	email = Fabian.Hof@l3t.com
+
+#################################
+# Core variables
+#################################
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+	pager = less -r
+[gc]
+	auto = 0
+
+#################################
+# Merge and Diff
+#################################
+[diff]
+	tool = diffuse
+[difftool]
+	prompt = no
+[difftool "diffuse"]
+	cmd = diffuse $LOCAL $REMOTE
+
+[merge]
+	tool = diffuse
+[mergetool]
+	prompt = no
+[mergetool "diffuse"]
+    cmd = diffuse $LOCAL $MERGED $REMOTE
+
+#################################
+# Pretty formatting
+#################################
+[format]
+	pretty = format:%h %an %ar:%x09%s
+[color]
+	ui = auto
+[color "branch"]
+	current = reverse
+[alias]
+	# Show all the alias in this file.
+	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
+
+	# Alias HELPERS
+	current-branch-name   = !git rev-parse --abbrev-ref HEAD
+	remote-repo-name    = !git config branch.$(git current-branch-name).remote
+	remote-branch-name  = !git config branch.$(git current-branch-name).merge | cut -b 12-
+	default-remote-name = "!sh -c 'if [ ! -z "$1" ]; then echo $1; else echo origin; fi' -"
+	default-branch-name = "!sh -c 'if [ ! -z "$1" ]; then echo $1; else echo $(git current-branch-name); fi' -"
+
+	# Quickly review the changes that are being asked to be checked into release
+	# master.
+	review = "!git merge-base origin/master HEAD | git difftool --stdin"
+
+	# Graphically show the last 15 entries of the log history
+	bit = "log --graph --pretty=format:'%C(yellow bold)%h%Creset (%ad) %C(bold)%an:%Creset %s %Cgreen%d%Creset' --date=relative -15"
+
+	# Graphically show the entire log history
+	lg = "log --graph --pretty=format:'%C(yellow bold)%h%Creset (%ad) %C(bold)%an:%Creset %s %Cgreen%d%Creset' --date=relative"
+
+
+	# UNCOMMIT
+	uncommit = reset HEAD^
+
+	# PUBLISH - Create remote branch
+	# Create branch in remote repo (using current branch name) and push current
+	# branch to it. Remote repo is assumed to be 'origin' but can be changed
+	# using an argument. The current branch remote tracking information is
+	# automatically set to the created branch on the remote repo.
+	# Examples
+	# 'git publish'         : origin is assumed to be remote repo
+	# 'git publish dev'     : dev is defined as remote repo
+	publish = "!sh -c 'git branch --unset-upstream $(git current-branch-name); git push -u $(git default-remote-name $1) $(git current-branch-name)' -"
+
+	# UNPUBLISH - Delete remote branch
+	# Delete the remote branch in remote repo that the current branch is
+	# tracking. The current branch is left as is, but its remote tracking
+	# information is removed.
+	# 'git unpublish' : remote tracking branch in remote repo is deleted
+	unpublish = !git push $(git remote-repo-name) :$(git remote-branch-name)
+
+	# LFC - Lazy F-ing Checkout
+	# Create & checkout branch from a given remote repo (with tab completion)
+	# and set upstream to the remote branch. If the branch already exists
+	# locally, that branch is checked-out but the branch, and its upstream, is
+	# unchanged. This is a handy way to checkout review branches from reviews or
+	# any other remote branch in a single step.
+	# 'git lfc dev/feature/xx/fixStuff'
+	#       : Creates local 'feature/xx/fixStuff' branch that tracks the remote
+	#         branch 'dev/feature/xx/fixStuff'
+	# 1.8 Git
+	lfc = !git checkout -b $(sed \"s/[^\\/]*\\///\" <<< $1)
+	nb = checkout -b
+
+#################################
+# Branches
+#################################
+[push]
+	default = tracking
+[pull]
+	default = current
+[rebase]
+	autosquash = true
+
