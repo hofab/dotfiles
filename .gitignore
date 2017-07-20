@@ -2,3 +2,5 @@ vim/undodir/
 .netrwhist
 fishd.*
 __pycache__
+*.pyc
+
