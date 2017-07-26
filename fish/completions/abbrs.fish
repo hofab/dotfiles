@@ -38,39 +38,41 @@ abbr --add gca      'git commit --amend'
 abbr --add gdt      'git difftool'
 abbr --add gru      'git config --get remote.origin.url'
 abbr --add gp       'git push'
-abbr --add grd      'git push origin --delete' #delete remote branch
+abbr --add grbD     'git push origin --delete' #delete remote branch
 abbr --add gpl      'git pull'
-abbr --add gr       'git reset HEAD' #throw away any local changes
+abbr --add grh      'git reset HEAD' #throw away any local changes
 abbr --add gdlc     'git reset --hard HEAD^' #throw away the last commit
 abbr --add grc      'git reset --hard' #throw away everything after commit
 abbr --add gdrc     'git revert HEAD' #revert changes of specified commit
 abbr --add gcl      'git clone'
 abbr --add gDab     'git branch -D (git for-each-ref --format="%(refname:short)" | ag )'
 #shell shortcuts
-abbr --add c         'clear'
+abbr --add c        'clear'
 abbr --add infi     '> file.txt 2>&1'
-abbr rr             'rm -ir'
-abbr rd             'rm -id'
-abbr rf             'rm -rf'
-abbr rA             'rm -rf *'
-abbr llh            'ls -Al *.hex'
+abbr --add rr       'rm -ir'
+abbr --add rd       'rm -id'
+abbr --add rf       'rm -rf'
+abbr --add rA       'rm -rf *'
+abbr --add llh      'ls -Al *.hex'
 
 #ninja shortcuts
-abbr nc             'ninja clean'
-abbr nv             'ninja -v'
+abbr --add nc       'ninja clean'
+abbr --add nv       'ninja -v'
 
 #make shortcuts
-abbr mca            'make cleanall'
+abbr --add mca      'make cleanall'
 
 #useful stuff
-abbr efc            'nvim ~/dotfiles/fish/config.fish'
-abbr efia            'nvim ~/dotfiles/fish/completions/abbrs.fish'
-abbr evrc           'nvim ~/dotfiles/.vimrc'
-abbr evm            'nvim ~/dotfiles/vim/config/fhof_mapping.vim'
-abbr cdl            'cd ~/Downloads'
-abbr cmx            'cd ~/mx-dev.git'
-abbr cmxf           'cd ~/mx-fork.git'
-abbr rsse           'rsync fhof@pyrite:/home/sw-eng/builds/ -avzuP'
+abbr --add efc      'nvim ~/dotfiles/fish/config.fish'
+abbr --add efia     'nvim ~/dotfiles/fish/completions/abbrs.fish'
+abbr --add evrc     'nvim ~/dotfiles/.vimrc'
+abbr --add evm      'nvim ~/dotfiles/vim/config/fhof_mapping.vim'
+abbr --add cdl      'cd ~/Downloads'
+abbr --add cmx      'cd ~/mx-dev.git'
+abbr --add cmxf     'cd ~/mx-fork.git'
+abbr --add rsse     'rsync fhof@pyrite:/home/sw-eng/builds/ -avzuP'
+abbr --add o        'nvim'
+abbr --add ca       'rm *.{hex,elf,map,bin}'
 
 #merge history of several fish instances
 abbr --add mhi      'history --merge'
