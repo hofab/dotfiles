@@ -34,6 +34,7 @@ abbr --add gfrm     'git fetch; and git rebase origin/master'
 abbr --add gc       'git commit'
 abbr --add gcm      'git commit -m "'
 abbr --add gcf      'git commit --fixup'
+abbr --add gcfh     'git commit --fixup HEAD^'
 abbr --add gca      'git commit --amend'
 abbr --add gdt      'git difftool'
 abbr --add gru      'git config --get remote.origin.url'
@@ -62,6 +63,10 @@ abbr --add nv       'ninja -v'
 #make shortcuts
 abbr --add mca      'make cleanall'
 
+#make.py shortcuts
+abbr --add mpc      'make.py clean'
+abbr --add mp       'make.py'
+
 #useful stuff
 abbr --add efc      'nvim ~/dotfiles/fish/config.fish'
 abbr --add efia     'nvim ~/dotfiles/fish/completions/abbrs.fish'
@@ -69,7 +74,7 @@ abbr --add evrc     'nvim ~/dotfiles/.vimrc'
 abbr --add evm      'nvim ~/dotfiles/vim/config/fhof_mapping.vim'
 abbr --add cdl      'cd ~/Downloads'
 abbr --add cmx      'cd ~/mx-dev.git'
-abbr --add cmxf     'cd ~/mx-fork.git'
+abbr --add cma      'cd ~/maint'
 abbr --add rsse     'rsync fhof@pyrite:/home/sw-eng/builds/ -avzuP'
 abbr --add o        'nvim'
 abbr --add ca       'rm *.{hex,elf,map,bin}'
