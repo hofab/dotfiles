@@ -47,6 +47,9 @@ abbr --add grc      'git reset --hard' #throw away everything after commit
 abbr --add gdrc     'git revert HEAD' #revert changes of specified commit
 abbr --add gcl      'git clone'
 abbr --add gDab     'git branch -D (git for-each-ref --format="%(refname:short)" | ag )'
+abbr --add gbg      'git bisect good'
+abbr --add gbb      'git bisect bad'
+
 #shell shortcuts
 abbr --add c        'clear'
 abbr --add infi     '> file.txt 2>&1'
