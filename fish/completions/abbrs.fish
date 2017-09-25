@@ -21,6 +21,7 @@ abbr --add gr       'git rebase'
 abbr --add gri      'git rebase -i'
 abbr --add grm      'git rebase origin/master'
 abbr --add grp      'git rebase origin/production'
+abbr --add grc      'git rebase --continue'
 abbr --add gsb      'git branch'
 abbr --add gbd      'git branch -d'
 abbr --add gbD      'git branch -D'
@@ -43,12 +44,13 @@ abbr --add grbD     'git push origin --delete' #delete remote branch
 abbr --add gpl      'git pull'
 abbr --add grh      'git reset HEAD' #throw away any local changes
 abbr --add gdlc     'git reset --hard HEAD^' #throw away the last commit
-abbr --add grc      'git reset --hard' #throw away everything after commit
+abbr --add grco     'git reset --hard' #throw away everything after commit
 abbr --add gdrc     'git revert HEAD' #revert changes of specified commit
 abbr --add gcl      'git clone'
 abbr --add gDab     'git branch -D (git for-each-ref --format="%(refname:short)" | ag )'
 abbr --add gbg      'git bisect good'
 abbr --add gbb      'git bisect bad'
+abbr --add gmt      'git mergetool'
 
 #shell shortcuts
 abbr --add c        'clear'
