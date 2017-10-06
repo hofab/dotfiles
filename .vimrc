@@ -30,6 +30,11 @@ set ruler
 set nowrap
 set ff=unix
 set showcmd
+" show tabs (permanent) and spaces (typing)
+set list
+set lcs=tab:>-,trail:-
+" set relative line numbers
+set number relativenumber
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPING
@@ -40,19 +45,6 @@ nnoremap K <nop>
 
 " Always show a ctags list
 nnoremap <C-]> g<C-]>
-
-" Window splitting (vertical and horizontal)
-"nnoremap <C-v> :vsp<CR>
-"nnoremap <C-h> :sp<CR>
-
-" Auto completion
-"imap <tab> <C-p>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" DOXYGEN
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <F5> O/A*74.A//**oi *Brief.Detailed.@returnsA*76.A/6kb
-map <F6> O/**/O
-map <F7> A /**<  */hhi
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UNDO
@@ -101,6 +93,7 @@ augroup vimrc_autocmds
   autocmd BufEnter * match OverLength /\%81v.*/
 augroup END
 
+
 if has("autocmd")
 " autocmd BufRead,BufNewFile *.[ch] let fname = expand('<afile>:p:h') . '/types.vim'
 " autocmd BufRead,BufNewFile *.[ch] if filereadable(fname)
@@ -120,7 +113,7 @@ augroup cprog
     autocmd BufRead,BufNewFile *       set formatoptions=tcql nocindent comments&
     autocmd BufRead,BufNewFile *.c,*.h,*.cpp set formatoptions=croql cindent comments=sr:/*,mb:*,el:*/,://
     set cino=:0,(0,c1
-  augroup END
+augroup END
 
   autocmd BufWritePre * :%s/\s\+$//e
 endif
