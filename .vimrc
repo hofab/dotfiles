@@ -35,6 +35,8 @@ set list
 set lcs=tab:>-,trail:-
 " set relative line numbers
 set number relativenumber
+" set ignores case for searches
+set ignorecase
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPING

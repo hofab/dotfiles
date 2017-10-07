@@ -9,7 +9,7 @@ map <C-J> <C-W>j
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map ;; :w <CR>
 map ;t :tabe <CR>
-map ;o :tabe<CR>:e 
+map ;o :tabe<CR>:e
 map ;h :split <CR>
 " no search highlighting until next search
 map ;s :noh <CR>
