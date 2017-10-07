@@ -16,8 +16,8 @@ map ;s :noh <CR>
 " paste yanked text over word
 map ;v ciw<C-r>0<ESC>
 " copy word to clipboard
-nnoremap <F4> "+yiw
-vnoremap <F4> "+y
+nnoremap ;cc "+yiw
+vnoremap ;cc "+y
 
 " custom inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

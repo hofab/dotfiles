@@ -8,8 +8,12 @@ abbr --add gstp     'git stash pop'
 abbr --add gstd     'git stash drop'
 abbr --add gco      'git checkout'
 abbr --add gnb      'git checkout -b'
+abbr --add gfb      'git checkout -b feature/fh/'
+abbr --add ghb      'git checkout -b hotfix/fh/'
+abbr --add gwb      'git checkout -b wip/fh/'
 abbr --add gcom     'git checkout master'
 abbr --add gcop     'git checkout production'
+abbr --add gdf      'git checkout --'
 abbr --add gcp      'git cherry-pick'
 abbr --add gA       'git add --all'
 abbr --add ga       'git add'
@@ -23,8 +27,8 @@ abbr --add grm      'git rebase origin/master'
 abbr --add grp      'git rebase origin/production'
 abbr --add grc      'git rebase --continue'
 abbr --add gsb      'git branch'
-abbr --add gbd      'git branch -d'
-abbr --add gbD      'git branch -D'
+abbr --add gdb      'git branch -d'
+abbr --add gDb      'git branch -D'
 abbr --add gvv      'git branch -vv'
 abbr --add gseb     'git branch | ag'
 abbr --add glr      'git branch --remotes'
@@ -40,10 +44,11 @@ abbr --add gca      'git commit --amend'
 abbr --add gdt      'git difftool'
 abbr --add gru      'git config --get remote.origin.url'
 abbr --add gp       'git push'
-abbr --add grbD     'git push origin --delete' #delete remote branch
+abbr --add gDrb     'git push origin --delete' #delete remote branch
 abbr --add gpl      'git pull'
-abbr --add grh      'git reset HEAD' #throw away any local changes
+abbr --add gus      'git reset HEAD --' #throw away any local changes
 abbr --add gdlc     'git reset --hard HEAD^' #throw away the last commit
+abbr --add guco     'git reset --mixed HEAD~' #uncommit and keep changes
 abbr --add grco     'git reset --hard' #throw away everything after commit
 abbr --add gdrc     'git revert HEAD' #revert changes of specified commit
 abbr --add gcl      'git clone'
