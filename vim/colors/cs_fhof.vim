@@ -42,6 +42,8 @@ hi Macro                ctermfg=73
 hi PreProc              ctermfg=178 term=NONE
 hi Constant             ctermfg=5
 hi ErrorMsg             ctermfg=196 ctermbg=NONE
+hi NonText              ctermfg=248
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SYNTAX HIGHLIGHTING
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

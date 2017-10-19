@@ -8,8 +8,8 @@ map <C-J> <C-W>j
 " shortcuts to make my life easier
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map ;; :w <CR>
-map ;t :tabe <CR>
-map ;o :tabe<CR>:e
+map ;t :vs <CR> <C-L> :Files <CR>
+map ;o :tabe<CR> :Files <CR>
 map ;h :split <CR>
 " no search highlighting until next search
 map ;s :noh <CR>
@@ -23,5 +23,6 @@ vnoremap ;cc "+y
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " doxygen line comment
 map ;dc $a<TAB>/**<  */<ESC>2hi
+map ;lc $a<TAB>/*  */<ESC>2hi
 " surround code with if-statement
 vmap ;if d<ESC>iif(){<CR>}<ESC>kpk3li

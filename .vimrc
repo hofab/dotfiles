@@ -145,6 +145,12 @@ autocmd BufWritePost *.cpp,*.h,*.c call UpdateTags()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGINS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
 
 execute pathogen#infect()
 colorscheme cs_fhof

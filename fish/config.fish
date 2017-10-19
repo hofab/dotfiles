@@ -1,5 +1,6 @@
 eval (python -m virtualfish)
 set -g Z_SCRIPT_PATH /usr/local/bin/z
+set -U FZF_FIND_FILE_COMMAND 'rg --files --hidden --smartcase --glob "!.git/*"'
 
 # set path to fish completions
 set fish_complete_path ~/.cofig/fish/completions $fish_complete_path
