@@ -1,16 +1,12 @@
 eval (python -m virtualfish)
 set -g Z_SCRIPT_PATH /usr/local/bin/z
-set -U FZF_FIND_FILE_COMMAND 'rg --files --hidden --smartcase --glob "!.git/*"'
+set -U FZF_FIND_FILE_COMMAND 'rg --files --hidden --smartcase --glob --height=15 "!.git/*"'
+# open fzf file in nvim
+bind -e \cf
+bind \cf 'nvim (fzf --height=15)'
 
 # set path to fish completions
 set fish_complete_path ~/.cofig/fish/completions $fish_complete_path
-# Status Chars
-set __fish_git_prompt_char_dirtystate '⚡'
-set __fish_git_prompt_char_stagedstate '→'
-set __fish_git_prompt_char_untrackedfiles '☡'
-set __fish_git_prompt_char_stashstate '↩'
-set __fish_git_prompt_char_upstream_ahead '↑'
-set __fish_git_prompt_char_upstream_behind '↓'
 
 set fish_prompt_pwd_dir_length 1
 set theme_project_dir_length 1

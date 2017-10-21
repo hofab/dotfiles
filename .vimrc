@@ -149,12 +149,18 @@ autocmd BufWritePost *.cpp,*.h,*.c call UpdateTags()
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'SirVer/ultisnips'
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'itchyny/lightline.vim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
 execute pathogen#infect()
 colorscheme cs_fhof
-source ~/.vim/config/silversearcher.vim
 source ~/.vim/config/wescamSyntax.vim
 "source ~/.vim/config/colorhighlighting.vim
 source ~/.vim/config/fh_lightline.vim
