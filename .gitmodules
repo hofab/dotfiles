@@ -1,0 +1,3 @@
+[submodule "vim/plugged/lightline.cim"]
+    path = vim/plugged/lightline.vim
+    ignore = dirty
