@@ -8,8 +8,9 @@ map <C-J> <C-W>j
 " shortcuts to make my life easier
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map ;; :w<CR>
-map ;t :vs<CR><C-L>:Files<CR>
-map ;o :tabe<CR>:Files<CR>
+map ;ov :vs<CR><C-L>:Files<CR>
+map ;o :Files<CR>
+map ;t :tabe<CR>:Files<CR>
 map ;h :split <CR>
 " no search highlighting until next search
 map ;s :noh <CR>

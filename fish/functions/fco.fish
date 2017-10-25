@@ -1,3 +1,3 @@
 function fco --description 'Fuzzy-find and checkout a branch'
-    git branch --all | grep -v HEAD | string trim | fzf --height=10 | xargs git checkout
+    git branch --all | rg -v HEAD | string trim | cfzf | xargs git checkout -t
 end

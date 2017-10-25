@@ -1,3 +1,3 @@
 function atd
-    todo a $argv; and clear; dtd;
+    todo a $argv; and clear; std;
 end

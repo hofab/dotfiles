@@ -21,7 +21,6 @@ abbr --add gap      'git add -p'
 abbr --add gd       'git diff'
 abbr --add gdom     'git diff origin/master'
 abbr --add gdtom    'git difftool origin/master'
-abbr --add gb       'git bit'
 abbr --add gr       'git rebase'
 abbr --add gri      'git rebase -i'
 abbr --add grm      'git rebase origin/master'
@@ -45,7 +44,7 @@ abbr --add gca      'git commit --amend'
 abbr --add gdt      'git difftool'
 abbr --add gru      'git config --get remote.origin.url'
 abbr --add gp       'git push'
-abbr --add gDrb     'git push origin --delete' #delete remote branch
+abbr --add gDrb     'git push origin --delete (gbn)' #delete remote branch
 abbr --add gpl      'git pull'
 abbr --add gus      'git reset HEAD --' #throw away any local changes
 abbr --add gdlc     'git reset --hard HEAD^' #throw away the last commit
@@ -53,13 +52,14 @@ abbr --add guco     'git reset --mixed HEAD~' #uncommit and keep changes
 abbr --add grco     'git reset --hard' #throw away everything after commit
 abbr --add gdrc     'git revert HEAD' #revert changes of specified commit
 abbr --add gcl      'git clone'
-abbr --add gDab     'git branch -D (git for-each-ref --format="%(refname:short)" | ag )'
+abbr --add gDab     'git branch -D (git for-each-ref --format="%(refname:short)" | cfzf )'
 abbr --add gbg      'git bisect good'
 abbr --add gbb      'git bisect bad'
 abbr --add gmt      'git mergetool'
-
+abbr --add grev     'git merge-base origin/master HEAD | git difftool --stdin'
 #shell shortcuts
 abbr --add c        'clear'
+abbr --add cf       'cfzf'
 abbr --add infi     '> file.txt 2>&1'
 abbr --add rr       'rm -ir'
 abbr --add rd       'rm -id'
