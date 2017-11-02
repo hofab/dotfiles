@@ -1,3 +1,3 @@
 function sih --description 'Search only in headers.'
-	ag $argv --hh .
+    rg $argv --hh .
 end

@@ -1,3 +1,6 @@
+" custom leader
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader = "\<SPACE>"
 " custom mapping to my liking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <C-K> <C-W>k
@@ -7,23 +10,26 @@ map <C-J> <C-W>j
 
 " shortcuts to make my life easier
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map ;; :w<CR>
-map ;ov :vs<CR><C-L>:Files<CR>
-map ;o :Files<CR>
-map ;t :tabe<CR>:Files<CR>
-map ;h :split <CR>
+nnoremap <LEADER>w :w<CR>
+nmap <LEADER>f :vs<CR><C-L>:Files<CR>
+nmap <LEADER>o :Files<CR>
+nmap <LEADER>q :q<CR>
+nmap <LEADER>sq :wq<CR>
+nmap <LEADER>c :qa<CR>
+nmap <LEADER>t :tabe<CR>:Files<CR>
+nmap <LEADER>h :split <CR>
 " no search highlighting until next search
-map ;s :noh <CR>
+nmap <LEADER>s :noh <CR>
 " paste yanked text over word
-map ;v ciw<C-r>0<ESC>
+nmap <LEADER>v ciw<C-r>0<ESC>
 " copy word to clipboard
-nnoremap ;cc "+yiw
-vnoremap ;cc "+y
+nnoremap <LEADER>cc "+yiw
+vnoremap <LEADER>cc "+y
 
 " custom inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " doxygen line comment
-map ;dc $a<TAB>/**<  */<ESC>2hi
-map ;lc $a<TAB>/*  */<ESC>2hi
+map <LEADER>dc $a<TAB>/**<  */<ESC>2hi
+map <LEADER>lc $a<TAB>/*  */<ESC>2hi
 " surround code with if-statement
-vmap ;if d<ESC>iif(){<CR>}<ESC>kpk3li
+vmap <LEADER>if d<ESC>iif(){<CR>}<ESC>kpk3li

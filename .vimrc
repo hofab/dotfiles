@@ -156,6 +156,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'itchyny/lightline.vim'
+Plug 'dag/vim-fish'
+Plug 'jceb/vim-orgmode'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
