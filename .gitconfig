@@ -42,7 +42,6 @@
 [alias]
     # Show all the alias in this file.
     aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
-
 #################################
 # Branches
 #################################
