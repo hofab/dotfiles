@@ -33,3 +33,17 @@ map <LEADER>dc $a<TAB>/**<  */<ESC>2hi
 map <LEADER>lc $a<TAB>/*  */<ESC>2hi
 " surround code with if-statement
 vmap <LEADER>if d<ESC>iif(){<CR>}<ESC>kpk3li
+
+" use clang format
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"let clfPath = '/usr/share/clang/clang-format.py'
+function! ClFormatOnSave()
+  let l:formatdiff = 1
+  pyf /usr/share/clang/clang-format.py
+endfunction
+autocmd BufWritePre *.h,*.cc,*.cpp,*.c call ClFormatOnSave()
+
+map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
+imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
+
+

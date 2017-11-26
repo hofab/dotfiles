@@ -1,0 +1,20 @@
+---
+Language:        Cpp
+# BasedOnStyle:  Google
+BreakBeforeBraces: Stroustrup
+ColumnLimit:     80
+IndentWidth:     4
+MaxEmptyLinesToKeep:    2
+AlignTrailingComments:  true
+ReflowComments:         true
+BinPackArguments:       false
+BinPackParameters:      false
+BreakBeforeBinaryOperators: NonAssignment
+BreakBeforeTernaryOperators: true
+DerivePointerAlignment: true
+IndentCaseLabels:       true
+PointerAlignment: Right
+SpaceAfterCStyleCast:   true
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeParens: Always
+...
