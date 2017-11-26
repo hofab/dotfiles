@@ -72,36 +72,21 @@ endif
 " MOUSE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Allow the mouse to be used for selecting
-" :set mouse=""     Disable all mouse behaviour.
 set mouse=a     " Enable all mouse behaviour (the default).
-"set mouse+=v    "  Enable visual mode (v)
-" :set mouse-=c     Disable mouse in command mode.
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AUTO COMMANDS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("autocmd")
-" autocmd BufRead,BufNewFile *.[ch] let fname = expand('<afile>:p:h') . '/types.vim'
-" autocmd BufRead,BufNewFile *.[ch] if filereadable(fname)
-" autocmd BufRead,BufNewFile *.[ch]   exe 'so ' . fname
-" autocmd BufRead,BufNewFile *.[ch] endif
-
 " Remove trailing whitepsaces for each line on save.
 " Highlight text that goes past the 80 line limit.
 augroup vimrc_autocmds
-" autocmd BufReadPre * setlocal foldmethod=syntax
-" autocmd BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=manual | endif
   autocmd BufEnter * highlight OverLength ctermbg=7 ctermfg=0 guibg=#707070
   autocmd BufEnter * match OverLength /\%81v.*/
 augroup END
 
 
 if has("autocmd")
-" autocmd BufRead,BufNewFile *.[ch] let fname = expand('<afile>:p:h') . '/types.vim'
-" autocmd BufRead,BufNewFile *.[ch] if filereadable(fname)
-" autocmd BufRead,BufNewFile *.[ch]   exe 'so ' . fname
-" autocmd BufRead,BufNewFile *.[ch] endif
-" Remove trailing whitepsaces for each line on save.
   autocmd BufWritePre * :%s/\s\+$//e
 endif
 
