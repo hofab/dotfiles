@@ -6,11 +6,14 @@ ColumnLimit:     80
 IndentWidth:     4
 MaxEmptyLinesToKeep:    2
 AlignTrailingComments:  true
+AlignOperands:          true
+AlignConsecutiveAssignments:    true
 ReflowComments:         true
 BinPackArguments:       false
 BinPackParameters:      false
 BreakBeforeBinaryOperators: NonAssignment
 BreakBeforeTernaryOperators: true
+AlignAfterOpenBracket:  Align
 DerivePointerAlignment: true
 IndentCaseLabels:       true
 PointerAlignment: Right

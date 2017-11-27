@@ -77,3 +77,4 @@ cfg.h
 build/*
 *.pyc
 
+.clang-format

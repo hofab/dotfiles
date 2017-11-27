@@ -67,6 +67,7 @@ abbr --add rf       'rm -rf'
 abbr --add rA       'rm -rf *'
 abbr --add llh      'exa -l *.hex'
 abbr --add el       'exa -l'
+abbr --add ea       'exa -la'
 
 #ninja shortcuts
 abbr --add nc       'ninja clean'
