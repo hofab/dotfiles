@@ -20,5 +20,5 @@ IndentCaseLabels:       true
 PointerAlignment: Right
 SpaceAfterCStyleCast:   true
 SpaceBeforeAssignmentOperators: true
-SpaceBeforeParens: Always
+SpaceBeforeParens: ControlStatements
 ...
