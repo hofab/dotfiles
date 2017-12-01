@@ -2,6 +2,7 @@
 Language:        Cpp
 # BasedOnStyle:  Google
 BreakBeforeBraces: Stroustrup
+
 ColumnLimit:     80
 IndentWidth:     4
 MaxEmptyLinesToKeep:    2
@@ -9,7 +10,7 @@ AlignTrailingComments:  true
 AlignOperands:          true
 AlignConsecutiveAssignments:    true
 ReflowComments:         true
-BinPackArguments:       false
+BinPackArguments:       true
 BinPackParameters:      false
 BreakBeforeBinaryOperators: NonAssignment
 BreakBeforeTernaryOperators: true
