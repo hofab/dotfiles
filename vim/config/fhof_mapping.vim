@@ -11,6 +11,7 @@ map <C-J> <C-W>j
 " shortcuts to make my life easier
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <LEADER>w :w<CR>
+nnoremap <LEADER>[ <S-V>i{<C-K>
 nmap <LEADER>f :vs<CR><C-L>:Files<CR>
 nmap <LEADER>o :Files<CR>
 nmap <LEADER>q :q<CR>
