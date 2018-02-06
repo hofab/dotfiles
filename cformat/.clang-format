@@ -11,14 +11,15 @@ AlignOperands:          true
 AlignConsecutiveAssignments:    true
 ReflowComments:         true
 BinPackArguments:       true
-BinPackParameters:      false
-BreakBeforeBinaryOperators: NonAssignment
+BinPackParameters:      true
+BreakBeforeBinaryOperators: All
 BreakBeforeTernaryOperators: true
 AlignAfterOpenBracket:  Align
 DerivePointerAlignment: true
-IndentCaseLabels:       true
+IndentCaseLabels:       false
 PointerAlignment: Right
 SpaceAfterCStyleCast:   true
 SpaceBeforeAssignmentOperators: true
 SpaceBeforeParens: ControlStatements
+IndentWrappedFunctionNames: true
 ...

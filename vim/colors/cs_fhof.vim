@@ -20,10 +20,10 @@ let colors_name = "cs_fhof"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi Folded               ctermfg=252   ctermbg=240
 hi FoldColumn           ctermfg=7   ctermbg=8
-hi Search               ctermbg=215
 hi VertSplit            ctermfg=252 ctermbg=5
 hi LineNr               ctermfg=239 ctermbg=255
 hi Normal               ctermfg=239
+hi Search               ctermfg=239 ctermbg=199
 set cursorline
 hi CursorLine           ctermbg=253 cterm=NONE term=NONE
 hi CursorLineNr         ctermfg=255 ctermbg=199
@@ -50,12 +50,21 @@ hi NonText              ctermfg=248
 hi wesPrivCtx NONE
 hi wesAnnotate NONE
 hi wesWescam NONE
-hi wesUnimportant NONE
+hi def link wesUnimportant Function
 hi wesThis NONE
-hi wesIdentifier        ctermfg=167
+hi wesIdentifier        ctermfg=33
 hi wesCSpecial          ctermfg=5
 hi OverLength           ctermfg=239 ctermbg=196
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" # C Pre Proccessor Statements
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" hi cInclude             ctermfg=178     "#include
+" hi cIncluded            ctermfg=28      "<file>
+hi cDefine              ctermfg=20        "#define
+hi cPreCondit           ctermfg=5      "#if, #elif, #else, #endif
+" hi cPreProc             ctermfg=        "#error, #warning
+" hi cCppOut              ctermfg=        "#if 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " EXTENDED C SYNTAX
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

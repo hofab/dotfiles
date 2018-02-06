@@ -26,6 +26,7 @@ nmap <LEADER>v ciw<C-r>0<ESC>
 " copy word to clipboard
 nnoremap <LEADER>cc "+yiw
 vnoremap <LEADER>cc "+y
+nnoremap <LEADER>r *<ESC>:%s///g<left><left>
 
 " custom inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

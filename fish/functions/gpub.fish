@@ -1,3 +1,3 @@
-function gpub
-	git push -u origin (gbn)
+function gpu
+    git push -u origin (gbn)
 end

@@ -14,4 +14,23 @@ set --export EDITOR "nvim -f"
 # make Vim usable with git
 set --export GIT_EDITOR "nvim -f"
 
+# make.py quit output
+set --export MAKE_QUIET "1"
+
+# vectorCast
+set --export VECTORCAST_DIR '/opt/software/vectorcast'
+# vectorCast license server
+set --export VECTOR_LICENSE_FILE "27000@englicense1"
+# vectorCast Repos
+set --export VCAST_VER_REPO ~/verification.git
+set --export VCAST_MX_REPO ~/release.git
+
+# Matlab license and server
+set --export MLM_LICENSE_FILE "27000@LICENSESVR2:27000@LICENSESVR3"
+set --export VTE_VERSION "100"
+
+# codesonar
+set --export CS_WORKING_DIR "$HOME/codesonar"
+set --export CS_HUB_USER "fhof"
+
 source "$HOME/.config/fish/completions/abbrs.fish"
