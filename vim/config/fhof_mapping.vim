@@ -14,9 +14,8 @@ nnoremap <LEADER>w :w<CR>
 nnoremap <LEADER>[ <S-V>i{<C-K>
 nmap <LEADER>f :vs<CR><C-L>:Files<CR>
 nmap <LEADER>o :Files<CR>
-nmap <LEADER>q :q<CR>
 nmap <LEADER>sq :wq<CR>
-nmap <LEADER>c :qa<CR>
+nmap <LEADER>q :qa<CR>
 nmap <LEADER>t :tabe<CR>:Files<CR>
 nmap <LEADER>h :split <CR>
 " no search highlighting until next search

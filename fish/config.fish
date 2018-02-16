@@ -16,6 +16,7 @@ set --export GIT_EDITOR "nvim -f"
 
 # make.py quit output
 set --export MAKE_QUIET "1"
+set --export TOOLCHAIN "xilinx"
 
 # vectorCast
 set --export VECTORCAST_DIR '/opt/software/vectorcast'
