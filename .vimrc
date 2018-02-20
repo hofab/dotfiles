@@ -145,6 +145,8 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'itchyny/lightline.vim'
 Plug 'dag/vim-fish'
 Plug 'jceb/vim-orgmode'
+Plug 'easymotion/vim-easymotion'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 

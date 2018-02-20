@@ -18,7 +18,7 @@
 #################################
 [diff]
     tool = diffuse
-	algorithm = patience
+    algorithm = patience
 [difftool]
     prompt = no
 [difftool "diffuse"]
@@ -26,6 +26,7 @@
 
 [merge]
     tool = diffuse
+    algorithm = patience
 [mergetool]
     prompt = no
 [mergetool "diffuse"]
