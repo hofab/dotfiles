@@ -1,3 +1,3 @@
 function mcd
-	mkdir $argv; and cd $argv;
+    mkdir $argv; and cd $argv;
 end

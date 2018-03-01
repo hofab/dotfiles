@@ -16,11 +16,11 @@ if(${1:!statement}) {
 endsnippet
 
 snippet wmlog "WESCAM moduleLogError"
-moduleLogError(${1:moduleAddr},"${1:%s}\n"${1/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$2${1/([^%]|%%)*(%.)?.*/(?2:\);)/}
+moduleLogError(${1:moduleAddr}, "${1:%s}\n"${1/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$2${1/([^%]|%%)*(%.)?.*/(?2:\);)/}
 endsnippet
 
 snippet swlog "WESCAM moduleLogError"
-moduleLogError(${1:moduleAddr},"_LINE_: ${2:value}");
+moduleLogError(${1:moduleAddr}, "_LINE_: ${2:value}");
 endsnippet
 
 snippet wfunc
@@ -74,13 +74,13 @@ snippet lc
 endsnippet
 
 snippet wpb "Wescam print binary"
-moduleLogError(moduleAddr,"${1:binary}: %s",$1 ? "TRUE" : "FALSE");
+moduleLogError(moduleAddr, "${1:binary}: %s",$1 ? "TRUE" : "FALSE");
 endsnippet
 
 snippet wpv "Wescam print var"
-moduleLogError(moduleAddr,"${1:var}: %i",$1);
+moduleLogError(moduleAddr, "${1:var}: %i",$1);
 endsnippet
 
 snippet wpt "Wescam print text"
-moduleLogError(moduleAddr,"${1:text}");
+moduleLogError(moduleAddr, "${1:text}");
 endsnippet

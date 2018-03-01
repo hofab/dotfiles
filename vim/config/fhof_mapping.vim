@@ -18,6 +18,7 @@ nmap <LEADER>sq :wq<CR>
 nmap <LEADER>q :qa<CR>
 nmap <LEADER>t :tabe<CR>:Files<CR>
 nmap <LEADER>h :split <CR>
+nmap <LEADER>ut :UndotreeToggle <CR>
 " no search highlighting until next search
 nmap <LEADER>s :noh <CR>
 " paste yanked text over word
@@ -49,7 +50,7 @@ if filereadable("/usr/share/clang/clang-format.py")
     endfunction
     autocmd BufWritePre *.h,*.cc,*.cpp,*.c call ClFormatOnSave()
 
-    map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
+    map <LEADER>k :pyf /usr/share/clang/clang-format.py<cr>
     imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
 else
     if filereadable("/usr/share/clang/clang-format-6.0/clang-format.py")
@@ -58,8 +59,16 @@ else
       pyf /usr/share/clang/clang-format-6.0/clang-format.py
     endfunction
 
-        map <C-K> :pyf /usr/share/clang/clang-format-6.0/clang-format.py<cr>
+        map <LEADER>k :pyf /usr/share/clang/clang-format-6.0/clang-format.py<cr>
         imap <C-K> <c-o>:pyf /usr/share/clang/clang-format-6.0/clang-format.py<cr>
     endif
 endif
 
+"" easymotion configuration
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Move to line
+map <Leader><LEADER>l <Plug>(easymotion-bd-jk)
+nmap <Leader><LEADER>l <Plug>(easymotion-overwin-line)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)

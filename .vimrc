@@ -147,9 +147,11 @@ Plug 'dag/vim-fish'
 Plug 'jceb/vim-orgmode'
 Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/undotree'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
+"execute pathogen#infect()
 colorscheme cs_fhof
 source ~/.vim/config/wescamSyntax.vim
 "source ~/.vim/config/colorhighlighting.vim
