@@ -12,6 +12,7 @@ map <C-J> <C-W>j
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <LEADER>w :w<CR>
 nnoremap <LEADER>[ <S-V>i{<C-K>
+nnoremap <LEADER>cs :!cscope -bcqR<CR><ESC> :cs reset<CR><ESC>
 nmap <LEADER>f :vs<CR><C-L>:Files<CR>
 nmap <LEADER>o :Files<CR>
 nmap <LEADER>sq :wq<CR>
@@ -28,6 +29,10 @@ nnoremap <LEADER>cc "+yiw
 vnoremap <LEADER>cc "+y
 nnoremap <LEADER>r *<ESC>:%s///g<left><left>
 
+" variable dispatch command
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <LEADER>mk :Dispatch make -f MakePldMx15Zn_CMX SW_PN=76589 SW_VER=01 SW_REV=X -j
+
 " custom inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " doxygen line comment
@@ -35,6 +40,24 @@ map <LEADER>dc $a<TAB>/**<  */<ESC>2hi
 map <LEADER>lc $a<TAB>/*  */<ESC>2hi
 " surround code with if-statement
 vmap <LEADER>if d<ESC>iif(){<CR>}<ESC>kpk3li
+
+
+" use cscope as default
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("cscope")
+    set csprg=cscope
+    set csto=0
+    set cst
+    " add any database in current directory
+    " if filereadable("cscope.out")
+    "     silent cs add cscope.out
+    " " else add database pointed to by environment
+    " elseif $CSCOPE_DB != ""
+    "     silent cs add $CSCOPE_DB
+    " endif
+endif
+
+map <LEADER>gf :cs find 3 <C-R>=expand("<cword>")<CR><CR>
 
 " use clang format
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -67,8 +90,8 @@ endif
 "" easymotion configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Move to line
-map <Leader><LEADER>l <Plug>(easymotion-bd-jk)
-nmap <Leader><LEADER>l <Plug>(easymotion-overwin-line)
+map <LEADER><LEADER>l <Plug>(easymotion-bd-jk)
+nmap <LEADER><LEADER>l <Plug>(easymotion-overwin-line)
 
 " s{char}{char} to move to {char}{char}
-nmap s <Plug>(easymotion-overwin-f2)
+nmap <LEADER><LEADER>s <Plug>(easymotion-overwin-f2)

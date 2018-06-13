@@ -46,7 +46,7 @@ nnoremap Q <nop>
 nnoremap K <nop>
 
 " Always show a ctags list
-nnoremap <C-]> g<C-]>
+"nnoremap <C-]> g<C-]>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UNDO
@@ -126,7 +126,6 @@ function! UpdateTags()
 endfunction
 autocmd BufWritePost *.cpp,*.h,*.c call UpdateTags()
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGINS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -147,6 +146,7 @@ Plug 'dag/vim-fish'
 Plug 'jceb/vim-orgmode'
 Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/undotree'
+Plug 'ktchen14/cscope-auto'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
