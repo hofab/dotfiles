@@ -20,6 +20,8 @@ nmap <LEADER>q :qa<CR>
 nmap <LEADER>t :tabe<CR>:Files<CR>
 nmap <LEADER>h :split <CR>
 nmap <LEADER>ut :UndotreeToggle <CR>
+" delete to gebinning of line and join with line above
+nmap <LEADER>j d0kJ<CR>
 " no search highlighting until next search
 nmap <LEADER>s :noh <CR>
 " paste yanked text over word
