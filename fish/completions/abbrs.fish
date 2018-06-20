@@ -12,7 +12,7 @@ abbr --add gfb      'git checkout -b feature/fh/'
 abbr --add gbb      'git checkout -b bugfix/fh/'
 abbr --add gwb      'git checkout -b wip/fh/'
 abbr --add gcom     'git checkout master'
-abbr --add gdf      'git checkout --'
+abbr --add grf      'git checkout --'
 abbr --add gcp      'git cherry-pick'
 abbr --add gA       'git add --all'
 abbr --add ga       'git add'
@@ -24,13 +24,13 @@ abbr --add gdtom    'git difftool origin/master'
 abbr --add gr       'git rebase'
 abbr --add gri      'git rebase -i'
 abbr --add gas      'git rebase -i --autosquash'
-abbr --add grm      'git rebase origin/master'
+abbr --add grom     'git rebase origin/master'
 abbr --add grc      'git rebase --continue'
+abbr --add gra      'git rebase --abort'
 abbr --add gsb      'git branch'
 abbr --add gdb      'git branch -d'
 abbr --add gDb      'git branch -D'
 abbr --add gvv      'git branch -vv'
-abbr --add gseb     'git branch | ag'
 abbr --add glr      'git branch --remotes'
 abbr --add gDab     'git branch -D (git for-each-ref --format="%(refname:short)" | cfzf )'
 abbr --add gf       'git fetch'
@@ -50,7 +50,7 @@ abbr --add gus      'git reset HEAD --' #throw away any local changes
 abbr --add gdlc     'git reset --hard HEAD^' #throw away the last commit
 abbr --add guco     'git reset --mixed HEAD~' #uncommit and keep changes
 abbr --add grco     'git reset --hard' #throw away everything after commit
-abbr --add gdrc     'git revert HEAD' #revert changes of specified commit
+abbr --add grh      'git revert HEAD' #revert changes of specified commit
 abbr --add gcl      'git clone'
 abbr --add gbg      'git bisect good'
 abbr --add gbb      'git bisect bad'
