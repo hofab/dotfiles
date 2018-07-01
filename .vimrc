@@ -150,6 +150,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/undotree'
 Plug 'ktchen14/cscope-auto'
 Plug 'airblade/vim-gitgutter'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
