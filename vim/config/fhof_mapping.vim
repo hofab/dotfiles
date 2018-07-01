@@ -15,21 +15,24 @@ nnoremap <LEADER>[ <S-V>i{<C-K>
 nnoremap <LEADER>cs :!cscope -bcqR<CR><ESC> :cs reset<CR><ESC>
 nmap <LEADER>f :vs<CR><C-L>:Files<CR>
 nmap <LEADER>o :Files<CR>
-nmap <LEADER>sq :wq<CR>
+nmap <LEADER>s <C-Z>
 nmap <LEADER>q :qa<CR>
 nmap <LEADER>t :tabe<CR>:Files<CR>
 nmap <LEADER>h :split <CR>
 nmap <LEADER>ut :UndotreeToggle <CR>
-" delete to gebinning of line and join with line above
+" delete to beginning of the line and join with line above
 nmap <LEADER>j d0kJ<CR>
 " no search highlighting until next search
-nmap <LEADER>s :noh <CR>
+nmap <LEADER>dh :noh <CR>
 " paste yanked text over word
 nmap <LEADER>v ciw<C-r>0<ESC>
 " copy word to clipboard
 nnoremap <LEADER>cc "+yiw
 vnoremap <LEADER>cc "+y
 nnoremap <LEADER>r *<ESC>:%s///g<left><left>
+nnoremap <LEADER>tgg :GitGutterSignsToggle<CR>
+"map ; to :
+nnoremap ; :
 
 " variable dispatch command
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
