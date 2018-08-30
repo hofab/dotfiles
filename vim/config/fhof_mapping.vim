@@ -1,6 +1,7 @@
 " custom leader
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = "\<SPACE>"
+let localleader = "'"
 " custom mapping to my liking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <C-K> <C-W>k
@@ -30,9 +31,13 @@ nmap <LEADER>v ciw<C-r>0<ESC>
 nnoremap <LEADER>cc "+yiw
 vnoremap <LEADER>cc "+y
 nnoremap <LEADER>r *<ESC>:%s///g<left><left>
-nnoremap <LEADER>tgg :GitGutterSignsToggle<CR>
+nnoremap <LEADER>ggt :GitGutterSignsToggle<CR>
 "map ; to :
 nnoremap ; :
+
+" deoplete mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"inoremap <expr> <C-n>  deoplete#mappings#manual_complete()
 
 " variable dispatch command
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

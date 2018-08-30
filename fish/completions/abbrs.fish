@@ -24,7 +24,7 @@ abbr --add gdt      'git difftool'
 abbr --add gdtom    'git difftool origin/master'
 abbr --add gr       'git rebase'
 abbr --add gri      'git rebase -i'
-abbr --add gas      'git rebase -i --autosquash'
+abbr --add gas      'git rebase --autosquash'
 abbr --add grom     'git rebase origin/master'
 abbr --add grc      'git rebase --continue'
 abbr --add gra      'git rebase --abort'
@@ -45,6 +45,7 @@ abbr --add gcfh     'git commit --fixup HEAD'
 abbr --add gca      'git commit --amend'
 abbr --add gru      'git config --get remote.origin.url'
 abbr --add gp       'git push'
+abbr --add gfp      'git push -f'
 abbr --add gDrb     'git push origin --delete (gbn)' #delete remote branch
 abbr --add gpl      'git pull --rebase'
 abbr --add gus      'git reset HEAD --' #throw away any local changes
@@ -53,6 +54,7 @@ abbr --add guco     'git reset --mixed HEAD~' #uncommit and keep changes
 abbr --add grco     'git reset --hard' #throw away everything after commit
 abbr --add grh      'git revert HEAD' #revert changes of specified commit
 abbr --add gcl      'git clone'
+abbr --add gbs      'git bisect start "#GOOD" "#BAD" --'
 abbr --add gbg      'git bisect good'
 abbr --add gbb      'git bisect bad'
 abbr --add gmt      'git mergetool'
