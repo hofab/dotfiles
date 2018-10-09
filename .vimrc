@@ -100,7 +100,7 @@ augroup cprog
     autocmd BufRead,BufNewFile *       set formatoptions=tcql nocindent comments&
     autocmd BufRead,BufNewFile *.c,*.h,*.cpp set formatoptions=croql cindent comments=sr:/*,mb:*,el:*/,://
     set cino=:0,(0,c1
-augroup END
+  augroup END
 
   autocmd BufWritePre * :%s/\s\+$//e
 endif
@@ -149,6 +149,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/undotree'
 Plug 'ktchen14/cscope-auto'
 Plug 'airblade/vim-gitgutter'
+Plug 'vim-scripts/utl.vim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
