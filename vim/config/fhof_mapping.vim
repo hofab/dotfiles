@@ -21,7 +21,7 @@ nmap <LEADER>t :tabe<CR>:Files<CR>
 nmap <LEADER>h :split <CR>
 nmap <LEADER>ut :UndotreeToggle <CR>
 " delete to beginning of the line and join with line above
-nmap <LEADER>j d0kJ<CR>
+nmap <LEADER>j d0kJ
 " no search highlighting until next search
 nmap <LEADER>dh :noh <CR>
 " paste yanked text over word
