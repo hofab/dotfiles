@@ -50,7 +50,7 @@ abbr --add gpl      'git pull --rebase'
 abbr --add gus      'git reset HEAD --' #throw away any local changes
 abbr --add gdlc     'git reset --hard HEAD^' #throw away the last commit
 abbr --add guco     'git reset --mixed HEAD~' #uncommit and keep changes
-abbr --add grco     'git reset --hard' #throw away everything after commit
+abbr --add gdc      'git reset --hard' #throw away everything after commit
 abbr --add grh      'git revert HEAD' #revert changes of specified commit
 abbr --add gcl      'git clone'
 abbr --add gbs      'git bisect start "#GOOD" "#BAD" --'
@@ -61,7 +61,6 @@ abbr --add grev     'git merge-base origin/master HEAD | git difftool --stdin'
 #shell shortcuts
 abbr --add c        'clear'
 abbr --add infi     '> file.txt 2>&1'
-abbr --add sop       '> /dev/null'
 abbr --add rr       'rm -ir'
 abbr --add rd       'rm -id'
 abbr --add rf       'rm -rf'
@@ -90,6 +89,7 @@ abbr --add ecs      'nvim ~/dotfiles/vim/UltiSnips/c_my.snippets'
 abbr --add cdl      'cd ~/Downloads'
 abbr --add cmx      'cd ~/mx-dev.git'
 abbr --add cma      'cd ~/maint'
+abbr --add mip      './maint -i 142.65.'
 abbr --add rsse     'rsync fhof@pyrite:/home/sw-eng/builds/ -avzuP'
 abbr --add o        'nvim'
 abbr --add ov       'nvim *.vdd'

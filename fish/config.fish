@@ -16,7 +16,10 @@ set --export GIT_EDITOR "nvim -f"
 
 # make.py quit output
 set --export MAKE_QUIET "1"
-set --export TOOLCHAIN "xilinx"
+#set --export TOOLCHAIN "xilinx"
+set --export CFGDB_DIR "$HOME/cfgdb"
+set --export OPT_ROOT  '/opt/software'
+set --export CPPUTEST_HOME  "$OPT_ROOT/cpputest"
 
 # vectorCast
 set --export VECTORCAST_DIR '/opt/software/vectorcast'
@@ -28,7 +31,6 @@ set --export VCAST_MX_REPO ~/release.git
 
 # Matlab license and server
 set --export MLM_LICENSE_FILE "27000@LICENSESVR2:27000@LICENSESVR3"
-set --export VTE_VERSION "100"
 
 # codesonar
 set --export CS_WORKING_DIR "$HOME/codesonar"

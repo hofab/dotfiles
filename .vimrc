@@ -37,6 +37,7 @@ set lcs=tab:>-,trail:-
 set number relativenumber
 " set ignores case for searches
 set ignorecase
+let $VTE_VERSION="100"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPING
