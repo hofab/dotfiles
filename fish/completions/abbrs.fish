@@ -10,6 +10,7 @@ abbr --add gco      'git checkout'
 abbr --add gnb      'git checkout -b'
 abbr --add gfb      'git checkout -b feature/fh/'
 abbr --add gbb      'git checkout -b bugfix/fh/'
+abbr --add ghb      'git checkout -b hotfix/fh/'
 abbr --add gwb      'git checkout -b wip/fh/'
 abbr --add gcom     'git checkout master'
 abbr --add grf      'git checkout --'
@@ -19,6 +20,7 @@ abbr --add ga       'git add'
 abbr --add gap      'git add -p'
 abbr --add gd       'git diff'
 abbr --add gdh      'git diff HEAD'
+abbr --add gdlc     'git diff HEAD^'
 abbr --add gdom     'git diff origin/master'
 abbr --add gdt      'git difftool'
 abbr --add gdtom    'git difftool origin/master'
@@ -46,14 +48,15 @@ abbr --add gru      'git config --get remote.origin.url'
 abbr --add gp       'git push'
 abbr --add gfp      'git push -f'
 abbr --add gDrb     'git push origin --delete (gbn)' #delete remote branch
-abbr --add gpl      'git pull --rebase'
+abbr --add gpl      'git pull --rebase -p'
 abbr --add gus      'git reset HEAD --' #throw away any local changes
+abbr --add grs      'git reset --hard HEAD' #throw away any local changes
 abbr --add gdlc     'git reset --hard HEAD^' #throw away the last commit
 abbr --add guco     'git reset --mixed HEAD~' #uncommit and keep changes
 abbr --add gdc      'git reset --hard' #throw away everything after commit
 abbr --add grh      'git revert HEAD' #revert changes of specified commit
 abbr --add gcl      'git clone'
-abbr --add gbs      'git bisect start "#GOOD" "#BAD" --'
+abbr --add gbs      'git bisect start "#BAD" "#GOOD" --'
 abbr --add gbg      'git bisect good'
 abbr --add gbb      'git bisect bad'
 abbr --add gmt      'git mergetool'
