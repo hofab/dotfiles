@@ -57,8 +57,8 @@ abbr --add gdc      'git reset --hard' #throw away everything after commit
 abbr --add grh      'git revert HEAD' #revert changes of specified commit
 abbr --add gcl      'git clone'
 abbr --add gbs      'git bisect start "#BAD" "#GOOD" --'
-abbr --add gbg      'git bisect good'
-abbr --add gbb      'git bisect bad'
+abbr --add gbig     'git bisect good'
+abbr --add gbib     'git bisect bad'
 abbr --add gmt      'git mergetool'
 abbr --add grev     'git merge-base origin/master HEAD | git difftool --stdin'
 #shell shortcuts

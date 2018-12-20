@@ -33,6 +33,8 @@ nnoremap <LEADER>r *<ESC>:%s///g<left><left>
 nnoremap <LEADER>ggt :GitGutterSignsToggle<CR>
 "map ; to :
 nnoremap ; :
+inoremap ;; <ESC>
+inoremap <SPACE><SPACE> <ESC>
 
 " deoplete mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

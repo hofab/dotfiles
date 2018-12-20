@@ -151,6 +151,8 @@ Plug 'mbbill/undotree'
 Plug 'ktchen14/cscope-auto'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/utl.vim'
+Plug 'igankevich/mesonic'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
