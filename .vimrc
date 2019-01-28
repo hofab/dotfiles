@@ -86,10 +86,7 @@ augroup vimrc_autocmds
   autocmd BufEnter * match OverLength /\%81v.*/
 augroup END
 
-
-if has("autocmd")
-  autocmd BufWritePre * :%s/\s\+$//e
-endif
+autocmd BufWritePre * :%s/\s\+$//e
 
 augroup cprog
   " Remove all cprog autocommands
@@ -101,9 +98,9 @@ augroup cprog
     autocmd BufRead,BufNewFile *       set formatoptions=tcql nocindent comments&
     autocmd BufRead,BufNewFile *.c,*.h,*.cpp set formatoptions=croql cindent comments=sr:/*,mb:*,el:*/,://
     set cino=:0,(0,c1
-  augroup END
+augroup END
 
-  autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 endif
 
 " Automatically update the ctags file when a file is written

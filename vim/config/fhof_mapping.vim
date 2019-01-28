@@ -1,6 +1,19 @@
 " custom leader
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = "\<SPACE>"
+
+if has("autocmd")
+" map localleader to , for org files
+function! SetLocalLeader()
+    nmap , \
+endfunction
+
+augroup myOrgMode
+    autocmd!
+    autocmd Filetype org call SetLocalLeader()
+augroup END
+endif
+
 " custom mapping to my liking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <C-K> <C-W>k
@@ -34,7 +47,6 @@ nnoremap <LEADER>ggt :GitGutterSignsToggle<CR>
 "map ; to :
 nnoremap ; :
 inoremap ;; <ESC>
-inoremap <SPACE><SPACE> <ESC>
 
 " deoplete mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -87,14 +99,14 @@ if filereadable("/usr/share/clang/clang-format.py")
     map <LEADER>k :pyf /usr/share/clang/clang-format.py<cr>
     imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
 else
-    if filereadable("/usr/share/clang/clang-format-6.0/clang-format.py")
+    if filereadable("/usr/share/clang/clang-format-7/clang-format.py")
     function! ClFormatOnSave()
       let l:formatdiff = 1
-      pyf /usr/share/clang/clang-format-6.0/clang-format.py
+      pyf /usr/share/clang/clang-format-7/clang-format.py
     endfunction
 
-        map <LEADER>k :pyf /usr/share/clang/clang-format-6.0/clang-format.py<cr>
-        imap <C-K> <c-o>:pyf /usr/share/clang/clang-format-6.0/clang-format.py<cr>
+        map <LEADER>k :pyf /usr/share/clang/clang-format-7/clang-format.py<cr>
+        imap <C-K> <c-o>:pyf /usr/share/clang/clang-format-7/clang-format.py<cr>
     endif
 endif
 

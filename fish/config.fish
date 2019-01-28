@@ -10,9 +10,9 @@ set theme_project_dir_length 1
 
 # reference: https://gist.github.com/netmute/6761892
 # make Vim the default editor
-set --export EDITOR "nvim -f"
+set --export EDITOR "nvim"
 # make Vim usable with git
-set --export GIT_EDITOR "nvim -f"
+set --export GIT_EDITOR "nvim"
 
 # make.py quit output
 set --export MAKE_QUIET "1"
