@@ -7,6 +7,8 @@ set fish_complete_path ~/.cofig/fish/completions $fish_complete_path
 
 set fish_prompt_pwd_dir_length 1
 set theme_project_dir_length 1
+set -g theme_display_git_master_branch yes
+set -U theme_nerd_fonts yes
 
 # reference: https://gist.github.com/netmute/6761892
 # make Vim the default editor
