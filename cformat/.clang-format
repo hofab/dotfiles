@@ -22,4 +22,5 @@ SpaceAfterCStyleCast:   true
 SpaceBeforeAssignmentOperators: true
 SpaceBeforeParens: ControlStatements
 IndentWrappedFunctionNames: true
+Cpp11BracedListStyle: false
 ...

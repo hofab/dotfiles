@@ -1,7 +1,6 @@
 " custom leader
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = "\<SPACE>"
-
 if has("autocmd")
 " map localleader to , for org files
 function! SetLocalLeader()
@@ -16,25 +15,24 @@ endif
 
 " custom mapping to my liking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <C-K> <C-W>k
-map <C-H> <C-W>h
-map <C-L> <C-W>l
-map <C-J> <C-W>j
+map <LEADER>k <C-W>k
+map <LEADER>h <C-W>h
+map <LEADER>l <C-W>l
+map <LEADER>j <C-W>j
 
 " shortcuts to make my life easier
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <LEADER>w :w<CR>
 nnoremap <LEADER>[ <S-V>i{<C-K>
 nnoremap <LEADER>cs :!cscope -bcqR<CR><ESC> :cs reset<CR><ESC>
-nmap <LEADER>f :vs<CR><C-L>:Files<CR>
-nmap <LEADER>o :Files<CR>
+nmap <LEADER>f :vs<CR><C-W>l:execute 'Files' ProjectRootGuess()<CR>
+nmap <LEADER>o :execute 'Files' ProjectRootGuess()<CR>
 nmap <LEADER>s <C-Z>
 nmap <LEADER>q :qa<CR>
-nmap <LEADER>t :tabe<CR>:Files<CR>
-nmap <LEADER>h :split <CR>
+nmap <LEADER>t :tabe<CR>:execute 'Files' ProjectRootGuess()<CR>
 nmap <LEADER>ut :UndotreeToggle <CR>
 " delete to beginning of the line and join with line above
-nmap <LEADER>j d0kJ
+nmap <LEADER><LEADER>j d0kJ
 " no search highlighting until next search
 nmap <LEADER>dh :noh <CR>
 " paste yanked text over word
@@ -44,6 +42,8 @@ nnoremap <LEADER>cc "+yiw
 vnoremap <LEADER>cc "+y
 nnoremap <LEADER>r *<ESC>:%s///g<left><left>
 nnoremap <LEADER>ggt :GitGutterSignsToggle<CR>
+nnoremap <LEADER>gb :Gblame<CR>
+nnoremap <LEADER>rg :Find<CR>
 "map ; to :
 nnoremap ; :
 inoremap ;; <ESC>
@@ -99,14 +99,14 @@ if filereadable("/usr/share/clang/clang-format.py")
     map <LEADER>k :pyf /usr/share/clang/clang-format.py<cr>
     imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
 else
-    if filereadable("/usr/share/clang/clang-format-7/clang-format.py")
+    if filereadable("/usr/share/clang/clang-format-8/clang-format.py")
     function! ClFormatOnSave()
       let l:formatdiff = 1
-      pyf /usr/share/clang/clang-format-7/clang-format.py
+      pyf /usr/share/clang/clang-format-8/clang-format.py
     endfunction
 
-        map <LEADER>k :pyf /usr/share/clang/clang-format-7/clang-format.py<cr>
-        imap <C-K> <c-o>:pyf /usr/share/clang/clang-format-7/clang-format.py<cr>
+        map <LEADER>k :pyf /usr/share/clang/clang-format-8/clang-format.py<cr>
+        imap <C-K> <c-o>:pyf /usr/share/clang/clang-format-8/clang-format.py<cr>
     endif
 endif
 
@@ -115,6 +115,9 @@ endif
 " Move to line
 map <LEADER><LEADER>l <Plug>(easymotion-bd-jk)
 nmap <LEADER><LEADER>l <Plug>(easymotion-overwin-line)
+
+" Beginning of word forward and backward
+map <LEADER>a <Plug>(easymotion-bd-w)
 
 " s{char}{char} to move to {char}{char}
 nmap <LEADER><LEADER>s <Plug>(easymotion-overwin-f2)

@@ -1,4 +1,3 @@
-echo -n Setting abbreviations...
 #abbreviations
 abbr --add g        'git'
 abbr --add gs       'git status'
@@ -92,6 +91,8 @@ abbr --add ecs      'nvim ~/dotfiles/vim/UltiSnips/c_my.snippets'
 abbr --add cdl      'cd ~/Downloads'
 abbr --add cmx      'cd ~/mx-dev.git'
 abbr --add cma      'cd ~/maint'
+abbr --add zc       'z cfgdb'
+abbr --add zb       'z sw-builds'
 abbr --add mip      './maint -i 142.65.'
 abbr --add rsse     'rsync fhof@pyrite:/home/sw-eng/builds/ -avzuP'
 abbr --add o        'nvim'
@@ -100,4 +101,9 @@ abbr --add ca       'rm *.{hex,elf,map,bin}'
 
 #merge history of several fish instances
 abbr --add mhi      'history --merge'
-echo 'Done'
+
+#docker short cuts
+abbr --add dk       'docker'
+abbr --add dki      'docker images'
+abbr --add dkstop   'docker stop `docker ps -q`'
+abbr --add dkps     'docker ps --format "{{.ID}} ~ {{.Names}} ~ {{.Status}} ~ {{.Image}}"'

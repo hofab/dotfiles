@@ -38,6 +38,10 @@ set number relativenumber
 " set ignores case for searches
 set ignorecase
 let $VTE_VERSION="100"
+" set ripgrep as vimgrep
+set grepprg=rg\ --vimgrep
+" use fzf with ripgrep
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPING
@@ -149,7 +153,7 @@ Plug 'ktchen14/cscope-auto'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/utl.vim'
 Plug 'igankevich/mesonic'
-
+Plug 'dbakker/vim-projectroot'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 

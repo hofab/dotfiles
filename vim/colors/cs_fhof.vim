@@ -23,7 +23,7 @@ hi FoldColumn           ctermfg=7   ctermbg=8
 hi VertSplit            ctermfg=252 ctermbg=5
 hi LineNr               ctermfg=239 ctermbg=255
 hi Normal               ctermfg=239
-hi Search               ctermfg=239 ctermbg=199
+hi Search               ctermfg=239 ctermbg=230
 set cursorline
 hi CursorLine           ctermbg=253 cterm=NONE term=NONE
 hi CursorLineNr         ctermfg=255 ctermbg=199

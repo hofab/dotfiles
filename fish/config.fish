@@ -37,5 +37,3 @@ set --export MLM_LICENSE_FILE "27000@LICENSESVR2:27000@LICENSESVR3"
 # codesonar
 set --export CS_WORKING_DIR "$HOME/codesonar"
 set --export CS_HUB_USER "fhof"
-
-source "$HOME/.config/fish/completions/abbrs.fish"
