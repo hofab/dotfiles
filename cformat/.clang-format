@@ -1,26 +1,43 @@
 ---
-Language:        Cpp
-# BasedOnStyle:  Google
-BreakBeforeBraces: Stroustrup
-
-ColumnLimit:     80
-IndentWidth:     4
-MaxEmptyLinesToKeep:    2
-AlignTrailingComments:  true
-AlignOperands:          true
-AlignConsecutiveAssignments:    true
-ReflowComments:         true
-BinPackArguments:       true
-BinPackParameters:      true
+AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: 'true'
+AlignEscapedNewlines: Right
+AlignOperands: 'true'
+AlignTrailingComments: 'true'
+AllowAllParametersOfDeclarationOnNextLine: 'false'
+AllowShortBlocksOnASingleLine: 'false'
+AllowShortCaseLabelsOnASingleLine: 'false'
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: 'false'
+AlwaysBreakAfterDefinitionReturnType: None
+BinPackArguments: 'true'
+BinPackParameters: 'false'
 BreakBeforeBinaryOperators: All
-BreakBeforeTernaryOperators: true
-AlignAfterOpenBracket:  Align
-DerivePointerAlignment: true
-IndentCaseLabels:       false
+BreakBeforeBraces: Stroustrup
+BreakBeforeTernaryOperators: 'true'
+BreakConstructorInitializers: BeforeComma
+#BreakStringLiterals: 'true'
+ColumnLimit: '80'
+ConstructorInitializerAllOnOneLineOrOnePerLine: 'true'
+Cpp11BracedListStyle: 'false'
+DerivePointerAlignment: 'false'
+IndentCaseLabels: 'false'
+IndentPPDirectives: None
+IndentWidth: '4'
+IndentWrappedFunctionNames: 'false'
+KeepEmptyLinesAtTheStartOfBlocks: 'false'
+Language: Cpp
+MaxEmptyLinesToKeep: '1'
 PointerAlignment: Right
-SpaceAfterCStyleCast:   true
-SpaceBeforeAssignmentOperators: true
+ReflowComments: 'true'
+SortIncludes: 'false'
+SortUsingDeclarations: 'false'
+SpaceAfterCStyleCast: 'true'
+SpacesBeforeTrailingComments: '2'
+SpaceBeforeAssignmentOperators: 'true'
+SpaceBeforeCpp11BracedList: 'false'
 SpaceBeforeParens: ControlStatements
-IndentWrappedFunctionNames: true
-Cpp11BracedListStyle: false
+Standard: Cpp11
+UseTab: Never
+
 ...
