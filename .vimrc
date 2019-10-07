@@ -17,9 +17,9 @@ set nowrapscan
 set t_Co=256
 " Create line numbers on the left side of vi, 6 digits worth
 set number
-set numberwidth=6
-" Set text wrapping at 80 columns
-set tw=80
+set numberwidth=5
+" Set text wrapping at 132 columns
+set tw=132
 " Indent to the tab positiion when  you cross over the 80 line limit.
 set smartindent
 " Leave a couple of lines at the top and bottom when scrolling
@@ -37,7 +37,8 @@ set lcs=tab:>-,trail:-
 set number relativenumber
 " set ignores case for searches
 set ignorecase
-let $VTE_VERSION="100"
+"let $VTE_VERSION="100"
+set guicursor=
 " set ripgrep as vimgrep
 set grepprg=rg\ --vimgrep
 " use fzf with ripgrep
@@ -87,7 +88,7 @@ if has("autocmd")
 " Highlight text that goes past the 80 line limit.
 augroup vimrc_autocmds
   autocmd BufEnter * highlight OverLength ctermbg=7 ctermfg=0 guibg=#707070
-  autocmd BufEnter * match OverLength /\%81v.*/
+  autocmd BufEnter * match OverLength /\%133v.*/
 augroup END
 
 autocmd BufWritePre * :%s/\s\+$//e
@@ -150,12 +151,16 @@ Plug 'jceb/vim-orgmode'
 Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/undotree'
 Plug 'ktchen14/cscope-auto'
-Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/utl.vim'
 Plug 'igankevich/mesonic'
 Plug 'dbakker/vim-projectroot'
+Plug 'jiangmiao/auto-pairs'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+let g:deoplete#enable_at_startup = 1
+let g:python3_host_prog = '/usr/bin/python3.6'
 
 "execute pathogen#infect()
 colorscheme cs_fhof

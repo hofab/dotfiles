@@ -1,6 +1,7 @@
 eval (python -m virtualfish)
 set -g Z_SCRIPT_PATH /usr/local/bin/z
 set -U FZF_FIND_FILE_COMMAND 'rg --files --hidden --smartcase --glob --height=15 "!.git/*"'
+set --export FZF_DEFAULT_COMMAND 'fd --type f'
 
 # set path to fish completions
 set fish_complete_path ~/.config/fish/completions $fish_complete_path
@@ -37,5 +38,10 @@ set --export MLM_LICENSE_FILE "27000@LICENSESVR2:27000@LICENSESVR3"
 # codesonar
 set --export CS_WORKING_DIR "$HOME/codesonar"
 set --export CS_HUB_USER "fhof"
+
+set -g fish_term256 1
+
+# nnn suport editor
+set --export NNN_USE_EDITOR "1"
 
 source "$HOME/.config/fish/completions/abbrs.fish"

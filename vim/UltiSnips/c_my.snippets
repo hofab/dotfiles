@@ -74,17 +74,17 @@ snippet lc
 endsnippet
 
 snippet wpb "Wescam print binary"
-moduleLogError(moduleAddr, "${1:binary}: %s", $1 ? "TRUE" : "FALSE");
+moduleLogError(11, "${1:binary}: %s", $1 ? "TRUE" : "FALSE");
 endsnippet
 
 snippet wpv "Wescam print var"
-moduleLogError(moduleAddr, "${1:var}: %i", $1);
+moduleLogError(11, "${1:var}: %i", $1);
 endsnippet
 
 snippet wpt "Wescam print text"
-moduleLogError(moduleAddr, "${1:text}");
+moduleLogError(11, "${1:text}");
 endsnippet
 
 snippet wpu "Wescam print Unity"
-moduleLogError(moduleAddr, "${1:unity}: %+.3f", $1 / UNITY_FLOAT);
+moduleLogError(11, "${1:unity}: %+.3f", $1 / UNITY_FLOAT);
 endsnippet

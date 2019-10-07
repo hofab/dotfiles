@@ -48,10 +48,6 @@ nnoremap <LEADER>rg :Find<CR>
 nnoremap ; :
 inoremap ;; <ESC>
 
-" deoplete mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"inoremap <expr> <C-n>  deoplete#mappings#manual_complete()
-
 " variable dispatch command
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <LEADER>mk :Dispatch make -f MakePldMx15Zn_CMX SW_PN=76589 SW_VER=01 SW_REV=X -j
@@ -80,34 +76,14 @@ if has("cscope")
     " endif
 endif
 
+" no idea what this does :/
 map <LEADER>gf :cs find 3 <C-R>=expand("<cword>")<CR><CR>
 
 " use clang format
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! ClFormatOnSave()
-  let l:formatdiff = 1
-  pyf /usr/share/clang/clang-format.py
-endfunction
-
-if filereadable("/usr/share/clang/clang-format.py")
-    function! ClFormatOnSave()
-      let l:formatdiff = 1
-      pyf /usr/share/clang/clang-format.py
-    endfunction
-    autocmd BufWritePre *.h,*.cc,*.cpp,*.c call ClFormatOnSave()
-
-    map <LEADER>k :pyf /usr/share/clang/clang-format.py<cr>
-    imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
-else
-    if filereadable("/usr/share/clang/clang-format-8/clang-format.py")
-    function! ClFormatOnSave()
-      let l:formatdiff = 1
-      pyf /usr/share/clang/clang-format-8/clang-format.py
-    endfunction
-
-        map <LEADER>k :pyf /usr/share/clang/clang-format-8/clang-format.py<cr>
-        imap <C-K> <c-o>:pyf /usr/share/clang/clang-format-8/clang-format.py<cr>
-    endif
+if filereadable("/usr/share/clang/clang-format-8/clang-format.py")
+    map <LEADER>k :pyf /usr/share/clang/clang-format-8/clang-format.py<cr>
+    imap <C-K> <c-o>:pyf /usr/share/clang/clang-format-8/clang-format.py<cr>
 endif
 
 "" easymotion configuration
@@ -121,3 +97,7 @@ map <LEADER>a <Plug>(easymotion-bd-w)
 
 " s{char}{char} to move to {char}{char}
 nmap <LEADER><LEADER>s <Plug>(easymotion-overwin-f2)
+
+" deoplete selection with TAB
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"

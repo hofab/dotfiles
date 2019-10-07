@@ -77,4 +77,9 @@ hi cErrInParen          ctermfg=245
 hi cSeperator           ctermfg=245
 hi def link cComma cSeperator
 
+" popup-colors
+hi Pmenu ctermfg=245
+"PmenuSel	selected item  |hl-PmenuSel|
+"PmenuSbar	scrollbar  |hl-PmenuSbar|
+"PmenuThumb	thumb of the scrollbar  |hl-PmenuThumb|
 
