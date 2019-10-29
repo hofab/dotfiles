@@ -7,6 +7,7 @@ SETUVAR __fish_classic_git_prompt_initialized:\x1d
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
+SETUVAR _fish_abbr_ars:set\x20\x2de\x20fish_user_abbreviations\x3b\x20set\x20\x2de\x20fish_initialized
 SETUVAR _fish_abbr_c:clear
 SETUVAR _fish_abbr_ca:rm\x20\x2a\x2e\x7bhex\x2celf\x2cmap\x2cbin\x7d
 SETUVAR _fish_abbr_cdl:cd\x20\x7e/Downloads
@@ -114,12 +115,17 @@ SETUVAR _fish_abbr_rf:rm\x20\x2drf
 SETUVAR _fish_abbr_rg:rg\x20\x2di
 SETUVAR _fish_abbr_rr:rm\x20\x2dir
 SETUVAR _fish_abbr_rsse:rsync\x20fhof\x40pyrite\x3a/home/sw\x2deng/builds/\x20\x2davzuP
+SETUVAR _fish_abbr_rsw:rm\x20/home/fhof/\x2elocal/share/nvim/swap/\x2a
 SETUVAR _fish_abbr_sd:exa\x20\x2dl\x20\x7c\x20rg\x20\x2di
 SETUVAR _fish_abbr_sg:gb\x20\x2d1000\x20\x7c\x20rg\x20\x2di
 SETUVAR _fish_abbr_sop:\x3e\x20/dev/null
+SETUVAR _fish_abbr_st:rg\x20\x22\x40TODO\x2e\x2afhof\x22
+SETUVAR _fish_abbr_tmx:tmux\x20attach\x20\x2dd\x20\x2dt\x20dev
 SETUVAR _fish_abbr_zb:z\x20sw\x2dbuilds
 SETUVAR _fish_abbr_zc:z\x20\x7e/cfgdb
-SETUVAR _fish_abbr_zr:cd\x20\x7e/release\x2egit
+SETUVAR _fish_abbr_zdl:z\x20\x7e/Downloads
+SETUVAR _fish_abbr_zm:z\x20\x7e/maint
+SETUVAR _fish_abbr_zr:z\x20\x7e/release\x2egit
 SETUVAR fish_color_autosuggestion:a8a8a8
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:0000d7
@@ -148,5 +154,5 @@ SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_paths:/home/fhof/\x2ecargo/bin\x1e/home/fhof/\x2efzf/bin\x1e/home/fhof/opt/cpputest\x1e/opt/software/vectorcast\x1e/home/fhof/verification\x2egit/tests/env/compiler\x1e/opt/software/codesonar/codesonar\x2d4\x2e5p1/codesonar/bin\x1e/home/fhof/git\x2dtools\x1e/home/fhof/util\x2egit/
+SETUVAR fish_user_paths:/home/fhof/\x2ecargo/bin\x1e/home/fhof/\x2efzf/bin\x1e/home/fhof/opt/cpputest\x1e/opt/software/vectorcast\x1e/home/fhof/verification\x2egit/tests/env/compiler\x1e/opt/software/codesonar/codesonar\x2d4\x2e5p1/codesonar/bin\x1e/home/fhof/git\x2dtools\x1e/home/fhof/util\x2egit/\x1e/home/fhof/\x2elocal/bin
 SETUVAR theme_nerd_fonts:yes

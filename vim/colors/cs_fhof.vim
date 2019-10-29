@@ -49,11 +49,11 @@ hi NonText              ctermfg=248
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi wesPrivCtx NONE
 hi wesAnnotate NONE
-hi wesWescam NONE
+hi def link wesWescam Function
 hi def link wesUnimportant Function
 hi wesThis NONE
 hi wesIdentifier        ctermfg=33
-hi wesCSpecial          ctermfg=5
+hi def link wesCSpecial boolean
 hi OverLength           ctermfg=239 ctermbg=196
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -62,7 +62,7 @@ hi OverLength           ctermfg=239 ctermbg=196
 " hi cInclude             ctermfg=178     "#include
 " hi cIncluded            ctermfg=28      "<file>
 hi cDefine              ctermfg=20        "#define
-hi cPreCondit           ctermfg=5      "#if, #elif, #else, #endif
+hi cPreCondit           ctermfg=5         "#if, #elif, #else, #endif
 " hi cPreProc             ctermfg=        "#error, #warning
 " hi cCppOut              ctermfg=        "#if 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

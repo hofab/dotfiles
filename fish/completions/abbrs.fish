@@ -90,11 +90,11 @@ if not set -q fish_initialized
     abbr --add evrc     'nvim ~/dotfiles/.vimrc'
     abbr --add evm      'nvim ~/dotfiles/vim/config/fhof_mapping.vim'
     abbr --add ecs      'nvim ~/dotfiles/vim/UltiSnips/c_my.snippets'
-    abbr --add cdl      'cd ~/Downloads'
-    abbr --add cma      'cd ~/maint'
+    abbr --add zdl      'z ~/Downloads'
+    abbr --add zm       'z ~/maint'
     abbr --add zc       'z ~/cfgdb'
     abbr --add zb       'z sw-builds'
-    abbr --add zr       'cd ~/release.git'
+    abbr --add zr       'z ~/release.git'
     abbr --add mip      './maint -i 142.65.'
     abbr --add rsse     'rsync fhof@pyrite:/home/sw-eng/builds/ -avzuP'
     abbr --add o        'nvim'
@@ -102,6 +102,7 @@ if not set -q fish_initialized
     abbr --add ca       'rm *.{hex,elf,map,bin}'
     abbr --add sd       'exa -l | rg -i'
     abbr --add sg       'gb -1000 | rg -i'
+    abbr --add rsw      'rm /home/fhof/.local/share/nvim/swap/*'
 
 #merge history of several fish instances
     abbr --add mhi      'history --merge'
@@ -111,5 +112,11 @@ if not set -q fish_initialized
     abbr --add dki      'docker images'
     abbr --add dkstop   'docker stop `docker ps -q`'
     abbr --add dkps     'docker ps --format "{{.ID}} ~ {{.Names}} ~ {{.Status}} ~ {{.Image}}"'
+
+# make reset of abbreviations easy
+    abbr --add ars      'set -e fish_user_abbreviations; set -e fish_initialized'
+
+# tmux dev environment start
+    abbr --add tmx      'tmux attach -d -t dev'
     set -U fish_initialized
 end

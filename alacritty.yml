@@ -249,7 +249,7 @@ colors:
     blue:    '0x295fcc'
     magenta: '0xb77ee0'
     cyan:    '0x54ced6'
-    white:   '0xD0D0D0'
+    white:   '0x777777'
 
   # Dim colors (Optional)
   dim:
@@ -352,10 +352,10 @@ live_config_reload: true
 #   - (macOS) /bin/bash --login
 #   - (Linux) user login shell
 #   - (Windows) powershell
-#shell:
-#  program: /bin/bash
-#  args:
-#    - --login
+# shell:
+#   program: /bin/bash
+#   args:
+#     - --login
 
 # Startup directory
 #
