@@ -47,24 +47,25 @@ hi NonText              ctermfg=248
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SYNTAX HIGHLIGHTING
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi wesPrivCtx NONE
-hi wesAnnotate NONE
-hi def link wesWescam Function
-hi def link wesUnimportant Function
-hi wesThis NONE
-hi wesIdentifier        ctermfg=33
-hi def link wesCSpecial boolean
-hi OverLength           ctermfg=239 ctermbg=196
+hi def link wesWescam       Function
+hi def link wesUnimportant  Function
+hi def link wesCSpecial     boolean
+hi def link wesDbtType      Comment
+hi def link wesDbfType      wesDbtType
+hi wesIdentifier            ctermfg=33
+hi OverLength               ctermfg=239 ctermbg=196
+hi def custConstant         ctermfg=28
+hi def link custInterface   Function
+hi wesPrivCtx               NONE
+hi wesAnnotate              NONE
+hi wesThis                  NONE
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " # C Pre Proccessor Statements
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" hi cInclude             ctermfg=178     "#include
-" hi cIncluded            ctermfg=28      "<file>
 hi cDefine              ctermfg=20        "#define
 hi cPreCondit           ctermfg=5         "#if, #elif, #else, #endif
-" hi cPreProc             ctermfg=        "#error, #warning
-" hi cCppOut              ctermfg=        "#if 0
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " EXTENDED C SYNTAX
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -75,11 +76,41 @@ hi cEqual               ctermfg=199
 hi cErrInBracket        ctermfg=245
 hi cErrInParen          ctermfg=245
 hi cSeperator           ctermfg=245
-hi def link cComma cSeperator
+hi def link cComma      cSeperator
 
 " popup-colors
-hi Pmenu ctermfg=245
-"PmenuSel	selected item  |hl-PmenuSel|
-"PmenuSbar	scrollbar  |hl-PmenuSbar|
-"PmenuThumb	thumb of the scrollbar  |hl-PmenuThumb|
+hi Pmenu                ctermfg=235
+
+" ccls color highlighting with vim-lsb-cxx
+hi default link LspCxxHlSymUnknown          NONE
+hi default LspCxxHlGroupEnumConstant        ctermfg=28
+hi default link LspCxxHlGroupMemberVariable NONE
+hi default link LspCxxHlGroupNamespace      NONE
+
+" Type
+hi default link LspCxxHlSymClass            NONE
+hi default link LspCxxHlSymStruct           NONE
+hi default link LspCxxHlSymEnum             NONE
+hi default link LspCxxHlSymTypeAlias        NONE
+hi default link LspCxxHlSymTypeParameter    NONE
+
+" Function
+hi default link LspCxxHlSymFunction NONE
+hi default link LspCxxHlSymMethod NONE
+hi default link LspCxxHlSymStaticMethod NONE
+hi default link LspCxxHlSymConstructor NONE
+
+" EnumConstant
+hi default link LspCxxHlSymEnumMember NONE
+
+" Preprocessor
+hi default link LspCxxHlSymMacro NONE
+
+" Namespace
+hi default link LspCxxHlSymNamespace NONE
+
+" Variables
+hi default link LspCxxHlSymVariable NONE
+hi default link LspCxxHlSymParameter NONE
+hi default link LspCxxHlSymField NONE
 

@@ -4,7 +4,7 @@ let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive'] ],
-      \   'right': [ [ 'filename']],
+      \   'right': [ [ 'lineinfo','filename']],
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightlineFugitive',

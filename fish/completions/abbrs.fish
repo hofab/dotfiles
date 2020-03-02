@@ -32,8 +32,8 @@ if not set -q fish_initialized
     abbr --add grc      'git rebase --continue'
     abbr --add gra      'git rebase --abort'
     abbr --add gsb      'git branch'
-    abbr --add gdb      'git branch -d'
-    abbr --add gDb      'git branch -D'
+    abbr --add gbd      'git branch -d'
+    abbr --add gbD      'git branch -D'
     abbr --add gvv      'git branch -vv'
     abbr --add glr      'git branch --remotes'
     abbr --add gDab     'git branch -D (git for-each-ref --format="%(refname:short)" | cfzf )'
@@ -53,6 +53,7 @@ if not set -q fish_initialized
     abbr --add gus      'git reset HEAD --' #throw away any local changes
     abbr --add grs      'git reset --hard HEAD' #throw away any local changes
     abbr --add gdlc     'git reset --hard HEAD^' #throw away the last commit
+    abbr --add guc      'git reset --soft HEAD^' #undo last commit
     abbr --add guco     'git reset --mixed HEAD~' #uncommit and keep changes
     abbr --add gdc      'git reset --hard' #throw away everything after commit
     abbr --add grh      'git revert HEAD' #revert changes of specified commit

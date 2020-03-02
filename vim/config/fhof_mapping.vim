@@ -96,7 +96,7 @@ nmap <LEADER><LEADER>l <Plug>(easymotion-overwin-line)
 map <LEADER>a <Plug>(easymotion-bd-w)
 
 " s{char}{char} to move to {char}{char}
-nmap <LEADER><LEADER>s <Plug>(easymotion-overwin-f2)
+nmap <LEADER><LEADER>s <Plug>(easymotion-overwin-f)
 
 " deoplete selection with TAB
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"

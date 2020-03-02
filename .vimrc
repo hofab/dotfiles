@@ -16,15 +16,15 @@ set nowrapscan
 " To aid the colorscheme...
 set t_Co=256
 " Create line numbers on the left side of vi, 6 digits worth
-set number
-set numberwidth=5
+"set number
+"set numberwidth=2
 " Set text wrapping at 132 columns
 set tw=132
 " Indent to the tab positiion when  you cross over the 80 line limit.
 set smartindent
 " Leave a couple of lines at the top and bottom when scrolling
 set scrolloff=2
-" Give context on where you are in the file
+"Give context on where you are in the file
 set ruler
 " wrapping is a problem more often than not.
 set nowrap
@@ -34,7 +34,7 @@ set showcmd
 set list
 set lcs=tab:>-,trail:-
 " set relative line numbers
-set number relativenumber
+"set number relativenumber
 " set ignores case for searches
 set ignorecase
 "let $VTE_VERSION="100"
@@ -143,11 +143,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-dispatch'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'itchyny/lightline.vim'
 Plug 'dag/vim-fish'
-Plug 'jceb/vim-orgmode'
 Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/undotree'
 Plug 'ktchen14/cscope-auto'
@@ -155,7 +152,15 @@ Plug 'vim-scripts/utl.vim'
 Plug 'igankevich/mesonic'
 Plug 'dbakker/vim-projectroot'
 Plug 'jiangmiao/auto-pairs'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'terryma/vim-multiple-cursors'
+" Use release branch
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+" If you don't have nodejs and yarn
+" use pre build
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+" use make.py ?
+Plug 'tpope/vim-dispatch'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -165,7 +170,11 @@ let g:python3_host_prog = '/usr/bin/python3.6'
 "execute pathogen#infect()
 colorscheme cs_fhof
 source ~/.vim/config/wescamSyntax.vim
+source ~/.vim/config/customSyntax.vim
 "source ~/.vim/config/colorhighlighting.vim
 source ~/.vim/config/fh_lightline.vim
 source ~/.vim/config/fhof_mapping.vim
 source ~/.vim/config/UltiSnipConfig.vim
+source ~/.vim/config/markdown_preview.vim
+source ~/.vim/config/coc.config.vim
+

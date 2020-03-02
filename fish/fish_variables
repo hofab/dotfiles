@@ -7,6 +7,7 @@ SETUVAR __fish_classic_git_prompt_initialized:\x1d
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
+SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_ars:set\x20\x2de\x20fish_user_abbreviations\x3b\x20set\x20\x2de\x20fish_initialized
 SETUVAR _fish_abbr_c:clear
 SETUVAR _fish_abbr_ca:rm\x20\x2a\x2e\x7bhex\x2celf\x2cmap\x2cbin\x7d
@@ -28,12 +29,13 @@ SETUVAR _fish_abbr_evrc:nvim\x20\x7e/dotfiles/\x2evimrc
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_gA:git\x20add\x20\x2d\x2dall
 SETUVAR _fish_abbr_gDab:git\x20branch\x20\x2dD\x20\x28git\x20for\x2deach\x2dref\x20\x2d\x2dformat\x3d\x22\x25\x28refname\x3ashort\x29\x22\x20\x7c\x20cfzf\x20\x29
-SETUVAR _fish_abbr_gDb:git\x20branch\x20\x2dD
 SETUVAR _fish_abbr_gDrb:git\x20push\x20origin\x20\x2d\x2ddelete\x20\x28gbn\x29
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gap:git\x20add\x20\x2dp
 SETUVAR _fish_abbr_gas:git\x20rebase\x20\x2d\x2dautosquash
+SETUVAR _fish_abbr_gbD:git\x20branch\x20\x2dD
 SETUVAR _fish_abbr_gbb:git\x20checkout\x20\x2db\x20bugfix/fh/
+SETUVAR _fish_abbr_gbd:git\x20branch\x20\x2dd
 SETUVAR _fish_abbr_gbf:git\x20checkout\x20\x2db\x20bugfix/fh/
 SETUVAR _fish_abbr_gbg:git\x20bisect\x20good
 SETUVAR _fish_abbr_gbib:git\x20bisect\x20bad
@@ -52,7 +54,6 @@ SETUVAR _fish_abbr_gcop:git\x20checkout\x20production
 SETUVAR _fish_abbr_gcp:git\x20cherry\x2dpick
 SETUVAR _fish_abbr_gcpa:git\x20cherry\x2dpick\x20\x2d\x2dabort
 SETUVAR _fish_abbr_gd:git\x20diff
-SETUVAR _fish_abbr_gdb:git\x20branch\x20\x2dd
 SETUVAR _fish_abbr_gdc:git\x20reset\x20\x2d\x2dhard
 SETUVAR _fish_abbr_gdf:git\x20checkout\x20\x2d\x2d
 SETUVAR _fish_abbr_gdh:git\x20diff\x20HEAD
@@ -94,6 +95,7 @@ SETUVAR _fish_abbr_gst:git\x20stash
 SETUVAR _fish_abbr_gstd:git\x20stash\x20drop
 SETUVAR _fish_abbr_gstl:git\x20stash\x20list
 SETUVAR _fish_abbr_gstp:git\x20stash\x20pop
+SETUVAR _fish_abbr_guc:git\x20reset\x20\x2d\x2dsoft\x20HEAD\x5e
 SETUVAR _fish_abbr_guco:git\x20reset\x20\x2d\x2dmixed\x20HEAD\x7e
 SETUVAR _fish_abbr_gus:git\x20reset\x20HEAD\x20\x2d\x2d
 SETUVAR _fish_abbr_gvv:git\x20branch\x20\x2dvv
@@ -137,6 +139,7 @@ SETUVAR fish_color_error:870000
 SETUVAR fish_color_escape:bryellow\x1e\x2d\x2dbold
 SETUVAR fish_color_history_current:\x2d\x2dbold
 SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
 SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
 SETUVAR fish_color_normal:normal
 SETUVAR fish_color_operator:bryellow
@@ -149,6 +152,7 @@ SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_greeting:Welcome\x20to\x20fish\x2c\x20the\x20friendly\x20interactive\x20shell
+SETUVAR fish_initialized:\x1d
 SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
