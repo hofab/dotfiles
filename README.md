@@ -14,6 +14,12 @@ ln -sf ~/dotfiles/vim/UltiSnips ~/.config/nvim/UltiSnips
 ln -sf ~/dotfiles/vim/config ~/.config/nvim/config
 ln -sf ~/dotfiles/vim/colors ~/.config/nvim/colors
 
+ccls:
+brew install node ccls
+apt-get install yarn
+set PATH $PATH /home/linuxbrew/.linuxbrew/bin
+See: https://github.com/MaskRay/ccls/wiki/coc.nvim
+
 fish:
 rm -rf ~/.config/fish
 sudo ln -sf ~/dotfiles/fish ~/.config/fish
