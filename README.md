@@ -5,3 +5,25 @@ git clone https://github.com/samoshkin/tmux-config.git
 symlink tmux.conf to folder
 sudo ln -sf ~/dotfiles/tmux.conf  ~/.tmux/tmux.conf
 
+Alacritty:
+sudo ln -sf ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
+
+VIM:
+ln -sf ~/dotfiles/vim/config/fhof_ll_cs.vim ~/.config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme/fhof_ll_cs.vim
+ln -sf ~/dotfiles/vim/UltiSnips ~/.config/nvim/UltiSnips
+ln -sf ~/dotfiles/vim/config ~/.config/nvim/config
+ln -sf ~/dotfiles/vim/colors ~/.config/nvim/colors
+
+fish:
+rm -rf ~/.config/fish
+sudo ln -sf ~/dotfiles/fish ~/.config/fish
+fish
+pip install virtualfish
+curl -L https://get.oh-my.fish | fish
+omf install bobthefish
+omf install z
+# set path
+set PATH $PATH ~/XYZ
+# change default shell
+chsh -s /usr/bin/fish
+

@@ -41,7 +41,7 @@ set --export CS_HUB_USER "fhof"
 
 set -g fish_term256 1
 
-# nnn suport editor
+# nnn support editor
 set --export NNN_USE_EDITOR "1"
 
 source "$HOME/.config/fish/completions/abbrs.fish"

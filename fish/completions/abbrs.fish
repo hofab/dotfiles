@@ -69,9 +69,8 @@ if not set -q fish_initialized
     abbr --add rd       'rm -id'
     abbr --add rf       'rm -rf'
     abbr --add rA       'rm -rf *'
-    abbr --add elh      'exa -l *.hex'
-    abbr --add el       'exa -l'
-    abbr --add ea       'exa -la'
+    abbr --add ll       'exa -l'
+    abbr --add la       'exa -la'
 
 #ninja shortcuts
     abbr --add nc       'ninja clean'
