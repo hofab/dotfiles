@@ -40,6 +40,8 @@ set guicursor=
 set grepprg=rg\ --vimgrep
 " use fzf with ripgrep
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+" set signcolumn to no so we don't see a grey line on the left
+set signcolumn=no
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPING
@@ -141,19 +143,14 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-dispatch'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'itchyny/lightline.vim'
-Plug 'dag/vim-fish'
-Plug 'jceb/vim-orgmode'
 Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/undotree'
 Plug 'ktchen14/cscope-auto'
-Plug 'vim-scripts/utl.vim'
-Plug 'igankevich/mesonic'
 Plug 'dbakker/vim-projectroot'
 Plug 'jiangmiao/auto-pairs'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 

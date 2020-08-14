@@ -52,6 +52,19 @@ inoremap ;; <ESC>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <LEADER>mk :Dispatch make -f MakePldMx15Zn_CMX SW_PN=76589 SW_VER=01 SW_REV=X -j
 
+" coc and ccls mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" " Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 " custom inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " doxygen line comment
@@ -81,9 +94,14 @@ map <LEADER>gf :cs find 3 <C-R>=expand("<cword>")<CR><CR>
 
 " use clang format
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if filereadable("/usr/share/clang/clang-format-8/clang-format.py")
-    map <LEADER>k :pyf /usr/share/clang/clang-format-8/clang-format.py<cr>
-    imap <C-K> <c-o>:pyf /usr/share/clang/clang-format-8/clang-format.py<cr>
+if filereadable("/usr/share/clang/clang-format-10/clang-format.py")
+    map <LEADER>k :py3f /usr/share/clang/clang-format-10/clang-format.py<cr>
+    imap <C-K> <c-o>:py3f /usr/share/clang/clang-format-10/clang-format.py<cr>
+endif
+
+if filereadable("/home/linuxbrew/.linuxbrew/share/clang/clang-format.py")
+    map <LEADER>k :py3f /home/linuxbrew/.linuxbrew/share/clang/clang-format.py<cr>
+    imap <C-K> <c-o>:py3f /home/linuxbrew/.linuxbrew/share/clang/clang-format.py<cr>
 endif
 
 "" easymotion configuration

@@ -33,3 +33,10 @@ set PATH $PATH ~/XYZ
 # change default shell
 chsh -s /usr/bin/fish
 
+Tools:
+ripgrep
+exa
+fd
+entr
+bat
+bb

@@ -17,7 +17,7 @@ set --export EDITOR "nvim"
 # make Vim usable with git
 set --export GIT_EDITOR "nvim"
 
-# make.py quit output
+# make.py quiet output
 set --export MAKE_QUIET "1"
 #set --export TOOLCHAIN "xilinx"
 set --export CFGDB_DIR "$HOME/cfgdb"
@@ -43,5 +43,9 @@ set -g fish_term256 1
 
 # nnn support editor
 set --export NNN_USE_EDITOR "1"
+
+# exa colors
+# do more
+set --export EXA_COLORS "ln=35"
 
 source "$HOME/.config/fish/completions/abbrs.fish"

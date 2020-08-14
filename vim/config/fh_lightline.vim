@@ -1,10 +1,10 @@
 set laststatus=2
 let g:lightline = {
-      \ 'colorscheme': 'fhof',
+      \ 'colorscheme': 'fhof_ll_cs',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive'] ],
-      \   'right': [ [ 'filename']],
+      \   'right': [ [ 'filename'], [ 'lineinfo' ]],
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightlineFugitive',

@@ -18,13 +18,14 @@ let colors_name = "fhof"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLORS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi Folded               ctermfg=252   ctermbg=240
+hi Folded               ctermfg=252 ctermbg=240
 hi FoldColumn           ctermfg=7   ctermbg=8
 hi VertSplit            ctermfg=252 ctermbg=5
 hi LineNr               ctermfg=239 ctermbg=255
 hi Normal               ctermfg=239
 hi Search               ctermfg=239 ctermbg=230
 set cursorline
+hi Cursor               ctermfg=255 ctermbg=199
 hi CursorLine           ctermbg=253 cterm=NONE term=NONE
 hi CursorLineNr         ctermfg=255 ctermbg=199
 hi Comment              ctermfg=245
@@ -76,6 +77,7 @@ hi cErrInBracket        ctermfg=245
 hi cErrInParen          ctermfg=245
 hi cSeperator           ctermfg=245
 hi def link cComma cSeperator
+
 hi cConstant            ctermfg=29
 
 " popup-colors
