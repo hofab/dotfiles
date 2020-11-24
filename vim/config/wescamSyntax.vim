@@ -29,3 +29,4 @@ autocmd BufRead,BufNewFile *.c,*.h,*.cpp syntax keyword wesCSpecial
 \ BIT_23 BIT_24 BIT_25 BIT_26 BIT_27 BIT_28 BIT_29
 \ BIT_30 BIT_31 BIT_0
 \ OK ERROR
+\ true false

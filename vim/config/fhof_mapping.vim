@@ -1,17 +1,6 @@
 " custom leader
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = "\<SPACE>"
-if has("autocmd")
-" map localleader to , for org files
-function! SetLocalLeader()
-    nmap , \
-endfunction
-
-augroup myOrgMode
-    autocmd!
-    autocmd Filetype org call SetLocalLeader()
-augroup END
-endif
 
 " custom mapping to my liking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -40,13 +29,16 @@ nmap <LEADER>v ciw<C-r>0<ESC>
 " copy word to clipboard
 nnoremap <LEADER>cc "+yiw
 vnoremap <LEADER>cc "+y
+
 nnoremap <LEADER>r *<ESC>:%s///g<left><left>
-nnoremap <LEADER>ggt :GitGutterSignsToggle<CR>
+nnoremap <LEADER>b :??t.<left><left><left>
 nnoremap <LEADER>gb :Gblame<CR>
 nnoremap <LEADER>rg :Find<CR>
 "map ; to :
 nnoremap ; :
-inoremap ;; <ESC>
+
+inoremap jj <ESC>
+inoremap kk <ESC>
 
 " variable dispatch command
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -119,3 +111,13 @@ nmap <LEADER><LEADER>s <Plug>(easymotion-overwin-f2)
 " deoplete selection with TAB
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+"" try something new auto generate log from hovered over word
+
+nmap <LEADER>pv yiw<ESC>owpv<C-J><ESC><right>ciw<C-R>0<ESC>
+
+"" resize window to 120 and 106
+map <LEADER>y :call ToogleColumnWidth() <CR>
+
+nmap <LEADER>rl p<CR>kddyy
+

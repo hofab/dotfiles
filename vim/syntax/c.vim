@@ -280,3 +280,9 @@ hi def link cBoolean Boolean
 
 " CONST_ANT
 syn match cConstant "\<\u*_[A-Z0-9_]\+"
+syn match cMacro "\<\u*_[A-Z0-9_]\+("me=e-1
+
+" custom tags
+syn match cTodo "@\ctodo" containedin=Comment
+syn match cTest "@\Ctest" containedin=Comment
+syn match cNote "@\Cnote" containedin=Comment

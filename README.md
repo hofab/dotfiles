@@ -20,6 +20,11 @@ apt-get install yarn
 set PATH $PATH /home/linuxbrew/.linuxbrew/bin
 See: https://github.com/MaskRay/ccls/wiki/coc.nvim
 
+tig:
+git clone git://github.com/jonas/tig.git
+make
+make install
+
 fish:
 rm -rf ~/.config/fish
 sudo ln -sf ~/dotfiles/fish ~/.config/fish
@@ -40,3 +45,4 @@ fd
 entr
 bat
 bb
+tig

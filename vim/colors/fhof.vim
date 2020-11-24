@@ -60,25 +60,26 @@ hi OverLength           ctermfg=239 ctermbg=196
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " # C Pre Proccessor Statements
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" hi cInclude             ctermfg=178     "#include
-" hi cIncluded            ctermfg=28      "<file>
-hi cDefine              ctermfg=20        "#define
-hi cPreCondit           ctermfg=5         "#if, #elif, #else, #endif
-" hi cPreProc             ctermfg=        "#error, #warning
-" hi cCppOut              ctermfg=        "#if 0
+" hi cInclude    ctermfg=178     "#include
+" hi cIncluded   ctermfg=28      "<file>
+hi cDefine     ctermfg=20        "#define
+hi cPreCondit  ctermfg=5         "#if, #elif, #else, #endif
+" hi cPreProc    ctermfg=        "#error, #warning
+" hi cCppOut     ctermfg=        "#if 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " EXTENDED C SYNTAX
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi cOperator            ctermfg=199
-hi cDelimiter           ctermfg=245
-hi cBraces              ctermfg=245
-hi cEqual               ctermfg=199
-hi cErrInBracket        ctermfg=245
-hi cErrInParen          ctermfg=245
-hi cSeperator           ctermfg=245
-hi def link cComma cSeperator
+hi cOperator     ctermfg=199
+hi cDelimiter    ctermfg=245
+hi cBraces       ctermfg=245
+hi cEqual        ctermfg=199
+hi cErrInBracket ctermfg=245
+hi cErrInParen   ctermfg=245
+hi cSeperator    ctermfg=245
+hi cConstant     ctermfg=29
 
-hi cConstant            ctermfg=29
+hi def link cComma cSeperator
+hi def link cMacro cFunction
 
 " popup-colors
 hi Pmenu ctermfg=245
@@ -86,3 +87,8 @@ hi Pmenu ctermfg=245
 "PmenuSbar	scrollbar  |hl-PmenuSbar|
 "PmenuThumb	thumb of the scrollbar  |hl-PmenuThumb|
 
+" custom tag colors
+" tags are defined in syntax/c.vim
+hi cTodo ctermbg=47
+hi cNote ctermbg=39
+hi cTest ctermbg=1

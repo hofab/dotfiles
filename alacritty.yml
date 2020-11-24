@@ -3,14 +3,15 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
+env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  #TERM: xterm-256color
+  TERM: xterm-256color
+  WINIT_X11_SCALE_FACTOR: "1"
 
 window:
   # Window dimensions (changes require restart)
@@ -111,7 +112,9 @@ scrolling:
 # Font configuration (changes require restart)
 font:
   normal:
-    family: DejaVuSansMono Nerd Font # should be "Menlo" or something on macOS.
+      #family: Iosevka Term # should be "Menlo" or something on macOS.
+    family: UbuntuMono Nerd Font Mono # should be "Menlo" or something on macOS.
+    style: Regular
   # Normal (roman) font face
   #normal:
     # Font family
@@ -127,7 +130,9 @@ font:
 
   # Bold font face
   bold:
-    family: DejaVuSansMono Nerd Font # should be "Menlo" or something on macOS.
+    family: UbuntuMono Nerd Font Mono # should be "Menlo" or something on macOS.
+    #family: Iosevka Term # should be "Menlo" or something on macOS.
+    style: Bold
   #bold:
     # Font family
     #
@@ -136,11 +141,12 @@ font:
     #family: monospace
 
     # The `style` can be specified to pick a specific face.
-    #style: Bold
 
   # Italic font face
   italic:
-    family: DejaVuSansMono Nerd Font # should be "Menlo" or something on macOS.
+    family: UbuntuMono Nerd Font Mono # should be "Menlo" or something on macOS.
+    #family: Iosevka Term # should be "Menlo" or something on macOS.
+    style: Italic
   #italic:
     # Font family
     #
@@ -163,12 +169,12 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 10.0
+  size: 15.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
-    x: 0
+    x: -1
     y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
@@ -192,7 +198,7 @@ font:
   #
   # This is a global setting and will require a log out or restart to take
   # effect.
-  use_thin_strokes: true
+  use_thin_strokes: false
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
@@ -533,10 +539,10 @@ key_bindings:
   #- { key: C,        mods: Control|Shift, action: Copy             }
   #- { key: Insert,   mods: Shift,         action: PasteSelection   }
   #- { key: Key0,     mods: Control,       action: ResetFontSize    }
-  #- { key: Equals,   mods: Control,       action: IncreaseFontSize }
-  #- { key: Add,      mods: Control,       action: IncreaseFontSize }
-  #- { key: Subtract, mods: Control,       action: DecreaseFontSize }
-  #- { key: Minus,    mods: Control,       action: DecreaseFontSize }
+  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
+  - { key: Add,      mods: Control,       action: IncreaseFontSize }
+  - { key: Subtract, mods: Control,       action: DecreaseFontSize }
+  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
   - { key: Return,   mods: Alt,           action: ToggleFullscreen }
 
   # (macOS only)

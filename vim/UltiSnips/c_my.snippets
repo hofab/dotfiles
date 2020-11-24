@@ -24,8 +24,7 @@ moduleLogError(${1:moduleAddr}, "_LINE_: ${2:value}");
 endsnippet
 
 snippet wfunc
-/**************************************************************************//**
- *
+/**
  * @ingroup ${4:none}
  *
  * ${5:A brief description}
@@ -39,9 +38,17 @@ for argument in arguments:
 snip += ' * @returns {}'.format(t[1])
 snip += ' *'
 `
- *****************************************************************************/
+ */
 ${1:void} ${2:foo}(${3:args}) {
     ${7:code}
+}
+endsnippet
+snippet werf
+static retOE_t ${1:foo}(${2:args})
+{
+	retOE_T retVal = ERROR;
+    ${3:code}
+	return retVal;
 }
 endsnippet
 
@@ -90,5 +97,5 @@ moduleLogError(11, "${1:unity}: %+.3f", $1 / UNITY_FLOAT);
 endsnippet
 
 snippet td "todo"
-/* @TODO fhof: ${1:bla} */
+// @todo fhof: ${1:bla}
 endsnippet
