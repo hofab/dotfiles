@@ -1,4 +1,3 @@
-eval (python -m virtualfish)
 set -g Z_SCRIPT_PATH /usr/local/bin/z
 set -U FZF_FIND_FILE_COMMAND 'rg --files --hidden --smartcase --glob --height=15 "!.git/*"'
 set --export FZF_DEFAULT_COMMAND 'fd --type f'
@@ -38,7 +37,7 @@ set --export VCAST_MX_REPO ~/release.git
 # Matlab license and server
 set --export MLM_LICENSE_FILE "27000@LICENSESVR2:27000@LICENSESVR3"
 
-# codesonar
+# codesonar w
 set --export CS_WORKING_DIR "$HOME/codesonar"
 set --export CS_HUB_USER "fhof"
 
@@ -46,6 +45,8 @@ set -g fish_term256 1
 
 # nnn support editor
 set --export NNN_USE_EDITOR "1"
+set --export NNN_FCOLORS "04041947000080f600000000"
+set --export NNN_COLORS "5236"
 
 # exa colors
 # do more

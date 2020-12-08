@@ -153,14 +153,14 @@ Plug 'tommcdo/vim-exchange'
 Plug 'kkoomen/vim-doge'
 " add print statement with stuff under cursor, couldn't make it work with normal vim mapping
 Plug 'meain/vim-printer'
+Plug 'guns/xterm-color-table.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'jackguo380/vim-lsp-cxx-highlight', { 'for': ['c', 'cpp'] }
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
 let g:deoplete#enable_at_startup = 1
-let g:python3_host_prog = '/home/linuxbrew/.linuxbrew/bin//python3'
+let g:python3_host_prog = '/usr/bin/python3'
 
 "execute pathogen#infect()
 runtime config/wescamSyntax.vim

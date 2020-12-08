@@ -25,7 +25,8 @@ hi LineNr               ctermfg=239 ctermbg=255
 hi Normal               ctermfg=239
 hi Search               ctermfg=239 ctermbg=230
 set cursorline
-hi Cursor               ctermfg=255 ctermbg=199
+hi Cursor               ctermfg=8 ctermbg=199
+hi def link lCursor  Cursor
 hi CursorLine           ctermbg=253 cterm=NONE term=NONE
 hi CursorLineNr         ctermfg=255 ctermbg=199
 hi Comment              ctermfg=245

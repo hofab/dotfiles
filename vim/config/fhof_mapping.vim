@@ -86,14 +86,9 @@ map <LEADER>gf :cs find 3 <C-R>=expand("<cword>")<CR><CR>
 
 " use clang format
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if filereadable("/usr/share/clang/clang-format-10/clang-format.py")
-    map <LEADER>k :py3f /usr/share/clang/clang-format-10/clang-format.py<cr>
-    imap <C-K> <c-o>:py3f /usr/share/clang/clang-format-10/clang-format.py<cr>
-endif
-
-if filereadable("/home/linuxbrew/.linuxbrew/share/clang/clang-format.py")
-    map <LEADER>k :py3f /home/linuxbrew/.linuxbrew/share/clang/clang-format.py<cr>
-    imap <C-K> <c-o>:py3f /home/linuxbrew/.linuxbrew/share/clang/clang-format.py<cr>
+if filereadable("/usr/share/clang/clang-format.py")
+    map <LEADER>k :py3f /usr/share/clang/clang-format.py<cr>
+    imap <C-K> <c-o>:py3f /usr/share/clang/clang-format.py<cr>
 endif
 
 "" easymotion configuration
@@ -108,16 +103,22 @@ map <LEADER>a <Plug>(easymotion-bd-w)
 " s{char}{char} to move to {char}{char}
 nmap <LEADER><LEADER>s <Plug>(easymotion-overwin-f2)
 
-" deoplete selection with TAB
-inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+" coc.vim selection with TAB
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 "" try something new auto generate log from hovered over word
-
 nmap <LEADER>pv yiw<ESC>owpv<C-J><ESC><right>ciw<C-R>0<ESC>
 
 "" resize window to 120 and 106
 map <LEADER>y :call ToogleColumnWidth() <CR>
 
 nmap <LEADER>rl p<CR>kddyy
-
