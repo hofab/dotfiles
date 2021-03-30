@@ -86,7 +86,7 @@ scrolling:
 
   # Number of lines the viewport will move for every line scrolled when
   # scrollback is enabled (history > 0).
-  multiplier: 3
+  multiplier: 10
 
   # Faux Scrolling
   #
@@ -112,7 +112,7 @@ scrolling:
 # Font configuration (changes require restart)
 font:
   normal:
-      #family: Iosevka Term # should be "Menlo" or something on macOS.
+    #family: Iosevka Term # should be "Menlo" or something on macOS.
     family: UbuntuMono Nerd Font Mono # should be "Menlo" or something on macOS.
     style: Regular
   # Normal (roman) font face
@@ -174,7 +174,7 @@ font:
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
-    x: -1
+    x: 0
     y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
@@ -182,7 +182,7 @@ font:
   # increasing `y` moves the glyph upwards.
   glyph_offset:
     x: 0
-    y: 0
+    y: -1
 
   # Thin stroke font rendering (macOS only)
   #

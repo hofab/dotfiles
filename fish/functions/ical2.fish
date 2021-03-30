@@ -1,4 +1,4 @@
-function ical --description 'Copy all relevant data for inner call'
+function ical2 --description 'Copy all relevant data for inner call'
     set oPath (pwd)
     set date_ (date -I)
     set time_ (date +"%H%M")
@@ -10,9 +10,9 @@ function ical --description 'Copy all relevant data for inner call'
 #    cp ~/release/gimbalPositionSensors.c $path_
 #    cp ~/release/gimbalCtrl.c $path_
 #    cp ~/maint/ia_cal_mod.sc $path_
-    mv ~/maint/mx15_ia_cal.log $path_
-    mv ~/maint/mx15_ia_cal_results.log $path_
-    mv ~/maint/mx15_initial_state.log $path_
+#    mv ~/maint/mx15_ia_cal.log $path_
+    mv ~/shared/IA_CAL/mx15_ia_cal_results.log $path_
+#    mv ~/maint/mx15_initial_state.log $path_
 #    mv ~/maint/test.log $path_
 #    mv ~/maint/test_1.log $path_
     cd $path_

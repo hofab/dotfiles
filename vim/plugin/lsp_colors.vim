@@ -31,3 +31,8 @@ if executable('ccls')
     hi def link LspCxxHlSymPrimitive NONE
     hi def link LspCxxHlSymTypeParameter NONE
 endif
+
+hi LspDiagnosticsDefaultError ctermfg=9
+hi def link LspDiagnosticsDefaultHint LspDiagnosticsDefaultError
+hi def link LspDiagnosticsDefaultInformation LspDiagnosticsDefaultError
+hi def link LspDiagnosticsDefaultWarning LspDiagnosticsDefaultError

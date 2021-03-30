@@ -86,7 +86,8 @@ if not set -q fish_initialized
 
 #useful stuff
     abbr --add efc      'nvim ~/dotfiles/fish/config.fish'
-    abbr --add ei       'nvim ~/.i3/config'
+    abbr --add ei       'nvim ~/dotfiles/i3/config'
+    abbr --add et       'nvim ~/dotfiles/tmux.conf'
     abbr --add efia     'nvim ~/dotfiles/fish/completions/abbrs.fish'
     abbr --add evrc     'nvim ~/dotfiles/vim/init.vim'
     abbr --add evm      'nvim ~/dotfiles/vim/config/fhof_mapping.vim'

@@ -14,11 +14,11 @@ map <LEADER>j <C-W>j
 nnoremap <LEADER>w :w<CR>
 nnoremap <LEADER>[ <S-V>i{<C-K>
 nnoremap <LEADER>cs :!cscope -bcqR<CR><ESC> :cs reset<CR><ESC>
-nmap <LEADER>f :vs<CR><C-W>l:execute 'Files' ProjectRootGuess()<CR>
-nmap <LEADER>o :execute 'Files' ProjectRootGuess()<CR>
+" nmap <LEADER>f :vs<CR><C-W>l:call FileSearch()<CR>
+" nmap <LEADER>o :call FileSearch()<CR>
 nmap <LEADER>s <C-Z>
 nmap <LEADER>q :qa<CR>
-nmap <LEADER>t :tabe<CR>:execute 'Files' ProjectRootGuess()<CR>
+" nmap <LEADER>t :tabe<CR>:execute 'Files' ProjectRootGuess()<CR>
 nmap <LEADER>ut :UndotreeToggle <CR>
 " delete to beginning of the line and join with line above
 nmap <LEADER><LEADER>j d0kJ
@@ -33,12 +33,13 @@ vnoremap <LEADER>cc "+y
 nnoremap <LEADER>r *<ESC>:%s///g<left><left>
 nnoremap <LEADER>b :??t.<left><left><left>
 nnoremap <LEADER>gb :Gblame<CR>
-nnoremap <LEADER>rg :Find<CR>
 "map ; to :
 nnoremap ; :
 
 inoremap jj <ESC>
+inoremap jk <ESC>
 inoremap kk <ESC>
+inoremap kj <ESC>
 
 " variable dispatch command
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -103,12 +104,25 @@ map <LEADER>a <Plug>(easymotion-bd-w)
 " s{char}{char} to move to {char}{char}
 nmap <LEADER><LEADER>s <Plug>(easymotion-overwin-f2)
 
-" coc.vim selection with TAB
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" " coc.vim selection with TAB
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+
+imap <tab> <Plug>(completion_smart_tab)
+imap <s-tab> <Plug>(completion_smart_s_tab)
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -121,4 +135,8 @@ nmap <LEADER>pv yiw<ESC>owpv<C-J><ESC><right>ciw<C-R>0<ESC>
 "" resize window to 120 and 106
 map <LEADER>y :call ToogleColumnWidth() <CR>
 
-nmap <LEADER>rl p<CR>kddyy
+" DoxygenToolkit mapping
+nnoremap <LEADER>do :Dox <CR>
+
+" reload vimrc
+nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
