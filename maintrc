@@ -1,0 +1,5 @@
+format record gap
+
+misc dir make maint_logging -t -c
+log + maint.log
+misc dir cd ..

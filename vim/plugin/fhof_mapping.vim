@@ -2,6 +2,10 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = "\<SPACE>"
 
+" reload vim config
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <LEADER>rnv :so $MYVIMRC
+
 " custom mapping to my liking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <LEADER>k <C-W>k
@@ -44,19 +48,6 @@ inoremap kj <ESC>
 " variable dispatch command
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <LEADER>mk :Dispatch make -f MakePldMx15Zn_CMX SW_PN=76589 SW_VER=01 SW_REV=X -j
-
-" coc and ccls mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" " Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
 
 " custom inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -273,9 +273,9 @@ syn keyword cBoolean true false TRUE FALSE
 " Links
 hi def link cFunction Function
 hi def link cIdentifier Identifier
-hi def link cDelimiter Delimiter
+"hi def link cDelimiter Delimiter
 " foldmethod=syntax fix, courtesy of Ivan Freitas
-hi def link cBraces Delimiter
+"hi def link cBraces Delimiter
 hi def link cBoolean Boolean
 
 " CONST_ANT

@@ -61,6 +61,14 @@ M.search_dotfiles = function()
     })
 end
 
+M.search_notes = function()
+    require("telescope.builtin").live_grep({
+        prompt_title = "< Notes >",
+        cwd = "$HOME/Notes/",
+    })
+end
+
+
 M.git_branches = function()
     require("telescope.builtin").git_branches({
         attach_mappings = function(_, map)

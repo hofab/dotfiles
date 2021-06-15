@@ -3,6 +3,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 
+colorscheme fhof
+
 "Convert tabs to spaces
 set expandtab
 set shiftwidth=4
@@ -134,8 +136,11 @@ au BufRead,BufNewFile *.h setfiletype c
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.config/nvim/plugged')
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf.vim'
+" fzf alternative written in rust
+"Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
+"Plug 'lotabout/skim.vim'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -149,18 +154,19 @@ Plug 'ktchen14/cscope-auto'
 Plug 'dbakker/vim-projectroot'
 Plug 'tommcdo/vim-exchange'
 Plug 'kkoomen/vim-doge'
-Plug 'stsewd/fzf-checkout.vim'
+"Plug 'stsewd/fzf-checkout.vim'
+
 " add print statement with stuff under cursor, couldn't make it work with normal vim mapping
 Plug 'meain/vim-printer'
 Plug 'guns/xterm-color-table.vim'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'jackguo380/vim-lsp-cxx-highlight', { 'for': ['c', 'cpp'] }
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown'}
+
 " Plebvim lsp Plugins
 Plug 'neovim/nvim-lspconfig'
 Plug 'tjdevries/nlua.nvim'
+
 " Neovim Tree shitter
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -171,6 +177,8 @@ Plug 'nvim-treesitter/completion-treesitter'
 Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'folke/todo-comments.nvim'
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
 " vim-telescope
 Plug 'nvim-telescope/telescope.nvim'
@@ -193,8 +201,6 @@ call plug#end()
 
 let g:deoplete#enable_at_startup = 1
 let g:python3_host_prog = '/usr/bin/python3'
-
-colorscheme fhof
 
 " load lua folder
 lua require("fhof")

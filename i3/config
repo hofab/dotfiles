@@ -17,7 +17,7 @@ hide_edge_borders none
 # change borders
 bindsym $mod+u border none
 bindsym $mod+y border pixel 2
-bindsym $mod+n exec alacritty -e "nnn"
+#bindsym $mod+n exec alacritty -e "nnn"
 
 # is used in the bar {} block below.
 font xft:URWGothic-Book 11
@@ -61,7 +61,7 @@ bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id i3-scrot
+bindsym Print exec --no-statup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
@@ -136,6 +136,7 @@ bindsym $mod+Ctrl+Left workspace prev
 
 # Three monitor setup
 # exec --no-startup-id xrandr --output DP1-1 --mode 1920x1200 --scale 1x1 --pos 0x0 --output DP1-2 --mode 1920x1200 --scale 1x1 --pos 1920x0 --primary --output eDP1 --off
+exec ~/.config/fish/functions/ithree.fish
 # turn of bios beep on failure
 exec --no-startup-id xset -b
 
@@ -221,10 +222,11 @@ for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 #for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
-bindsym $mod+Shift+n exec alacritty -t "floating_ala" -e "nnn"
+
+bindsym $mod+n exec alacritty -t "floating_ala" -e "nnn"
 for_window [class="Alacritty" title="floating_ala"] floating enable
-# bindsym $mod+Shift+m exec alacritty -t "mx_notes"
-# for_window [class="Alacritty" title="mx_notes"] floating enable
+for_window [ title="notetaker_window" ] floating enable
+bindsym $mod+Shift+n exec alacritty -t "notetaker_window" -e /home/fhof/dotfiles/scripts/notetaker
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
