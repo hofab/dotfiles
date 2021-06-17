@@ -20,3 +20,6 @@ nnoremap <leader>cd :lua require('fhof.telescope').search_dotfiles()<CR>
 " check Notes
 nnoremap <leader>cn :lua require('fhof.telescope').search_notes()<CR>
 
+" check cfg
+nnoremap <leader>cg :lua require('fhof.telescope').search_cfgdb()<CR>
+

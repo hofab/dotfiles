@@ -68,6 +68,13 @@ M.search_notes = function()
     })
 end
 
+M.search_cfgdb = function()
+    require("telescope.builtin").live_grep({
+        prompt_title = "< CFG_DB >",
+        cwd = "$HOME/cfgdb/",
+    })
+end
+
 
 M.git_branches = function()
     require("telescope.builtin").git_branches({
