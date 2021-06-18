@@ -14,14 +14,8 @@ ln -sf ~/dotfiles/vim/UltiSnips ~/.config/nvim/UltiSnips
 ln -sf ~/dotfiles/vim/config ~/.config/nvim/config
 ln -sf ~/dotfiles/vim/colors ~/.config/nvim/colors
 
-
 which python3
 let g:python3_host_prog = ''
-
-ccls:
-pamac install nodejs ccls meson cscope
-set PATH $PATH /home/linuxbrew/.linuxbrew/bin
-See: https://github.com/MaskRay/ccls/wiki/coc.nvim
 
 tig:
 git clone git://github.com/jonas/tig.git
@@ -49,3 +43,5 @@ entr
 bat
 bb
 tig
+watchexec-cli
+gron
