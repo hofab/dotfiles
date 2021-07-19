@@ -6,10 +6,6 @@ require'lspconfig'.clangd.setup
 {
     on_attach=require'completion'.on_attach
 }
-require'lspconfig'.ccls.setup
-{
-    on_attach=require'completion'.on_attach
-}
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {

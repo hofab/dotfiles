@@ -183,6 +183,7 @@ Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 " vim-telescope
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
 " nnn in vim
 Plug 'mcchrish/nnn.vim'
 
@@ -193,8 +194,17 @@ Plug 'hrsh7th/nvim-compe'
 " auto-pairs that works with compe
 Plug 'windwp/nvim-autopairs'
 
-" CSS colors
-Plug 'ap/vim-css-color'
+" show key mappings if lost
+Plug 'folke/which-key.nvim'
+
+" colorizes rgb etc in files
+Plug 'norcalli/nvim-colorizer.lua'
+
+" better quick fix
+Plug 'kevinhwang91/nvim-bqf'
+
+" reload/restart functionality while running
+Plug 'famiu/nvim-reload'
 
 "List ends here. Plugins become visible to Vim after this call.
 call plug#end()

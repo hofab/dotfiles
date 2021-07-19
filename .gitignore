@@ -83,3 +83,4 @@ build/*
 cfg.mak
 .clang-format
 vim/plugged/*
+vim/autoload/*

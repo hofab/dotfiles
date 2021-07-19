@@ -20,33 +20,20 @@ format = """\
 
 # Generic prompt configurations
 [character]
-success_symbol = "[[](bg:#AFD700 fg:#464347)](fg:#AFD700)"
-error_symbol = "[[](bg:#ff3322 fg:#464347)](fg:#ff3322)"
-vicmd_symbol = "[[](bg:#6f6a70 fg:#464347)[](bg:#464347 fg:#6f6a70)](bold bg:#6f6a70 fg:#ff3322)"
-format = "[[](bg:#464347)$symbol]($style)"
+success_symbol = "[[](bg:#AFD700 fg:#3a3a3a)](fg:#AFD700)"
+error_symbol = "[[](bg:#ff3322 fg:#3a3a3a)](fg:#ff3322)"
+vicmd_symbol = "[[](bg:#6f6a70 fg:#3a3a3a)[](bg:#3a3a3a fg:#6f6a70)](bold bg:#6f6a70 fg:#ff3322)"
+format = "[[](bg:#3a3a3a)$symbol]($style)"
 
 [line_break]
 disabled = true
-# Module configurations
-[battery]
-disabled = true
-full_symbol = "🔋"
-charging_symbol = " "
-discharging_symbol = " "
-format = "[[](bg:#464347 fg:#FF5511)$symbol$percentage[](bg:#464347 fg:#FF5511)]($style)"
-[[battery.display]]
-threshold = 10
-style = "bold bg:#FF5511 fg:#EEEEEE"
-[[battery.display]]
-threshold = 20
-style = "bg:#FF5511 fg:#111111"
 
 [directory]
-style = "italic bg:#3a3a3a fg:#dadada"
+style = "italic bg:#EEEEEE fg:#3a3a3a"
 read_only = ""
 read_only_style = "bg:#3a3a3a fg:#3a3a3a"
 truncation_length = 1
-truncation_symbol = "…/"
+truncation_symbol = "/"
 fish_style_pwd_dir_length = 1
 format = "([[](bg:#3a3a3a fg:#3a3a3a)$read_only[](bg:#3a3a3a fg:#3a3a3a)]($read_only_style))[[](bg:#3a3a3a fg:#3a3a3a)$path[](bg:#3a3a3a fg:#3a3a3a)]($style)"
 
@@ -56,17 +43,17 @@ format = "([[](bg:#3a3a3a fg:#3a3a3a)$read_only[](bg:#3a3a3a fg:#3a3a3a)](
 "~" = ""
 
 [git_branch]
-symbol = ""
+symbol = ""
 style = "bg:#008700 fg:#dadada"
 # truncation_length = 4
 # truncation_symbol = ""
-format = "[[](bg:#464347 fg:#008700)$symbol$branch[](bg:#464347 fg:#008700)]($style)"
+format = "[[](bg:#3a3a3a fg:#008700)$symbol$branch[](bg:#3a3a3a fg:#008700)]($style)"
 
 [git_commit]
 style = "bg:#E58F73 fg:#111111"
 commit_hash_length = 4
 # only_detached = true
-format = "[[](bg:#464347 fg:#E58F73)#$hash[](bg:#464347 fg:#E58F73)]($style)"
+format = "[[](bg:#3a3a3a fg:#E58F73)#$hash[](bg:#3a3a3a fg:#E58F73)]($style)"
 
 [git_state]
 style = "bg:#E0B25D fg:111111"
@@ -77,24 +64,24 @@ cherry_pick = " picking"
 bisect = "bisecting"
 am = "am'ing"
 am_or_rebase = "am/rebase"
-format = '\([[](bg:#464347 fg:#E0B25D)$state($progress_current/$progress_total)[](bg:#464347 fg:#E0B25D)]($style)\)'
+format = '\([[](bg:#3a3a3a fg:#E0B25D)$state($progress_current/$progress_total)[](bg:#3a3a3a fg:#E0B25D)]($style)\)'
 
 [git_status]
 style = "bg:#5f5fdf fg:#EEEEEE"
 stashed = "${count}"
-ahead = "ﲗ ${count}"
+ahead = "ﲗ${count}"
 behind = "↡ ${count}"
 diverged = "↔ ${ahead_count} ${behind_count}"
 conflicted = "≠${count}"
 deleted = "${count}"
 renamed = "r${count}"
-modified = " ${count}"
+modified = "${count}"
 staged = "⎆ ${count}"
 untracked = "⇪ ${count}"
-format = "([[](bg:#464347 fg:#5f5fdf)$all_status[](bg:#464347 fg:#5f5fdf)]($style))"
+format = "([[](bg:#3a3a3a fg:#5f5fdf)$all_status[](bg:#3a3a3a fg:#5f5fdf)]($style))"
 
 [status]
 disabled = false
 symbol = ""
-style = "bg:#464347 fg:#ff3322"
+style = "bg:#3a3a3a fg:#ff3322"
 format = "[$symbol$status]($style)"

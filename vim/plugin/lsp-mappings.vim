@@ -10,5 +10,6 @@ nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 
 
+nnoremap <leader>dl <cmd>lua vim.lsp.diagnostic.set_loclist()<CR>
 nnoremap <leader>dn <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <leader>dp <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>

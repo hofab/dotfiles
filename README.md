@@ -9,10 +9,13 @@ Alacritty:
 sudo ln -sf ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 VIM:
-ln -sf ~/dotfiles/vim/config/fhof_ll_cs.vim ~/.config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme/fhof_ll_cs.vim
-ln -sf ~/dotfiles/vim/UltiSnips ~/.config/nvim/UltiSnips
-ln -sf ~/dotfiles/vim/config ~/.config/nvim/config
-ln -sf ~/dotfiles/vim/colors ~/.config/nvim/colors
+./config/nvim -> /home/fhof/dotfiles/vim
+
+starship:
+./config/starship.toml -> /home/fhof/dotfiles/starship.toml
+
+i3:
+~/.i3 -> /home/fhof/dotfiles/i3
 
 which python3
 let g:python3_host_prog = ''
