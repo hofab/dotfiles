@@ -171,7 +171,7 @@ Plug 'tjdevries/nlua.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
-Plug 'nvim-treesitter/completion-treesitter'
+"Plug 'nvim-treesitter/completion-treesitter'
 
 " vim-lua
 Plug 'nvim-lua/completion-nvim'
@@ -184,12 +184,16 @@ Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
+" refactoring from ThePrimagen
+Plug 'ThePrimeagen/refactoring.nvim'
+
 " nnn in vim
 Plug 'mcchrish/nnn.vim'
 
 " nvim looks
 Plug 'onsails/lspkind-nvim'
 Plug 'hrsh7th/nvim-compe'
+Plug 'glepnir/lspsaga.nvim'
 
 " auto-pairs that works with compe
 Plug 'windwp/nvim-autopairs'

@@ -23,6 +23,14 @@ snippet swlog "WESCAM moduleLogError"
 moduleLogError(${1:moduleAddr}, "_LINE_: ${2:value}");
 endsnippet
 
+snippet func
+static ${1:void} ${2:foo}(${3:args}) {
+	$1 retVal = 0;
+
+	return retVal;
+}
+endsnippet
+
 snippet wfunc
 /**
  * @ingroup ${4:none}
@@ -39,8 +47,10 @@ snip += ' * @returns {}'.format(t[1])
 snip += ' *'
 `
  */
-${1:void} ${2:foo}(${3:args}) {
-    ${7:code}
+static ${1:void} ${2:foo}(${3:args}) {
+	$1 retVal = 0;
+
+	return retVal;
 }
 endsnippet
 snippet werf
@@ -97,7 +107,7 @@ moduleLogError(11, "${1:unity}: %+.3f", $1 / UNITY_FLOAT);
 endsnippet
 
 snippet uh "Wescam moduleLogAssert Unhandled Case"
-moduleAssert(${1:moduleAddr}, UNHANDLED_CASE);                                              │     * Called from: Any state
+moduleAssert(${1:moduleAddr}, UNHANDLED_CASE);
 endsnippet
 
 snippet td "todo"

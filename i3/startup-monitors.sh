@@ -4,8 +4,10 @@
 xrandr_output=$(xrandr --listactivemonitors)
 two_monitor="`echo $xrandr_output | rg -i 'HDMI-1'`";
 # Monitors on DP1-2 and DP1-2
-left_mon_connected="`echo $xrandr_output| rg -i 'DP1-1'`";
+left_mon_connected="`echo $xrandr_output | rg -i 'DP1-1'`";
+echo $left_mon_connected
 mid_mon_connected="`echo $xrandr_output | rg -i 'DP1-2'`";
+echo $mid_mon_connected
 script_path="/home/fhof/.config/i3"
 startup_delay=3
 

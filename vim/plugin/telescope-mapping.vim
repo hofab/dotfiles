@@ -23,3 +23,6 @@ nnoremap <leader>cn :lua require('fhof.telescope').search_notes()<CR>
 " check cfg
 nnoremap <leader>cg :lua require('fhof.telescope').search_cfgdb()<CR>
 
+" grep for word und cursor
+nnoremap <leader>cw :lua require('telescope.builtin').grep_string({silent = true, noremap = true})<CR>
+

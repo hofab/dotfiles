@@ -16,6 +16,8 @@ format = """\
         (↓ on input line ↓)\
         $status\
         $character\
+        $python\
+        $package\
     """
 
 # Generic prompt configurations
@@ -85,3 +87,14 @@ disabled = false
 symbol = ""
 style = "bg:#3a3a3a fg:#ff3322"
 format = "[$symbol$status]($style)"
+
+[python]
+# Display the version of python from inside a local venv.
+#
+# Note this will only work when the venv is inside the project and it will only
+# work in the directory that contains the venv dir but maybe this is ok?
+python_binary = ["./venv/bin/python", "python", "python3", "python2"]
+symbol =""
+
+[package]
+

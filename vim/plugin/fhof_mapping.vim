@@ -36,7 +36,7 @@ vnoremap <LEADER>cc "+y
 
 nnoremap <LEADER>r *<ESC>:%s///g<left><left>
 nnoremap <LEADER>b :??t.<left><left><left>
-nnoremap <LEADER>gb :Gblame<CR>
+nnoremap <LEADER>gb :Git blame<CR>
 "map ; to :
 nnoremap ; :
 
