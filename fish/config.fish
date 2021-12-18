@@ -13,6 +13,8 @@ set theme_project_dir_length 1
 set -g theme_display_git_master_branch yes
 set -U theme_nerd_fonts no
 
+set --export TERMINAL "alacritty"
+
 # reference: https://gist.github.com/netmute/6761892
 # make neovim the default editor
 set --export EDITOR "nvim"

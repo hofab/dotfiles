@@ -22,9 +22,9 @@ format = """\
 
 # Generic prompt configurations
 [character]
-success_symbol = "[[](bg:#AFD700 fg:#3a3a3a)](fg:#AFD700)"
-error_symbol = "[[](bg:#ff3322 fg:#3a3a3a)](fg:#ff3322)"
-vicmd_symbol = "[[](bg:#6f6a70 fg:#3a3a3a)[](bg:#3a3a3a fg:#6f6a70)](bold bg:#6f6a70 fg:#ff3322)"
+success_symbol = "[[](bg:#AFD700 fg:#3a3a3a)](fg:#AFD700)"
+error_symbol = "[[](bg:#ff3322 fg:#3a3a3a)](fg:#ff3322)"
+vicmd_symbol = "[[](bg:#6f6a70 fg:#3a3a3a)[](bg:#3a3a3a fg:#6f6a70)](bold bg:#6f6a70 fg:#ff3322)"
 format = "[[](bg:#3a3a3a)$symbol]($style)"
 
 [line_break]
@@ -37,7 +37,7 @@ read_only_style = "bg:#3a3a3a fg:#3a3a3a"
 truncation_length = 1
 truncation_symbol = "/"
 fish_style_pwd_dir_length = 1
-format = "([[](bg:#3a3a3a fg:#3a3a3a)$read_only[](bg:#3a3a3a fg:#3a3a3a)]($read_only_style))[[](bg:#3a3a3a fg:#3a3a3a)$path[](bg:#3a3a3a fg:#3a3a3a)]($style)"
+format = "([[](bg:#3a3a3a fg:#3a3a3a)$read_only[](bg:#3a3a3a fg:#3a3a3a)]($read_only_style))[[](bg:#3a3a3a fg:#3a3a3a)$path]($style)"
 
 [directory.substitutions]
 "~/Downloads" = " "

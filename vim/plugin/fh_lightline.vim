@@ -12,7 +12,7 @@ let g:lightline = {
       \   'modified': 'LightlineModified',
       \   'filename': 'LightlineFilename'
       \ },
-      \ 'separator': { 'left': '', 'right': '' },
+      \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
 

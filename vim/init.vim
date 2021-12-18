@@ -67,12 +67,12 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AUTOCOMPLETE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has('wildmenu')
-"    set wildmode=list:longest,full
-    set wildignore+=*.a,*.o,*.orig,*~
-    set wildmenu
-    set wildmode=longest,list
-endif
+"if has('wildmenu')
+""    set wildmode=list:longest,full
+"    set wildignore+=*.a,*.o,*.orig,*~
+"    set wildmenu
+"    set wildmode=longest,list
+"endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MOUSE
@@ -136,25 +136,26 @@ au BufRead,BufNewFile *.h setfiletype c
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.config/nvim/plugged')
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " fzf alternative written in rust
 "Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
 "Plug 'lotabout/skim.vim'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-commentary' # sorry tpope you had to go
+Plug 'numToStr/Comment.nvim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-dispatch'
+"Plug 'tpope/vim-dispatch'
 Plug 'itchyny/lightline.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'phaazon/hop.nvim'
 Plug 'mbbill/undotree'
-Plug 'ktchen14/cscope-auto'
+"Plug 'ktchen14/cscope-auto'
 Plug 'dbakker/vim-projectroot'
 Plug 'tommcdo/vim-exchange'
 Plug 'kkoomen/vim-doge'
-"Plug 'stsewd/fzf-checkout.vim'
 
 " add print statement with stuff under cursor, couldn't make it work with normal vim mapping
 Plug 'meain/vim-printer'
@@ -172,9 +173,14 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 "Plug 'nvim-treesitter/completion-treesitter'
+"
+" tabs written in lue
+" Icons already included for treesitter
+"Plug 'kyazdani42/nvim-web-devicons'
+Plug 'akinsho/bufferline.nvim'
 
 " vim-lua
-Plug 'nvim-lua/completion-nvim'
+"Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'folke/todo-comments.nvim'
@@ -192,11 +198,24 @@ Plug 'mcchrish/nnn.vim'
 
 " nvim looks
 Plug 'onsails/lspkind-nvim'
-Plug 'hrsh7th/nvim-compe'
 Plug 'glepnir/lspsaga.nvim'
+
+" nvim autocomplete
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+
+" For vsnip users.
+" Plug 'hrsh7th/cmp-vsnip'
+" Plug 'hrsh7th/vim-vsnip'
+" Plug 'one-harsh/vscode-cpp-snippets'
 
 " auto-pairs that works with compe
 Plug 'windwp/nvim-autopairs'
+
 
 " show key mappings if lost
 Plug 'folke/which-key.nvim'
@@ -210,12 +229,18 @@ Plug 'kevinhwang91/nvim-bqf'
 " reload/restart functionality while running
 Plug 'famiu/nvim-reload'
 
+" yet another orgmode clone for vim - testing
+Plug 'kristijanhusak/orgmode.nvim'
+
 "List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
 let g:deoplete#enable_at_startup = 1
 let g:python3_host_prog = '/usr/bin/python3'
 
+" needed for bufferline
+let g:lightline#extensions#tabline#enabled = 0
+let g:airline#extensions#tabline#enabled = 0
+
 " load lua folder
 lua require("fhof")
-

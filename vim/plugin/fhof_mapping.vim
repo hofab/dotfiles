@@ -2,10 +2,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = "\<SPACE>"
 
-" reload vim config
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <LEADER>rnv :so $MYVIMRC
-
 " custom mapping to my liking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <LEADER>k <C-W>k
@@ -100,25 +96,12 @@ map <LEADER>a <Plug>(easymotion-bd-w)
 " s{char}{char} to move to {char}{char}
 nmap <LEADER><LEADER>s <Plug>(easymotion-overwin-f2)
 
-" " coc.vim selection with TAB
-" inoremap <silent><expr> <TAB>
-"       \ pumvisible() ? "\<C-n>" :
-"       \ <SID>check_back_space() ? "\<TAB>" :
-"       \ coc#refresh()
-" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 " Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Set completeopt to have a better completion experience
-" set completeopt=menuone,noinsert,noselect
+" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Avoid showing message extra message when using completion
 set shortmess+=c
-
-imap <tab> <Plug>(completion_smart_tab)
-imap <s-tab> <Plug>(completion_smart_s_tab)
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -136,3 +119,19 @@ nnoremap <LEADER>do :Dox <CR>
 
 " reload vimrc
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
+
+" delete buffers with bufferline
+nnoremap <LEADER>dt :bdelete <CR>
+nnoremap gt :BufferLineCycleNext <CR>
+nnoremap gT :BufferLineCyclePrev <CR>
+" make bufferline behave as normal nvim with 1gt > go to first buffer
+nnoremap 1gt :BufferLineGoToBuffer 1<CR>
+nnoremap 2gt :BufferLineGoToBuffer 2<CR>
+nnoremap 3gt :BufferLineGoToBuffer 3<CR>
+nnoremap 4gt :BufferLineGoToBuffer 4<CR>
+nnoremap 5gt :BufferLineGoToBuffer 5<CR>
+nnoremap 6gt :BufferLineGoToBuffer 6<CR>
+nnoremap 7gt :BufferLineGoToBuffer 7<CR>
+nnoremap 8gt :BufferLineGoToBuffer 8<CR>
+nnoremap 9gt :BufferLineGoToBuffer 9<CR>
+

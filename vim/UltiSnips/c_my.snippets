@@ -113,3 +113,8 @@ endsnippet
 snippet td "todo"
 // @todo fhof: ${1:bla}
 endsnippet
+
+snippet pdefine
+const char *${1:string} = {${2:DEFINE}};
+moduleLogError(moduleAddr, "%s", $1[${3:ENTRY}]);
+endsnippet

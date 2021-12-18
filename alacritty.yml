@@ -10,7 +10,7 @@ env:
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  # TERM: tmux-256color
+  TERM: tmux-256color
   WINIT_X11_SCALE_FACTOR: "1"
 
 window:
@@ -112,7 +112,6 @@ scrolling:
 # Font configuration (changes require restart)
 font:
   normal:
-    #family: Iosevka Term # should be "Menlo" or something on macOS.
     family: UbuntuMono Nerd Font Mono # should be "Menlo" or something on macOS.
     style: Regular
   # Normal (roman) font face
