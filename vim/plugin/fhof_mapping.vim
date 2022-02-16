@@ -2,6 +2,10 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = "\<SPACE>"
 
+" reload vim config
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <LEADER>rnv :so $MYVIMRC
+
 " custom mapping to my liking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <LEADER>k <C-W>k
@@ -13,12 +17,12 @@ map <LEADER>j <C-W>j
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <LEADER>w :w<CR>
 nnoremap <LEADER>[ <S-V>i{<C-K>
-nnoremap <LEADER>cs :!cscope -bcqR<CR><ESC> :cs reset<CR><ESC>
-nmap <LEADER>f :vs<CR><C-W>l:execute 'Files' ProjectRootGuess()<CR>
-nmap <LEADER>o :execute 'Files' ProjectRootGuess()<CR>
+"nnoremap <LEADER>cs :!cscope -bcqR<CR><ESC> :cs reset<CR><ESC>
+" nmap <LEADER>f :vs<CR><C-W>l:call FileSearch()<CR>
+" nmap <LEADER>o :call FileSearch()<CR>
 nmap <LEADER>s <C-Z>
 nmap <LEADER>q :qa<CR>
-nmap <LEADER>t :tabe<CR>:execute 'Files' ProjectRootGuess()<CR>
+" nmap <LEADER>t :tabe<CR>:execute 'Files' ProjectRootGuess()<CR>
 nmap <LEADER>ut :UndotreeToggle <CR>
 " delete to beginning of the line and join with line above
 nmap <LEADER><LEADER>j d0kJ
@@ -33,29 +37,17 @@ vnoremap <LEADER>cc "+y
 nnoremap <LEADER>r *<ESC>:%s///g<left><left>
 nnoremap <LEADER>b :??t.<left><left><left>
 nnoremap <LEADER>gb :Gblame<CR>
-nnoremap <LEADER>rg :Find<CR>
 "map ; to :
 nnoremap ; :
 
 inoremap jj <ESC>
+inoremap jk <ESC>
 inoremap kk <ESC>
+inoremap kj <ESC>
 
 " variable dispatch command
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <LEADER>mk :Dispatch make -f MakePldMx15Zn_CMX SW_PN=76589 SW_VER=01 SW_REV=X -j
-
-" coc and ccls mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" " Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
 
 " custom inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -68,32 +60,24 @@ vmap <LEADER>if d<ESC>iif(){<CR>}<ESC>kpk3li
 
 " use cscope as default
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has("cscope")
-    set csprg=cscope
-    set csto=0
-    set cst
-    " add any database in current directory
-    " if filereadable("cscope.out")
-    "     silent cs add cscope.out
-    " " else add database pointed to by environment
-    " elseif $CSCOPE_DB != ""
-    "     silent cs add $CSCOPE_DB
-    " endif
-endif
-
-" no idea what this does :/
-map <LEADER>gf :cs find 3 <C-R>=expand("<cword>")<CR><CR>
+" if has("cscope")
+"     set csprg=cscope
+"     set csto=0
+"     set cst
+"     " add any database in current directory
+"     " if filereadable("cscope.out")
+"     "     silent cs add cscope.out
+"     " " else add database pointed to by environment
+"     " elseif $CSCOPE_DB != ""
+"     "     silent cs add $CSCOPE_DB
+"     " endif
+" endif
 
 " use clang format
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if filereadable("/usr/share/clang/clang-format-10/clang-format.py")
-    map <LEADER>k :py3f /usr/share/clang/clang-format-10/clang-format.py<cr>
-    imap <C-K> <c-o>:py3f /usr/share/clang/clang-format-10/clang-format.py<cr>
-endif
-
-if filereadable("/home/linuxbrew/.linuxbrew/share/clang/clang-format.py")
-    map <LEADER>k :py3f /home/linuxbrew/.linuxbrew/share/clang/clang-format.py<cr>
-    imap <C-K> <c-o>:py3f /home/linuxbrew/.linuxbrew/share/clang/clang-format.py<cr>
+if filereadable("/usr/share/clang/clang-format-15/clang-format.py")
+    map <LEADER>k :py3f /usr/share/clang/clang-format-15/clang-format.py<cr>
+    imap <C-K> <c-o>:py3f /usr/share/clang/clang-format-15/clang-format.py<cr>
 endif
 
 "" easymotion configuration
@@ -108,16 +92,36 @@ map <LEADER>a <Plug>(easymotion-bd-w)
 " s{char}{char} to move to {char}{char}
 nmap <LEADER><LEADER>s <Plug>(easymotion-overwin-f2)
 
-" deoplete selection with TAB
-inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+" " coc.vim selection with TAB
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-"" try something new auto generate log from hovered over word
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-nmap <LEADER>pv yiw<ESC>owpv<C-J><ESC><right>ciw<C-R>0<ESC>
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+
+imap <tab> <Plug>(completion_smart_tab)
+imap <s-tab> <Plug>(completion_smart_s_tab)
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 "" resize window to 120 and 106
 map <LEADER>y :call ToogleColumnWidth() <CR>
 
-nmap <LEADER>rl p<CR>kddyy
+" DoxygenToolkit mapping
+nnoremap <LEADER>do :Dox <CR>
 
+" reload vimrc
+nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>

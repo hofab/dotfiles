@@ -3,6 +3,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 
+colorscheme fhof
 
 "Convert tabs to spaces
 set expandtab
@@ -84,11 +85,11 @@ set mouse=a     " Enable all mouse behaviour (the default).
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("autocmd")
 " Remove trailing whitepsaces for each line on save.
-" Highlight text that goes past the 80 line limit.
-augroup vimrc_autocmds
-  autocmd BufEnter * highlight OverLength ctermbg=7 ctermfg=0 guibg=#707070
-  autocmd BufEnter * match OverLength /\%133v.*/
-augroup END
+" Highlight text that goes past the 133 line limit.
+" augroup vimrc_autocmds
+"   autocmd BufEnter * highlight OverLength ctermbg=7 ctermfg=0
+"   autocmd BufEnter * match OverLength /\%133v.*/
+" augroup END
 
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -135,8 +136,6 @@ au BufRead,BufNewFile *.h setfiletype c
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.config/nvim/plugged')
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -146,30 +145,69 @@ Plug 'tpope/vim-dispatch'
 Plug 'itchyny/lightline.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/undotree'
-Plug 'ktchen14/cscope-auto'
+"Plug 'ktchen14/cscope-auto'
 Plug 'dbakker/vim-projectroot'
-Plug 'jiangmiao/auto-pairs'
 Plug 'tommcdo/vim-exchange'
 Plug 'kkoomen/vim-doge'
-" add print statement with stuff under cursor, couldn't make it work with normal vim mapping
+
+"add print statement with stuff under cursor, couldn't make it work with normal vim mapping
 Plug 'meain/vim-printer'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'jackguo380/vim-lsp-cxx-highlight', { 'for': ['c', 'cpp'] }
-" List ends here. Plugins become visible to Vim after this call.
+Plug 'guns/xterm-color-table.vim'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'vimwiki/vimwiki'
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown'}
+
+" Plebvim lsp Plugins
+Plug 'neovim/nvim-lspconfig'
+Plug 'tjdevries/nlua.nvim'
+
+" Neovim Tree shitter
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
+Plug 'nvim-treesitter/completion-treesitter'
+
+" vim-lua
+Plug 'nvim-lua/completion-nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'folke/todo-comments.nvim'
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+
+" vim-telescope
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+" nnn in vim
+Plug 'mcchrish/nnn.vim'
+
+" nvim looks
+Plug 'onsails/lspkind-nvim'
+Plug 'hrsh7th/nvim-compe'
+
+" auto-pairs that works with compe
+Plug 'windwp/nvim-autopairs'
+
+" show key mappings if lost
+Plug 'folke/which-key.nvim'
+
+" colorizes rgb etc in files
+Plug 'norcalli/nvim-colorizer.lua'
+
+" better quick fix
+Plug 'kevinhwang91/nvim-bqf'
+
+" reload/restart functionality while running
+Plug 'famiu/nvim-reload'
+
+" CSS colors
+Plug 'ap/vim-css-color'
+
+"List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
 let g:deoplete#enable_at_startup = 1
-let g:python3_host_prog = '/home/linuxbrew/.linuxbrew/bin//python3'
+let g:python3_host_prog = '/usr/bin/python3'
 
-"execute pathogen#infect()
-runtime config/wescamSyntax.vim
-"source ~/.vim/config/colorhighlighting.vim
-runtime config/fh_lightline.vim
-runtime config/customFunctions.vim
-runtime config/fhof_mapping.vim
-runtime config/UltiSnipConfig.vim
-runtime config/fzf_config.vim
-runtime config/lsp_colors.vim
+" load lua folder
+lua require("fhof")
 
-colorscheme fhof

@@ -1,0 +1,6 @@
+require("fhof.treesitter")
+require("fhof.nvim-comp")
+require("fhof.lspkind")
+require("fhof.devicons")
+require("fhof.autopairs")
+require("fhof.todo")

@@ -7,13 +7,14 @@ function ical --description 'Copy all relevant data for inner call'
 
     echo $path_
     mkdir -p $path_
-    cp ~/release/gimbalPositionSensors.c $path_
-    cp ~/release/gimbalCtrl.c $path_
-    cp ~/maint/ia_cal_mod.sc $path_
+#    cp ~/release/gimbalPositionSensors.c $path_
+#    cp ~/release/gimbalCtrl.c $path_
+#    cp ~/maint/ia_cal_mod.sc $path_
     mv ~/maint/mx15_ia_cal.log $path_
     mv ~/maint/mx15_ia_cal_results.log $path_
-    mv ~/maint/test.log $path_
-    mv ~/maint/test_1.log $path_
+    mv ~/maint/mx15_initial_state.log $path_
+#    mv ~/maint/test.log $path_
+#    mv ~/maint/test_1.log $path_
     cd $path_
     if test -f test_1.log
         cp test_1.log back_1.log; and sed -i -e '/^[^J]/d' test_1.log; and sed -i -e '/^[[:space:]]*$/d' test_1.log; and sed -i -e 's/^J.*>//g' test_1.log

@@ -1,7 +1,7 @@
 priority 0
 # WESCAM specific c templates
 snippet wifel "Wescam if statement"
-if(${1:!statement}) {
+if (${1:!statement}) {
     ${VISUAL:CODE}
 }
 else {
@@ -10,7 +10,7 @@ else {
 endsnippet
 
 snippet wif "Wescam if statement"
-if(${1:!statement}) {
+if (${1:!statement}) {
     ${2:CODE}
 }
 endsnippet
@@ -94,6 +94,10 @@ endsnippet
 
 snippet wpu "Wescam print Unity"
 moduleLogError(11, "${1:unity}: %+.3f", $1 / UNITY_FLOAT);
+endsnippet
+
+snippet uh "Wescam moduleLogAssert Unhandled Case"
+moduleAssert(${1:moduleAddr}, UNHANDLED_CASE);                                              │     * Called from: Any state
 endsnippet
 
 snippet td "todo"

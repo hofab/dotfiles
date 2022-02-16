@@ -6,7 +6,7 @@
 " =============================================================================
 let s:NORMAL_TEXT= [ '#4e4e4e', 239 ]
 let s:LIGHT_TEXT= [ '#dadada', 253 ]
-let s:NORMAL_BGRND= [ '#800080', 5 ]
+let s:NORMAL_BGRND= [ '#af00af', 5 ]
 let s:base03 = [ '#242424', 235 ]
 let s:base023 = [ '#353535 ', 236 ]
 let s:base02 = [ '#444444 ', 238 ]

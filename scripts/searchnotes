@@ -1,0 +1,3 @@
+#!/bin/sh
+
+nvim -c "lua require('fhof.telescope').search_notes()<CR>"

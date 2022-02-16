@@ -12,6 +12,7 @@ if not set -q fish_initialized
     abbr --add gbb      'git checkout -b bugfix/fh/'
     abbr --add gcom     'git checkout master'
     abbr --add grf      'git checkout --'
+    abbr --add gcu      'git clean -fd'
     abbr --add gcp      'git cherry-pick'
     abbr --add gcpa     'git cherry-pick --abort'
     abbr --add gcpc     'git cherry-pick --continue'
@@ -80,29 +81,21 @@ if not set -q fish_initialized
 #make shortcuts
     abbr --add mca      'make cleanall'
 
-#make.py shortcuts
-    abbr --add mpc      'make.py clean'
-    abbr --add mp       'make.py'
-
 #useful stuff
     abbr --add efc      'nvim ~/dotfiles/fish/config.fish'
+    abbr --add ei       'nvim ~/dotfiles/i3/config'
+    abbr --add et       'nvim ~/dotfiles/tmux.conf'
     abbr --add efia     'nvim ~/dotfiles/fish/completions/abbrs.fish'
     abbr --add evrc     'nvim ~/dotfiles/vim/init.vim'
     abbr --add evm      'nvim ~/dotfiles/vim/config/fhof_mapping.vim'
     abbr --add ecs      'nvim ~/dotfiles/vim/UltiSnips/c_my.snippets'
     abbr --add zd       'z ~/Downloads'
-    abbr --add zm       'z ~/maint'
-    abbr --add zc       'z ~/cfgdb'
-    abbr --add zb       'z sw-builds'
-    abbr --add zr       'z ~/release'
-    abbr --add mi       'maint -i 142.65.'
-    abbr --add rsse     'rsync fhof@pyrite:/home/sw-eng/builds/ -avzuP'
     abbr --add o        'nvim'
-    abbr --add ov       'nvim *.vdd'
     abbr --add ca       'rm *.{hex,elf,map,bin}'
     abbr --add sd       'exa -lR | rg -i'
     abbr --add sc       'rg -i -tc'
     abbr --add sg       'gb -1000 | rg -i'
+    abbr --add rg       'rg -i'
     abbr --add rsw      'rm /home/fhof/.local/share/nvim/swap/*'
 
 #merge history of several fish instances

@@ -1,8 +1,3 @@
-
-[user]
-    name = Fabian Hof
-    email = Fabian.Hof@l3t.com
-
 #################################
 # Core variables
 #################################
@@ -27,7 +22,7 @@
 [merge]
     tool = diffuse
     algorithm = patience
-	renamelimit = 4096
+    renamelimit = 4096
 [mergetool]
     prompt = no
 [mergetool "diffuse"]
