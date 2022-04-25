@@ -21,7 +21,10 @@ require('telescope').setup {
         file_sorter = require('telescope.sorters').get_fzy_sorter,
         file_ignore_patterns = {},
         generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
-        shorten_path = true,
+        path_display = {
+            "shorten",
+        },
+        -- shorten_path = true,
         winblend = 0,
         width = 0.75,
         preview_cutoff = 120,
@@ -58,6 +61,7 @@ M.search_dotfiles = function()
     require("telescope.builtin").find_files({
         prompt_title = "< Dotfiles >",
         cwd = "$HOME/dotfiles/",
+        path_display = { "shorten" },
     })
 end
 
@@ -65,16 +69,9 @@ M.search_notes = function()
     require("telescope.builtin").live_grep({
         prompt_title = "< Notes >",
         cwd = "$HOME/Notes/",
+        path_display = { "shorten" },
     })
 end
-
-M.search_cfgdb = function()
-    require("telescope.builtin").live_grep({
-        prompt_title = "< CFG_DB >",
-        cwd = "$HOME/cfgdb/",
-    })
-end
-
 
 M.git_branches = function()
     require("telescope.builtin").git_branches({

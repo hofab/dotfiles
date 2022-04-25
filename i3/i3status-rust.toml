@@ -3,6 +3,7 @@ name = "modern"
 [theme.overrides]
 idle_bg = "#EEEEEE"
 idle_fg = "#0D0D0D"
+separator= ""
 
 [icons]
 name = "awesome"
@@ -21,19 +22,20 @@ info_type = "used"
 format = "{icon} {used}/{total} ({available} free)"
 alert_absolute = true
 unit = "GB"
-alert = 400
-warning = 450
+alert = 175
+warning = 200
 
 #[[block]]
 #block = "weather"
 #format = "{temp}°C {weather}, {wind}m/s {direction}"
 #service = { name = "openweathermap", api_key = "82b3c5fede9070e99419dde454a2db96", city_id = "5969785", units = "metric" }
 
-[[block]]
-block = "net"
-device = "wlo1"
-format = "{ssid} {signal_strength} {speed_down;K*b}"
-interval = 5
+#[[block]]
+#block = "net"
+##device = "wlo1"
+#device = "wlp0s20f3"
+#format = "{ssid} {signal_strength} {speed_down;K*b}"
+#interval = 5
 
 #[[block]]
 #block = "net"

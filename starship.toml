@@ -31,9 +31,9 @@ format = "[[](bg:#3a3a3a)$symbol]($style)"
 disabled = true
 
 [directory]
-style = "italic bg:#EEEEEE fg:#3a3a3a"
+style = "italic bg:#3a3a3a fg:#dadada"
 read_only = ""
-read_only_style = "bg:#3a3a3a fg:#3a3a3a"
+read_only_style = "bg:#3a3a3a fg:#dadada"
 truncation_length = 1
 truncation_symbol = "/"
 fish_style_pwd_dir_length = 1

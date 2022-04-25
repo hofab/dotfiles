@@ -1,3 +1,3 @@
 function gpub
-    git push -u origin (gbn)
+    git push -u $argv (gbn)
 end

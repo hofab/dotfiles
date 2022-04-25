@@ -13,8 +13,12 @@ let g:lightline = {
       \   'filename': 'LightlineFilename'
       \ },
       \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
+      \ 'subseparator': { 'left': '', 'right': '' }
       \ }
+
+let g:lightline.tab = {
+    \ 'active': [ 'filename', 'modified' ],
+    \ 'inactive': [ 'tabnum', 'filename', 'modified' ] }
 
 function! LightlineModified()
   if &filetype == "help"
@@ -42,6 +46,7 @@ function! LightlineFugitive()
   if exists("*fugitive#head")
     let branch = fugitive#head()
     return branch !=# '' ? ' '.branch : ''
+
   endif
   return ''
 endfunction

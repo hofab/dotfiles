@@ -14,11 +14,8 @@ map <LEADER>j <C-W>j
 nnoremap <LEADER>w :w<CR>
 nnoremap <LEADER>[ <S-V>i{<C-K>
 nnoremap <LEADER>cs :!cscope -bcqR<CR><ESC> :cs reset<CR><ESC>
-" nmap <LEADER>f :vs<CR><C-W>l:call FileSearch()<CR>
-" nmap <LEADER>o :call FileSearch()<CR>
 nmap <LEADER>s <C-Z>
 nmap <LEADER>q :qa<CR>
-" nmap <LEADER>t :tabe<CR>:execute 'Files' ProjectRootGuess()<CR>
 nmap <LEADER>ut :UndotreeToggle <CR>
 " delete to beginning of the line and join with line above
 nmap <LEADER><LEADER>j d0kJ
@@ -40,10 +37,6 @@ inoremap jj <ESC>
 inoremap jk <ESC>
 inoremap kk <ESC>
 inoremap kj <ESC>
-
-" variable dispatch command
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <LEADER>mk :Dispatch make -f MakePldMx15Zn_CMX SW_PN=76589 SW_VER=01 SW_REV=X -j
 
 " custom inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -79,9 +72,9 @@ if filereadable("/usr/share/clang/clang-format.py")
     imap <C-K> <c-o>:py3f /usr/share/clang/clang-format.py<cr>
 endif
 
-if filereadable("/usr/share/clang/clang-format-10/clang-format.py")
-    map <LEADER>k :py3f /usr/share/clang/clang-format-10/clang-format.py<cr>
-    imap <C-K> <c-o>:py3f /usr/share/clang/clang-format-10/clang-format.py<cr>
+if filereadable("/usr/share/clang/clang-format-15/clang-format.py")
+    map <LEADER>k :py3f /usr/share/clang/clang-format-15/clang-format.py<cr>
+    imap <C-K> <c-o>:py3f /usr/share/clang/clang-format-15/clang-format.py<cr>
 endif
 
 "" easymotion configuration
@@ -121,17 +114,17 @@ nnoremap <LEADER>do :Dox <CR>
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 
 " delete buffers with bufferline
-nnoremap <LEADER>dt :bdelete <CR>
-nnoremap gt :BufferLineCycleNext <CR>
-nnoremap gT :BufferLineCyclePrev <CR>
+" nnoremap <LEADER>dt :bdelete <CR>
+" nnoremap gt :BufferLineCycleNext <CR>
+" nnoremap gT :BufferLineCyclePrev <CR>
 " make bufferline behave as normal nvim with 1gt > go to first buffer
-nnoremap 1gt :BufferLineGoToBuffer 1<CR>
-nnoremap 2gt :BufferLineGoToBuffer 2<CR>
-nnoremap 3gt :BufferLineGoToBuffer 3<CR>
-nnoremap 4gt :BufferLineGoToBuffer 4<CR>
-nnoremap 5gt :BufferLineGoToBuffer 5<CR>
-nnoremap 6gt :BufferLineGoToBuffer 6<CR>
-nnoremap 7gt :BufferLineGoToBuffer 7<CR>
-nnoremap 8gt :BufferLineGoToBuffer 8<CR>
-nnoremap 9gt :BufferLineGoToBuffer 9<CR>
-
+" nnoremap 1gt :BufferLineGoToBuffer 1<CR>
+" nnoremap 2gt :BufferLineGoToBuffer 2<CR>
+" nnoremap 3gt :BufferLineGoToBuffer 3<CR>
+" nnoremap 4gt :BufferLineGoToBuffer 4<CR>
+" nnoremap 5gt :BufferLineGoToBuffer 5<CR>
+" nnoremap 6gt :BufferLineGoToBuffer 6<CR>
+" nnoremap 7gt :BufferLineGoToBuffer 7<CR>
+" nnoremap 8gt :BufferLineGoToBuffer 8<CR>
+" nnoremap 9gt :BufferLineGoToBuffer 9<CR>
+"

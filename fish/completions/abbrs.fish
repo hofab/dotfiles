@@ -9,7 +9,6 @@ if not set -q fish_initialized
     abbr --add gco      'git checkout'
     abbr --add gnb      'git checkout -b fh/'
     abbr --add gfb      'git checkout -b feature/fh/'
-    abbr --add gbb      'git checkout -b bugfix/fh/'
     abbr --add gcom     'git checkout master'
     abbr --add grf      'git checkout --'
     abbr --add gcp      'git cherry-pick'
@@ -71,6 +70,7 @@ if not set -q fish_initialized
     abbr --add rf       'rm -rf'
     abbr --add rA       'rm -rf *'
     abbr --add ll       'exa -l'
+    abbr --add lll      '..; and exa -l'
     abbr --add lr       'exa -lR'
     abbr --add la       'exa -la'
 
@@ -81,32 +81,21 @@ if not set -q fish_initialized
 #make shortcuts
     abbr --add mca      'make cleanall'
 
-#make.py shortcuts
-    abbr --add mpc      'make.py clean'
-    abbr --add mp       'make.py'
-
 #useful stuff
-    abbr --add efc      'nvim ~/dotfiles/fish/config.fish'
     abbr --add ei       'nvim ~/dotfiles/i3/config'
     abbr --add et       'nvim ~/dotfiles/tmux.conf'
-    abbr --add efia     'nvim ~/dotfiles/fish/completions/abbrs.fish'
     abbr --add evrc     'nvim ~/dotfiles/vim/init.vim'
+    abbr --add efc      'nvim ~/dotfiles/fish/config.fish'
+    abbr --add efia     'nvim ~/dotfiles/fish/completions/abbrs.fish'
     abbr --add evm      'nvim ~/dotfiles/vim/config/fhof_mapping.vim'
     abbr --add ecs      'nvim ~/dotfiles/vim/UltiSnips/c_my.snippets'
     abbr --add zd       'z ~/Downloads'
-    abbr --add zm       'z ~/maint'
-    abbr --add zc       'z ~/cfgdb'
-    abbr --add zb       'z sw-builds'
-    abbr --add zr       'z ~/release'
-    abbr --add mi       'maint -i 142.65.'
-    abbr --add rsse     'rsync fhof@pyrite:/home/sw-eng/builds/ -avzuP'
     abbr --add o        'nvim'
-    abbr --add ov       'nvim *.vdd'
-    abbr --add ca       'rm *.{hex,elf,map,bin}'
     abbr --add sd       'exa -lR | rg -i'
-    abbr --add sc       'rg -i -tc'
+    abbr --add sc       'rg -iu -tc'
     abbr --add sg       'gb -1000 | rg -i'
     abbr --add rsw      'rm /home/fhof/.local/share/nvim/swap/*'
+    abbr --add chssh    'sshpass -f ~/.config/.auth/kepler@ut2 ssh -q ut2-1 exit; and echo $status'
 
 #merge history of several fish instances
     abbr --add mhi      'history --merge'
@@ -116,11 +105,13 @@ if not set -q fish_initialized
     abbr --add dki      'docker images'
     abbr --add dkstop   'docker stop `docker ps -q`'
     abbr --add dkps     'docker ps --format "{{.ID}} ~ {{.Names}} ~ {{.Status}} ~ {{.Image}}"'
+    abbr --add drio     'docker run -it --rm --name="draw" -p 8080:8080 -p 8443:8443 jgraph/drawio'
 
 # make reset of abbreviations easy
     abbr --add ars      'set -e fish_user_abbreviations; set -e fish_initialized'
 
 # tmux dev environment start
     abbr --add tmx      'tmux attach -d -t fhof'
+#
     set -U fish_initialized
 end

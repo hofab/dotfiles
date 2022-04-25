@@ -131,13 +131,26 @@ autocmd BufWritePost *.cpp,*.h,*.c call UpdateTags()
 "set .h filetype as c, so that we can use C-snippets
 au BufRead,BufNewFile *.h setfiletype c
 
+function! <SID>AutoProjectRootCD()
+  try
+    if &ft != 'help'
+      ProjectRootCD
+    endif
+  catch
+    " Silently ignore invalid buffers
+  endtry
+endfunction
+
+autocmd BufEnter * call <SID>AutoProjectRootCD()
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGINS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.config/nvim/plugged')
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " fzf alternative written in rust
 "Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
 "Plug 'lotabout/skim.vim'
@@ -177,7 +190,7 @@ Plug 'nvim-treesitter/playground'
 " tabs written in lue
 " Icons already included for treesitter
 "Plug 'kyazdani42/nvim-web-devicons'
-Plug 'akinsho/bufferline.nvim'
+"Plug 'akinsho/bufferline.nvim'
 
 " vim-lua
 "Plug 'nvim-lua/completion-nvim'
@@ -239,8 +252,8 @@ let g:deoplete#enable_at_startup = 1
 let g:python3_host_prog = '/usr/bin/python3'
 
 " needed for bufferline
-let g:lightline#extensions#tabline#enabled = 0
-let g:airline#extensions#tabline#enabled = 0
+" let g:lightline#extensions#tabline#enabled = 0
+" let g:airline#extensions#tabline#enabled = 0
 
 " load lua folder
 lua require("fhof")
