@@ -24,13 +24,12 @@ function ctemplate --description 'Create .c/.h-files for a new "module"'
 #ifndef $UPPER_ARGV""_H_
 #define $UPPER_ARGV""_H_
 #ifdef __cplusplus
-extern "C" {
+extern ""C"" {
 #endif
 
 // <CODE>
 
 #ifdef __cplusplus
-extern "C"
 }
 #endif
 /** @} */
