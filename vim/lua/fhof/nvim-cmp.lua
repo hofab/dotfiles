@@ -68,6 +68,7 @@ require'lspconfig'.pyright.setup{
   capabilities = capabilities
 }
 require'lspconfig'.clangd.setup{
-  capabilities = capabilities
+  capabilities = capabilities,
+  root_dir = function() return "/home/fhof/kepler/c/pch_reliable_boot" end
 }
 
