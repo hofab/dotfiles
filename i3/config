@@ -9,11 +9,11 @@ set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 set $default_border none
-set $default_floating_border normal
+set $default_floating_border none
 
 # Hide borders
-set $hide_edge_borders none
-set $border none
+#set $hide_edge_borders none
+#set $border none
 
 # change borders
 bindsym $mod+u border none
@@ -204,6 +204,7 @@ for_window [class="qalculate-gtk"] floating enable border pixel 1
 #for_window [class="Xfburn"] floating enable
 
 bindsym $mod+n exec alacritty -t "floating_ala" -e fish -c "nnn -eE"
+bindsym $mod+p exec alacritty -e fish -c "tmux attach -d -t fhof"
 for_window [class="Alacritty" title="floating_ala"] floating enable, border pixel 1
 for_window [ title="notetaker_window" ] floating enable, border pixel 1
 bindsym $mod+Shift+n exec alacritty -t "notetaker_window" -e /home/fhof/dotfiles/scripts/notetaker
@@ -430,8 +431,8 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-#assign [title="main_term"] $ws2
-#assign [title="teams"] $ws5
+assign [title="main_term"] $ws2
+assign [title="teams"] $ws5
 
 # setup applications as desired
 #exec compton

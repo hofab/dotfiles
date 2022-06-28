@@ -15,14 +15,8 @@ function ctemplate --description 'Create .c/.h-files for a new "module"'
  *
  * @note Assumptions:
  */
-/**
- * @addtogroup <DUMMY>
- * @{
- */
 #pragma once
 
-#ifndef $UPPER_ARGV""_H_
-#define $UPPER_ARGV""_H_
 #ifdef __cplusplus
 extern ""C"" {
 #endif
@@ -32,13 +26,11 @@ extern ""C"" {
 #ifdef __cplusplus
 }
 #endif
-/** @} */
-#endif  // $UPPER_ARGV""_H_
 ">$argv.h
             # create and write c-file
             touch $argv.c
             echo "/**
- * @file
+ * @file $argv.c
  * @copyright Copyright 2022 Kepler Communications Inc.
  * @brief <DUMMY>
  */
