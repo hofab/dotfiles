@@ -65,10 +65,23 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 -- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 -- didn't work for me for some reason enter deleted the line completely
 require'lspconfig'.pyright.setup{
-  capabilities = capabilities
+  capabilities = capabilities;
+  root_dir = require('lspconfig/util').root_pattern(".gitignore"),
 }
 require'lspconfig'.clangd.setup{
-  capabilities = capabilities,
-  root_dir = function() return "/home/fhof/kepler/c/pch_reliable_boot" end
+    capabilities = capabilities;
+    on_attach = on_attach;
+    flags = {
+        debounce_text_changes = 150,
+    },
+    cmd = {
+        "clangd",
+        "--background-index",
+    },
+    filetypes = { "c", "cpp", "objc", "objcpp" },
+    -- on_init = function to handle changing offsetEncoding
+    root_dir = require('lspconfig/util').root_pattern("compile_commands.json", "compile_flags.txt"),
+    -- root_dir = root_pattern("compile_commands.json", "compile_flags.txt", ".git") or dirname
+--  capabilities = capabilities,
+--  root_dir = function() return "/home/fhof/kepler/c/pch_reliable_boot" end
 }
-

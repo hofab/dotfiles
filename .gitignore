@@ -84,3 +84,4 @@ cfg.mak
 .clang-format
 vim/plugged/*
 vim/autoload/*
+fish/fundle/**

@@ -4,10 +4,10 @@ let mapleader = "\<SPACE>"
 
 " custom mapping to my liking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <LEADER>k <C-W>k
-map <LEADER>h <C-W>h
-map <LEADER>l <C-W>l
-map <LEADER>j <C-W>j
+nnoremap <LEADER>k <C-W>k
+nnoremap <LEADER>h <C-W>h
+nnoremap <LEADER>l <C-W>l
+nnoremap <LEADER>j <C-W>j
 
 " shortcuts to make my life easier
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -27,6 +27,9 @@ nmap <LEADER>v ciw<C-r>0<ESC>
 nnoremap <LEADER>cc "+yiw
 vnoremap <LEADER>cc "+y
 
+" <LEADER>p is occupied by vim-printer
+nnoremap <LEADER>pp :pu<CR>
+
 nnoremap <LEADER>r *<ESC>:%s///g<left><left>
 nnoremap <LEADER>b :??t.<left><left><left>
 nnoremap <LEADER>gb :Git blame<CR>
@@ -41,29 +44,8 @@ inoremap kj <ESC>
 " custom inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " doxygen line comment
-map <LEADER>dc $a<TAB>/**<  */<ESC>2hi
-map <LEADER>lc $a<TAB>/*  */<ESC>2hi
-" surround code with if-statement
-vmap <LEADER>if d<ESC>iif(){<CR>}<ESC>kpk3li
-
-
-" use cscope as default
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has("cscope")
-    set csprg=cscope
-    set csto=0
-    set cst
-    " add any database in current directory
-    " if filereadable("cscope.out")
-    "     silent cs add cscope.out
-    " " else add database pointed to by environment
-    " elseif $CSCOPE_DB != ""
-    "     silent cs add $CSCOPE_DB
-    " endif
-endif
-
-" no idea what this does :/
-map <LEADER>gf :cs find 3 <C-R>=expand("<cword>")<CR><CR>
+nmap <LEADER>dc $a<TAB>/**<  */<ESC>2hi
+nmap <LEADER>lc $a<TAB>/*  */<ESC>2hi
 
 " use clang format
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -80,11 +62,11 @@ endif
 "" easymotion configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Move to line
-map <LEADER><LEADER>l <Plug>(easymotion-bd-jk)
+nmap <LEADER><LEADER>l <Plug>(easymotion-bd-jk)
 nmap <LEADER><LEADER>l <Plug>(easymotion-overwin-line)
 
 " Beginning of word forward and backward
-map <LEADER>a <Plug>(easymotion-bd-w)
+nmap <LEADER>a <Plug>(easymotion-bd-w)
 
 " s{char}{char} to move to {char}{char}
 nmap <LEADER><LEADER>s <Plug>(easymotion-overwin-f2)
@@ -101,9 +83,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-"" try something new auto generate log from hovered over word
-nmap <LEADER>pv yiw<ESC>owpv<C-J><ESC><right>ciw<C-R>0<ESC>
-
 "" resize window to 120 and 106
 map <LEADER>y :call ToogleColumnWidth() <CR>
 
@@ -112,19 +91,3 @@ nnoremap <LEADER>do :Dox <CR>
 
 " reload vimrc
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
-
-" delete buffers with bufferline
-" nnoremap <LEADER>dt :bdelete <CR>
-" nnoremap gt :BufferLineCycleNext <CR>
-" nnoremap gT :BufferLineCyclePrev <CR>
-" make bufferline behave as normal nvim with 1gt > go to first buffer
-" nnoremap 1gt :BufferLineGoToBuffer 1<CR>
-" nnoremap 2gt :BufferLineGoToBuffer 2<CR>
-" nnoremap 3gt :BufferLineGoToBuffer 3<CR>
-" nnoremap 4gt :BufferLineGoToBuffer 4<CR>
-" nnoremap 5gt :BufferLineGoToBuffer 5<CR>
-" nnoremap 6gt :BufferLineGoToBuffer 6<CR>
-" nnoremap 7gt :BufferLineGoToBuffer 7<CR>
-" nnoremap 8gt :BufferLineGoToBuffer 8<CR>
-" nnoremap 9gt :BufferLineGoToBuffer 9<CR>
-"

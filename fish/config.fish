@@ -42,3 +42,5 @@ fundle init
 
 source "$HOME/.config/fish/completions/abbrs.fish"
 starship init fish | source
+
+pyenv init - | source

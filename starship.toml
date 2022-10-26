@@ -42,7 +42,7 @@ format = "([[](bg:#3a3a3a fg:#3a3a3a)$read_only[](bg:#3a3a3a fg:#3a3a3a)](
 [directory.substitutions]
 "~/Downloads" = " "
 "~/projects" = " "
-"~" = ""
+"~" = " "
 
 [git_branch]
 symbol = ""
@@ -69,7 +69,7 @@ am_or_rebase = "am/rebase"
 format = '\([[](bg:#3a3a3a fg:#E0B25D)$state($progress_current/$progress_total)[](bg:#3a3a3a fg:#E0B25D)]($style)\)'
 
 [git_status]
-style = "bg:#5f5fdf fg:#EEEEEE"
+style = "bg:#AF00AF fg:#EEEEEE"
 stashed = "${count}"
 ahead = "ﲗ${count}"
 behind = "↡ ${count}"
@@ -80,7 +80,7 @@ renamed = "r${count}"
 modified = "${count}"
 staged = "⎆ ${count}"
 untracked = "⇪ ${count}"
-format = "([[](bg:#3a3a3a fg:#5f5fdf)$all_status[](bg:#3a3a3a fg:#5f5fdf)]($style))"
+format = "([[](bg:#3a3a3a fg:#AF00AF)$all_status[](bg:#3a3a3a fg:#AF00AF)]($style))"
 
 [status]
 disabled = false

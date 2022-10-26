@@ -95,7 +95,6 @@ if not set -q fish_initialized
     abbr --add sc       'rg -iu -tc'
     abbr --add sg       'gb -1000 | rg -i'
     abbr --add rsw      'rm /home/fhof/.local/share/nvim/swap/*'
-    abbr --add chssh    'sshpass -f ~/.config/.auth/kepler@ut2 ssh -q ut2-1 exit; and echo $status'
 
 #merge history of several fish instances
     abbr --add mhi      'history --merge'

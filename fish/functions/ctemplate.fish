@@ -10,32 +10,21 @@ function ctemplate --description 'Create .c/.h-files for a new "module"'
 
             echo "/**
  * @file $argv.h
- * @copyright Copyright 2022 Kepler Communications Inc.
+ * @copyright Copyright 2022 Space Flight Laboratories
  * @ingroup <DUMMY>
- *
- * @note Assumptions:
  */
 #pragma once
 
-#ifdef __cplusplus
-extern ""C"" {
-#endif
-
-// <CODE>
-
-#ifdef __cplusplus
-}
-#endif
 ">$argv.h
             # create and write c-file
-            touch $argv.c
+            touch $argv.cc
             echo "/**
  * @file $argv.c
- * @copyright Copyright 2022 Kepler Communications Inc.
+ * @copyright Copyright 2022 Space Flight Laboratories
  * @brief <DUMMY>
  */
 
-#include "\"$argv.h\""">$argv.c
+#include "\"$argv.h\""">$argv.cc
             end
         else
             echo "No module name given as argument"

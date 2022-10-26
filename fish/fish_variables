@@ -2,6 +2,7 @@
 # VERSION: 3.0
 SETUVAR --export FZF_DEFAULT_COMMAND:fd\x20\x2d\x2dtype\x20f
 SETUVAR FZF_FIND_FILE_COMMAND:rg\x20\x2d\x2dfiles\x20\x2d\x2dhidden\x20\x2d\x2dsmartcase\x20\x2d\x2dglob\x20\x2d\x2dheight\x3d15\x20\x22\x21\x2egit/\x2a\x22
+SETUVAR --export PYENV_ROOT:/home/fhof/\x2epyenv
 SETUVAR TERM:xterm\x2d256color
 SETUVAR __fish_classic_git_prompt_initialized:\x1d
 SETUVAR __fish_init_2_39_8:\x1d
@@ -172,4 +173,5 @@ SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_user_paths:/home/fhof/\x2epyenv/bin\x1e/home/fhof/\x2elocal/bin\x1e/home/fhof/\x2econfig/i3/bin
 SETUVAR theme_nerd_fonts:no

@@ -148,13 +148,11 @@ autocmd BufEnter * call <SID>AutoProjectRootCD()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.config/nvim/plugged')
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug 'junegunn/fzf.vim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-" fzf alternative written in rust
-"Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
-"Plug 'lotabout/skim.vim'
+" vim-telescope
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-commentary' # sorry tpope you had to go
 Plug 'numToStr/Comment.nvim'
@@ -174,8 +172,7 @@ Plug 'kkoomen/vim-doge'
 Plug 'meain/vim-printer'
 Plug 'guns/xterm-color-table.vim'
 Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'vimwiki/vimwiki'
-Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown'}
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 
 " Plebvim lsp Plugins
 Plug 'neovim/nvim-lspconfig'
@@ -199,9 +196,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
-" vim-telescope
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " refactoring from ThePrimagen
 Plug 'ThePrimeagen/refactoring.nvim'
@@ -241,9 +235,6 @@ Plug 'kevinhwang91/nvim-bqf'
 
 " reload/restart functionality while running
 Plug 'famiu/nvim-reload'
-
-" yet another orgmode clone for vim - testing
-Plug 'kristijanhusak/orgmode.nvim'
 
 "List ends here. Plugins become visible to Vim after this call.
 call plug#end()
