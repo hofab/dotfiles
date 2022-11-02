@@ -22,7 +22,7 @@ set termguicolors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi Folded               ctermfg=252 ctermbg=240 guifg=#e4e4e4   guibg=#585858
 hi FoldColumn           ctermfg=7   ctermbg=8   guifg=#c0c0c0   guibg=#808080
-hi VertSplit            ctermfg=252 ctermbg=5   guifg=#e4e4e4   guibg=#af00af
+hi VertSplit            ctermfg=252 ctermbg=5   guifg=#eeeeee   guibg=#af00af
 hi LineNr               ctermfg=239 ctermbg=255 guifg=#aeaeae   guibg=#eeeeee
 hi Normal               ctermfg=239 ctermbg=NONE  guifg=#4e4e4e
 hi Identifier           ctermfg=239 ctermbg=NONE  guifg=#4e4e4e
