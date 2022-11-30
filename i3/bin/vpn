@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# Looks for a vpn conenction and allows it to be brought up/down
+# from the command line. This assumes that there is only one
+# vpn connection present in the list.
+#
+
+CMD="$1"
+VPN_ID=$(nmcli con | grep ' vpn ' | cut -f 1 -d' ' | grep 'udp')
+echo "$VPN_ID"
+
+case "${CMD}" in
+
+    on|up)
+        echo "UP"
+        nmcli con up id "${VPN_ID}"
+        ;;
+
+    off|down)
+        echo "down"
+        nmcli con down id "${VPN_ID}"
+        ;;
+
+    *)
+        nmcli con | egrep --color=NEVER '(NAME| vpn )'
+        ;;
+esac
