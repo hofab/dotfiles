@@ -1,8 +1,15 @@
 function nsssh --description 'SSH into the NorSat-flatsat'
-    if ssh -oHostKeyAlgorithms=+ssh-rsa -o ConnectTimeout=5 root@192.168.11.12 'exit 0'
-        ssh -oHostKeyAlgorithms=+ssh-rsa root@192.168.11.12
+    if [ (count $argv) -gt 0 ]
+        set POBC_IP "192.168.11.$argv"
     else
-        ssh-keygen -f "/home/fhof/.ssh/known_hosts" -R 192.168.11.12
-        ssh -oHostKeyAlgorithms=+ssh-rsa root@192.168.11.12
+        echo "nsssh <ip subaddress> e.g. nsssh 12 - 192.168.11.<12>"
+        exit
+    end
+
+    if ssh -oHostKeyAlgorithms=+ssh-rsa -o ConnectTimeout=5 root@$POBC_IP 'exit 0'
+        ssh -oHostKeyAlgorithms=+ssh-rsa root@$POBC_IP
+    else
+        ssh-keygen -f "/home/fhof/.ssh/known_hosts" -R $POBC_IP
+        ssh -oHostKeyAlgorithms=+ssh-rsa root@$POBC_IP
     end
 end
