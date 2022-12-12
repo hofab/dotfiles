@@ -32,7 +32,7 @@ The closing sequence `\r\n` would be dictated by your device and its settings.
 ## Want to print without a terminal program
 Most of the time, when we are sending request to a devie we want to observe the response as well. To do so, we can do the following.
 ```
-/dev/ttyXX | hexdump -C
+cat /dev/ttyXX | hexdump -C
 cat < /dev/ttyXX
 ```
 Each of the options is usueful in different circumstances.
