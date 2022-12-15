@@ -6,6 +6,9 @@ if not set -q fish_initialized
     abbr --add gstl     'git stash list'
     abbr --add gstp     'git stash pop'
     abbr --add gstd     'git stash drop'
+    # see mjcarroll: https://github.com/mjcarroll/dotfiles/blob/master/git/.gitconfig
+    abbr --add gsnap    'git stash save "snapshot: (date)"; and git stash apply "stash@{0}"'
+    abbr --add gsnaps   'git stash list --rg snapshot'
     abbr --add gco      'git checkout'
     abbr --add gnb      'git checkout -b fh/'
     abbr --add gfb      'git checkout -b feature/fh/'

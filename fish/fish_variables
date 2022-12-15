@@ -99,6 +99,8 @@ SETUVAR _fish_abbr_gru:git\x20config\x20\x2d\x2dget\x20remote\x2eorigin\x2eurl
 SETUVAR _fish_abbr_gs:git\x20status
 SETUVAR _fish_abbr_gsb:git\x20branch
 SETUVAR _fish_abbr_gseb:git\x20branch\x20\x7c\x20ag
+SETUVAR _fish_abbr_gsnap:git\x20stash\x20save\x20\x22snapshot\x3a\x20\x24\x28date\x29\x22\x3b\x20and\x20git\x20stash\x20apply\x20\x22stash\x40\x7b0\x7d\x22
+SETUVAR _fish_abbr_gsnaps:git\x20stash\x20list\x20\x2d\x2drg\x20snapshot
 SETUVAR _fish_abbr_gst:git\x20stash
 SETUVAR _fish_abbr_gstd:git\x20stash\x20drop
 SETUVAR _fish_abbr_gstl:git\x20stash\x20list
