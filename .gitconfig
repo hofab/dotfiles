@@ -17,21 +17,21 @@
 # Merge and Diff
 #################################
 [diff]
-    tool = diffuse
+    tool = meld
     algorithm = patience
 [difftool]
     prompt = no
-[difftool "diffuse"]
-    cmd = diffuse $LOCAL $REMOTE
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
 
 [merge]
-    tool = diffuse
+    tool = meld
     algorithm = patience
-	renamelimit = 4096
+    renamelimit = 4096
 [mergetool]
     prompt = no
-[mergetool "diffuse"]
-    cmd = diffuse $LOCAL $MERGED $REMOTE
+[mergetool "meld"]
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 
 #################################
 # Pretty formatting
