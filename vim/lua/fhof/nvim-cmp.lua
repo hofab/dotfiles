@@ -4,10 +4,9 @@ local cmp = require('cmp')
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menu,menuone,noselect'
 
-
 cmp.setup({
   completion = {
-      autocomplete = false
+      autocomplete = true
   },
   snippet = {
     -- REQUIRED - you must specify a snippet engine
@@ -60,10 +59,6 @@ cmp.setup.cmdline(':', {
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
--- Add additional capabilities supported by nvim-cmp
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
--- didn't work for me for some reason enter deleted the line completely
 require'lspconfig'.pyright.setup{
   capabilities = capabilities;
   root_dir = require('lspconfig/util').root_pattern(".gitignore"),
@@ -75,13 +70,62 @@ require'lspconfig'.clangd.setup{
         debounce_text_changes = 150,
     },
     cmd = {
-        "clangd",
-        "--background-index",
+    "docker",
+    "exec",
+    "-i",
+    "clangd-test",
+    "clangd-12",
+    "--background-index",
+    },
+    settings = {
+    cpp = {
+      analysis = {
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+        diagnosticMode = 'openFilesOnly',
+            },
+        },
     },
     filetypes = { "c", "cpp", "objc", "objcpp" },
     -- on_init = function to handle changing offsetEncoding
     root_dir = require('lspconfig/util').root_pattern("compile_commands.json", "compile_flags.txt"),
+    -- root_dir = function() return "/home/vivado/sfl/q8/libkvh" end,
+    --     -- return lspconfig.util.root_pattern('compile_commands.json')(fname)
+    --     -- print(dir_)
+    --     -- dir_.gsub(dir_, "fhof", "vivado")
+    --     -- return dir_
+    -- end,
     -- root_dir = root_pattern("compile_commands.json", "compile_flags.txt", ".git") or dirname
 --  capabilities = capabilities,
 --  root_dir = function() return "/home/fhof/kepler/c/pch_reliable_boot" end
+    -- cwd = function(root_dir)
+    --     return root_dir.gsub(root_dir, "fhof", "vivado")
+    -- end,
+    -- handlers = {
+    -- ['textDocument/declaration'] = function(err, result, method, ...)
+          -- local uri = result.uri or result.targetUri
+          -- local fname = vim.uri_to_fname(uri)
+          -- for _, item in pairs(result) do
+              -- print("Uri: ", item.uri.gsub(item.uri, "vivado", "fhof"))
+              -- item.uri = item.uri.gsub(item.uri, "vivado", "fhof")
+          -- end
+          -- for _, item in pairs(result) do
+          --     print("Uri: ", item.uri)
+          -- end
+      -- don't include internal react definitions (react/index.d.ts)
+      -- print("HERE!!!!")
+      -- print("Testing: ", fname)
+      -- if vim.tbl_islist(result) then
+      --   local filter = function(v)
+      --     return string.match(v.targetUri, '%.d.ts') == nil
+      --   end
+      --   result = vim.tbl_filter(filter, result)
+      -- end
+      -- jump to use the original implementation in handlers.lua
+      -- vim.lsp.handlers['textDocument/declaration'](err, result, method, ...)
+    -- end
+    -- },
+    before_init = function(params)
+        params.processId = vim.NIL
+    end,
 }

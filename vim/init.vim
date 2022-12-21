@@ -175,7 +175,6 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 
 " Plebvim lsp Plugins
-Plug 'neovim/nvim-lspconfig'
 Plug 'tjdevries/nlua.nvim'
 
 " Neovim Tree shitter
@@ -208,6 +207,7 @@ Plug 'onsails/lspkind-nvim'
 Plug 'glepnir/lspsaga.nvim'
 
 " nvim autocomplete
+Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -222,7 +222,6 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " auto-pairs that works with compe
 Plug 'windwp/nvim-autopairs'
-
 
 " show key mappings if lost
 Plug 'folke/which-key.nvim'
