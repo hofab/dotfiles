@@ -161,7 +161,6 @@ Plug 'tpope/vim-surround'
 "Plug 'tpope/vim-dispatch'
 Plug 'itchyny/lightline.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'phaazon/hop.nvim'
 Plug 'mbbill/undotree'
 "Plug 'ktchen14/cscope-auto'
 Plug 'dbakker/vim-projectroot'
@@ -238,12 +237,7 @@ Plug 'famiu/nvim-reload'
 "List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
-let g:deoplete#enable_at_startup = 1
 let g:python3_host_prog = '/usr/bin/python3'
-
-" needed for bufferline
-" let g:lightline#extensions#tabline#enabled = 0
-" let g:airline#extensions#tabline#enabled = 0
 
 " load lua folder
 lua require("fhof")
