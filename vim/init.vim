@@ -234,10 +234,16 @@ Plug 'kevinhwang91/nvim-bqf'
 " reload/restart functionality while running
 Plug 'famiu/nvim-reload'
 
+Plug 'lukas-reineke/indent-blankline.nvim'
+
 "List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
 let g:python3_host_prog = '/usr/bin/python3'
+
+" had to add this as all of a sudden a tabline appeared and I don't know from where
+" also blankline.lua didn't appear to work for some reason so disabling the tablines here
+let g:indent_blankline_enabled = v:false
 
 " load lua folder
 lua require("fhof")
