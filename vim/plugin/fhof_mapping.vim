@@ -43,9 +43,6 @@ inoremap kj <ESC>
 
 " custom inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" doxygen line comment
-nmap <LEADER>dc $a<TAB>/**<  */<ESC>2hi
-nmap <LEADER>lc $a<TAB>/*  */<ESC>2hi
 
 " use clang format
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -91,3 +88,7 @@ nnoremap <LEADER>do :Dox <CR>
 
 " reload vimrc
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
+
+" asynctask mappings
+noremap <silent><f5> :AsyncTask file-run<cr>
+noremap <silent><f9> :AsyncTask file-build<cr>

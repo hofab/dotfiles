@@ -131,6 +131,7 @@ autocmd BufWritePost *.cpp,*.h,*.c call UpdateTags()
 "set .h filetype as c, so that we can use C-snippets
 au BufRead,BufNewFile *.h setfiletype c
 
+" make quickfix work
 function! <SID>AutoProjectRootCD()
   try
     if &ft != 'help'
@@ -150,6 +151,7 @@ autocmd BufEnter * call <SID>AutoProjectRootCD()
 call plug#begin('~/.config/nvim/plugged')
 " vim-telescope
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -234,6 +236,12 @@ Plug 'kevinhwang91/nvim-bqf'
 " reload/restart functionality while running
 Plug 'famiu/nvim-reload'
 
+" async stuff
+Plug 'skywind3000/asynctasks.vim'
+Plug 'skywind3000/asyncrun.vim'
+
+" to prevent a blank line that apperared all of a sudden
+" probably can be removed during a new setup
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 "List ends here. Plugins become visible to Vim after this call.
@@ -244,6 +252,11 @@ let g:python3_host_prog = '/usr/bin/python3'
 " had to add this as all of a sudden a tabline appeared and I don't know from where
 " also blankline.lua didn't appear to work for some reason so disabling the tablines here
 let g:indent_blankline_enabled = v:false
+
+" setup asynctask/run
+let g:asyncrun_open = 6
+" to get the correct root directory for async, otherwise the quickfix didn't work
+let g:rootmarkers = ['.root']
 
 " load lua folder
 lua require("fhof")
