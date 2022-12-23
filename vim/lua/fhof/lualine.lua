@@ -1,6 +1,9 @@
 local colors = {
   red = '#e5786d',
-  grey = '#a0a1a7',
+  grey = '#a8a8a8',
+  light_grey = '#d0d0d0',
+  dark_grey = '#666666',
+  med_grey = '#969696',
   black = '#4e4e4e',
   white = '#4e4e4e',
   light_green = '#83a598',
@@ -17,7 +20,7 @@ local theme = {
     a = { fg = colors.light_text, bg = colors.normal },
     b = { fg = colors.white, bg = colors.grey },
     c = { fg = colors.black, bg = colors.white },
-    z = { fg = colors.white, bg = colors.black },
+    z = { fg = colors.white, bg = colors.light_text },
   },
   insert = { a = { fg = colors.normal_text, bg = colors.green } },
   visual = { a = { fg = colors.normal_text, bg = colors.visual } },
@@ -75,14 +78,13 @@ end
 require('lualine').setup {
   options = {
     theme = theme,
-    component_separators = '',
-    section_separators = { left = '', right = '' },
+    component_separators = '%',
+    section_separators = { left = '', right = '' },
   },
   sections = process_sections {
     lualine_a = { 'mode' },
     lualine_b = {
-      'branch',
-      'diff',
+      {'diff', color = { bg = colors.med_grey } },
       {
         'diagnostics',
         source = { 'nvim' },
@@ -95,8 +97,7 @@ require('lualine').setup {
         sections = { 'warn' },
         diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
       },
-      { 'filename', file_status = false, path = 1 },
-      { modified, color = { bg = colors.red } },
+      { modified, color = { fg = colors.light_text } },
       {
         '%w',
         cond = function()
@@ -118,11 +119,15 @@ require('lualine').setup {
     },
     lualine_c = {},
     lualine_x = {},
-    lualine_y = { search_result, 'filetype' },
-    lualine_z = { '%l:%c', '%p%%/%L' },
+    lualine_y = { {'%l:%c', color = { fg = colors.light_text, bg = colors.dark_grey } } },
+    lualine_z =
+    {
+      {'filetype', color = { fg = colors.light_text, bg = colors.grey } },
+      { 'filename', file_status = false, path = 1, color = { fg = colors.light_text, bg = colors.med_grey } },
+    },
   },
   inactive_sections = {
-    lualine_c = { '%f %y %m' },
+    lualine_c = {},
     lualine_x = {},
   },
 }
