@@ -183,7 +183,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
 " status bar
-Plug 'itchyny/lightline.vim'
 Plug 'nvim-lualine/lualine.nvim'
 
 " vim-lua
