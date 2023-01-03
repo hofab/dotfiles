@@ -98,6 +98,7 @@ require('lualine').setup {
         diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
       },
       { modified, color = { fg = colors.light_text } },
+      'lsp_progress',
       {
         '%w',
         cond = function()

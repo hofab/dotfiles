@@ -184,6 +184,7 @@ Plug 'nvim-treesitter/playground'
 
 " status bar
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'arkav/lualine-lsp-progress'
 
 " vim-lua
 "Plug 'nvim-lua/completion-nvim'
