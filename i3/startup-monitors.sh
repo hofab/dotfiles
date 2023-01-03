@@ -15,7 +15,7 @@ startup_delay=3
 if [ "$left_mon_connected" ] && [ "$mid_mon_connected" ] ; then
     echo "THREE"
     sleep $startup_delay
-    $script_path/triple.sh
+    $script_path/triple
 # elif [ "$two_monitor" ]; then
 #     echo "DUAL"
 #     sleep $startup_delay
@@ -23,5 +23,5 @@ if [ "$left_mon_connected" ] && [ "$mid_mon_connected" ] ; then
 else
     echo "SINGLE"
     sleep $startup_delay
-    $script_path/single.sh
+    $script_path/single
 fi
