@@ -79,7 +79,7 @@ require('lualine').setup {
   options = {
     theme = theme,
     component_separators = '%',
-    section_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
   },
   sections = process_sections {
     lualine_a = { 'mode' },
@@ -130,5 +130,16 @@ require('lualine').setup {
   inactive_sections = {
     lualine_c = {},
     lualine_x = {},
+  },
+  tabline = {
+        lualine_a = {{
+          'tabs',
+          tabs_color = {
+              active    = {fg = colors.light_grey, bg = colors.normal },
+              inactive = {fg = colors.dark_grey, bg = colors.light_grey },
+          },
+          section_separators = { left = '', right = '' },
+          mode=2
+        }},
   },
 }
