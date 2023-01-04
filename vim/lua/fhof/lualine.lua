@@ -78,7 +78,7 @@ end
 require('lualine').setup {
   options = {
     theme = theme,
-    component_separators = '%',
+    component_separators = '|',
     section_separators = { left = '', right = '' },
   },
   sections = process_sections {
