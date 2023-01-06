@@ -159,7 +159,9 @@ Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-commentary' # sorry tpope you had to go
 Plug 'numToStr/Comment.nvim'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
+Plug 'kylechui/nvim-surround'
+
 "Plug 'tpope/vim-dispatch'
 Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/undotree'
