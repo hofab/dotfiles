@@ -78,7 +78,7 @@ end
 require('lualine').setup {
   options = {
     theme = theme,
-    component_separators = '|',
+    component_separators = '\\',
     section_separators = { left = '', right = '' },
   },
   sections = process_sections {
@@ -139,6 +139,7 @@ require('lualine').setup {
               inactive = {fg = colors.dark_grey, bg = colors.light_grey },
           },
           section_separators = { left = '', right = '' },
+          max_length = vim.o.columns,
           mode=2
         }},
   },
