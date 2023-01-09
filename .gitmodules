@@ -1,6 +1,0 @@
-[submodule "vim/plugged/lightline.cim"]
-    path = vim/plugged/lightline.vim
-    ignore = dirty
-[submodule "vim/plugged/fzf.cvim"]
-    path = vim/plugged/fzf.vim
-    ignore = dirty
