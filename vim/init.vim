@@ -159,9 +159,10 @@ Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-commentary' # sorry tpope you had to go
 Plug 'numToStr/Comment.nvim'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
+Plug 'kylechui/nvim-surround'
+
 "Plug 'tpope/vim-dispatch'
-Plug 'itchyny/lightline.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/undotree'
 "Plug 'ktchen14/cscope-auto'
@@ -182,12 +183,10 @@ Plug 'tjdevries/nlua.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
-"Plug 'nvim-treesitter/completion-treesitter'
-"
-" tabs written in lue
-" Icons already included for treesitter
-"Plug 'kyazdani42/nvim-web-devicons'
-"Plug 'akinsho/bufferline.nvim'
+
+" status bar
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'arkav/lualine-lsp-progress'
 
 " vim-lua
 "Plug 'nvim-lua/completion-nvim'

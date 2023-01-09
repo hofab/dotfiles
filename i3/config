@@ -242,6 +242,18 @@ bindsym $mod+x [urgent=latest] focus
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+bindsym $mod+Shift+9 mode "$mode_screen"
+set $mode_screen screen (s) single, (d) dual, (t) triple
+mode "$mode_screen" {
+    bindsym s exec --no-startup-id ~/.config/i3/single, mode "default"
+    bindsym d exec --no-startup-id ~/.config/i3/dual, mode "default"
+    bindsym t exec --no-startup-id ~/.config/i3/triple, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 bindsym $mod+0 mode "$mode_vpn"
 set $mode_vpn vpn (u) up, (d) down, (o) on, (f) off
 mode "$mode_vpn" {
