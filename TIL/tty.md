@@ -39,3 +39,10 @@ Each of the options is usueful in different circumstances.
 You should choose the cat option if you like to see a stream of data printed in `ASCII`. On the other hand, if we want to see the
 data being reseived in `hexadecimal`, use the `hexdump -C` option.
 
+## Processes using the tty
+Sometimes you just want to know who is currently using the tty, maybe you see some odd behaviour e.g. dropped packets. The simplest
+way to see if more than one process is using your connection is to run the following.
+```
+ls -l /proc/[0-9]*/fd/* | grep /dev/ttyXX
+```
+
