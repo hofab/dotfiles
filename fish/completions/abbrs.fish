@@ -48,7 +48,7 @@ if not set -q fish_initialized
     abbr --add gca      'git commit --amend'
     abbr --add gru      'git config --get remote.origin.url'
     abbr --add gp       'git push'
-    abbr --add gfp      'git push -f'
+    abbr --add gfp      'git push --force-with-lease'
     abbr --add gDrb     'git push origin --delete (gbn)' #delete remote branch
     abbr --add gpl      'git pull --rebase -p'
     abbr --add gus      'git reset HEAD --' #throw away any local changes

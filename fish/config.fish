@@ -40,6 +40,8 @@ fundle plugin 'tuvistavie/fish-fastdir'
 
 fundle init
 
+source "$HOME/sfl-bkp/git-subrepo/.fish.rc"
+
 source "$HOME/.config/fish/completions/abbrs.fish"
 starship init fish | source
 
