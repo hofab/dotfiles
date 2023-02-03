@@ -23,10 +23,10 @@ set nowrapscan
 set t_Co=256
 " Set text wrapping at 132 columns
 set tw=132
-" Indent to the tab positiion when  you cross over the 80 line limit.
+" Indent to the tab position when  you cross over the 132 line limit.
 set smartindent
 " Leave a couple of lines at the top and bottom when scrolling
-set scrolloff=2
+set scrolloff=6
 " Give context on where you are in the file
 set ruler
 " wrapping is a problem more often than not.
