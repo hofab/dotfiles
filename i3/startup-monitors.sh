@@ -9,7 +9,7 @@ left_mon_connected="`echo $xrandr_output | rg -i 'DVI-I-2-2'`";
 mid_mon_connected="`echo $xrandr_output | rg -i 'DVI-I-1-1'`";
 #echo $mid_mon_connected
 script_path="/home/fhof/.config/i3"
-startup_delay=3
+startup_delay=10
 
 # test if string
 if [ "$left_mon_connected" ] && [ "$mid_mon_connected" ] ; then
