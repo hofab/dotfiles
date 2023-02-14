@@ -6,10 +6,10 @@ syntax on
 colorscheme fhof
 
 "Convert tabs to spaces
-set expandtab
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+:set noexpandtab
+:set shiftwidth=4
+:set tabstop=4
+filetype plugin indent on
 "allow opening a buffer with unwritten changes
 set hidden
 "no swap files
@@ -35,7 +35,8 @@ set ff=unix
 set showcmd
 " show tabs (permanent) and spaces (typing)
 set list
-set lcs=tab:>-,trail:-
+set list listchars=tab:>-,trail:-
+
 " set ignores case for searches
 set ignorecase
 "let $VTE_VERSION="100"
@@ -156,13 +157,10 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-commentary' # sorry tpope you had to go
 Plug 'numToStr/Comment.nvim'
 Plug 'tpope/vim-repeat'
-" Plug 'tpope/vim-surround'
 Plug 'kylechui/nvim-surround'
 
-"Plug 'tpope/vim-dispatch'
 Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/undotree'
 "Plug 'ktchen14/cscope-auto'
