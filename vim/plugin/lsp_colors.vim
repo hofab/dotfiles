@@ -1,5 +1,5 @@
 " If we have lsp enable its colors
-if executable('ccls')
+if executable('clangd')
     hi def link LspCxxHlGroupEnumConstant NONE
     hi def link LspCxxHlSymClass NONE
     hi def link LspCxxHlSymEnum NONE
