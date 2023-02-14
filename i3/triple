@@ -16,4 +16,3 @@ xrandr \
     --output $leftmon $leftmon_args \
     --output $midmon $midmon_args \
     --output eDP-1 --off
-#    --output eDP-1 --mode 2560x1600 --pos 7680x0
