@@ -49,7 +49,7 @@ hi Macro                ctermfg=73              guifg=#5fafaf
 hi PreProc              ctermfg=178             guifg=#dfaf00
 hi Constant             ctermfg=29              guifg=#00875f
 hi ErrorMsg             ctermfg=196             guifg=#ff0000
-hi NonText              ctermfg=248             guifg=#a8a8a8
+hi NonText              ctermfg=248             guifg=#F1F1F1
 hi MatchParen           ctermfg=8   ctermbg=199 guifg=#808080   guibg=#ffafff
 hi MoreMsg              gui=NONE
 hi Question             gui=NONE
@@ -60,17 +60,6 @@ hi OverLength           ctermfg=239 ctermbg=196 guifg=#aeaeae   guibg=#ff0000
 " popup-colors
 hi Pmenu         ctermfg=0  ctermbg=117         guifg=#000000   guibg=#87d7ff
 hi PmenuSel      ctermfg=0  ctermbg=213         guifg=#000000   guibg=#ff87ff
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" SYNTAX HIGHLIGHTING
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi wesPrivCtx NONE
-hi wesAnnotate NONE
-hi def link wesWescam Function
-hi def link wesUnimportant Function
-hi wesThis NONE
-hi wesIdentifier        ctermfg=33              guifg=#0087ff
-hi def link wesCSpecial boolean
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " # C Pre Proccessor Statements
