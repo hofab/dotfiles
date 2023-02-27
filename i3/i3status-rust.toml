@@ -1,38 +1,37 @@
+icons_format = "{icon}"
+
 [theme]
-name = "modern"
+theme = "modern"
 [theme.overrides]
 idle_bg = "#EEEEEE"
 idle_fg = "#0D0D0D"
 separator= ""
 
 [icons]
-name = "awesome"
-[icons.overrides]
-time = ""
-backlight_empty = " "
-backlight_partial1 = " "
-backlight_partial2 = " "
-backlight_partial3 = " "
-backlight_full = " "
+icons = "awesome4"
 
 [[block]]
 block = "disk_space"
 path = "/"
 info_type = "available"
+alert_unit = "GB"
 interval = 20
 warning = 20.0
 alert = 10.0
-format = "root: $available.eng(2)"
+format = " $icon / $available.eng(w:2) "
 
 [[block]]
 block = "memory"
-display_type = "memory"
-format_mem = "$mem_total_used_percents.eng(2)"
-format_swap = "$swap_used_percents.eng(2)"
+format = " $icon $mem_used_percents.eng(w:1) "
+interval = 30
+warning_mem = 70
+critical_mem = 90
 
 [[block]]
 block = "cpu"
 interval = 5
+format = " $icon $utilization "
+format_alt = " $icon $frequency $boost "
 
 [[block]]
 block = "sound"
@@ -41,10 +40,21 @@ show_volume_when_muted = true
 [[block]]
 block = "battery"
 interval = 10
-format = "{percentage} {time} {power}"
+format = " $icon $percentage "
+not_charging_format = " $icon $percentage $time $power"
+good = 60
+warning = 30
+critical = 10
+
+[[block]]
+block = "temperature"
+format = " $icon $max max "
+format_alt = " $icon $min min, $max max, $average avg "
+interval = 10
+chip = "*-isa-*"
 
 [[block]]
 block = "time"
 interval = 60
-format = " %a %b %d,%l:%M%p"
+format = " $timestamp.datetime(f:'%a %d/%m %R') "
 
