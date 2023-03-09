@@ -11,6 +11,12 @@ separator= ""
 icons = "awesome4"
 
 [[block]]
+block = "pomodoro"
+notify_cmd = "notify-send '{msg}'"
+blocking_cmd = false
+
+
+[[block]]
 block = "disk_space"
 path = "/"
 info_type = "available"
@@ -29,7 +35,7 @@ critical_mem = 90
 
 [[block]]
 block = "cpu"
-interval = 5
+interval = 10
 format = " $icon $utilization "
 format_alt = " $icon $frequency $boost "
 
