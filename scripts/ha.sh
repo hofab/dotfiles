@@ -1,6 +1,9 @@
 #!/bin/bash
 #
-# Updates home assistant docker dontainer
+# Updates home assistant docker container
+#
+# e.g.
+# ssh -oHostKeyALgorithms=+ssh-rsa "$USER"@"$IP" 'bash -s' < <patch/to/file>ha.sh
 #
 
 HOMEASS="homeassistant"
