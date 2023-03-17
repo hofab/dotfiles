@@ -51,7 +51,7 @@ windows:
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - nvim
+        - cd ~/sfl
   - ssh:
       layout: main-vertical
       panes:
@@ -59,21 +59,22 @@ windows:
         - cd ~/
         - cd ~/
   - notes:
+      layout: main-vertical
       panes:
-        - cd ~/Notes
         - cd ~/Notes
   - nnn:
       panes:
       - nnn
   - Downloads:
+      layout: main-vertical
       panes:
         - cd ~/Downloads
         - cd ~/Downloads
   - portfolio:
       panes:
         - cd ~/portfolio
-        - cd ~/portfolio
   - dotfiles:
+      layout: main-vertical
       panes:
         - cd ~/dotfiles
         - cd ~/dotfiles
