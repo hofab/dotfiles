@@ -7,8 +7,9 @@
 #
 
 HOMEASS="homeassistant"
+LOCAL_CFG_FOLDER="/home/pi/homeassistant/config"
 
 docker stop $HOMEASS
 docker rm $HOMEASS
 docker pull homeassistant/home-assistant
-docker run -d --network=host --name $HOMEASS -v /path/to/local/config:/config  homeassistant/home-assistant
+docker run -d --network=host --name $HOMEASS --restart=unless-stopped --privileged -v $LOCAL_CFG_FOLDER:/config  homeassistant/home-assistant
