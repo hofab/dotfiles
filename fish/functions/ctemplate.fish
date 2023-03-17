@@ -1,4 +1,4 @@
-function ctemplate --description 'Create .c/.h-files for a new "module"'
+function ctemplate --description 'Create .cc/.h-files for a new "module"'
     if count $argv > /dev/null
         if [ (count $argv) -gt 2 ]
             echo "Too many arguments. \$ctemplate <MODULE_NAME>"
@@ -10,7 +10,7 @@ function ctemplate --description 'Create .c/.h-files for a new "module"'
 
             echo "/**
  * @file $argv.h
- * @copyright Copyright 2022 Space Flight Laboratories
+ * @copyright Copyright 2023 Space Flight Laboratories
  * @ingroup <DUMMY>
  */
 #pragma once
@@ -19,8 +19,8 @@ function ctemplate --description 'Create .c/.h-files for a new "module"'
             # create and write c-file
             touch $argv.cc
             echo "/**
- * @file $argv.c
- * @copyright Copyright 2022 Space Flight Laboratories
+ * @file $argv.cc
+ * @copyright Copyright 2023 Space Flight Laboratories
  * @brief <DUMMY>
  */
 
