@@ -65,6 +65,7 @@ if not set -q fish_initialized
     abbr --add grev     'git merge-base origin/master HEAD | git difftool --stdin'
     abbr --add gaifb    'git checkout integration/aifb'
     abbr --add gac      'git commit -m"((gbn) | string split '/' | string match -r ".*[0-9]")'
+    abbr --add flc      'gfc -1' #show files of last commit
 #shell shortcuts
     abbr --add c        'clear'
     abbr --add infi     '> file.txt 2>&1'
