@@ -7,7 +7,7 @@
 #
 
 HOMEASS="homeassistant"
-LOCAL_CFG_FOLDER="/home/pi/homeassistant/config"
+LOCAL_CFG_FOLDER="/home/pi/homeassistant"
 
 docker stop $HOMEASS
 docker rm $HOMEASS
