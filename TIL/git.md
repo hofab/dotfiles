@@ -4,7 +4,7 @@ Just a collection of things I don't do often and don't want to look up repeadetl
 ## Split up previously committed commits into multiple commits
 [stackoverflow](https://stackoverflow.com/questions/6217156/break-a-previous-commit-into-multiple-commits)
 ```
-git rebase <hash>~
+git rebase -i <hash>~
 # replace pick with edit in rebase screen
 git reset HEAD~
 # make the changes
