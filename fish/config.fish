@@ -30,7 +30,10 @@ set --export NNN_COLORS "5236"
 
 # exa colors
 # do more
-set --export EXA_COLORS "ln=35"
+set --export EXA_COLORS "ln=35:ex=32"
+
+# set bat theme
+set --export BAT_THEME "ansi"
 
 #alacritty scalling to be consistent
 set --export WINIT_X11_SCALE_FACTOR "1"
