@@ -1,5 +1,9 @@
 # Rust
 
+## Update rust itself
+```
+rustup update
+```
 ## Update all installed cargo packages
 ```
 cargo install cargo-update
