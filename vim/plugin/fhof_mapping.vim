@@ -47,13 +47,13 @@ inoremap kj <ESC>
 " use clang format
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if filereadable("/usr/share/clang/clang-format.py")
-    map <LEADER>k :py3f /usr/share/clang/clang-format.py<cr>
-    imap <C-K> <c-o>:py3f /usr/share/clang/clang-format.py<cr>
+    autocmd Filetype c,cpp map <LEADER>i :py3f /usr/share/clang/clang-format.py<cr>
+    autocmd Filetype c,cpp imap <C-K> <c-o>:py3f /usr/share/clang/clang-format.py<cr>
 endif
 
 if filereadable("/usr/share/clang/clang-format-15/clang-format.py")
-    map <LEADER>k :py3f /usr/share/clang/clang-format-15/clang-format.py<cr>
-    imap <C-K> <c-o>:py3f /usr/share/clang/clang-format-15/clang-format.py<cr>
+    autocmd Filetype c,cpp map <LEADER>i :py3f /usr/share/clang/clang-format-16/clang-format.py<cr>
+    autocmd Filetype c,cpp imap <C-K> <c-o>:py3f /usr/share/clang/clang-format-16/clang-format.py<cr>
 endif
 
 "" easymotion configuration
@@ -92,3 +92,6 @@ nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 " asynctask mappings
 noremap <silent><f5> :AsyncTask file-run<cr>
 noremap <silent><f9> :AsyncTask file-build<cr>
+
+" check no expandtab mapping
+noremap <LEADER>et :verbose set expandtab?<CR>
