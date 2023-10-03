@@ -46,7 +46,11 @@ fundle init
 
 source "$HOME/sfl-bkp/git-subrepo/.fish.rc"
 
+# if not loaded remove surrounding if and restart fish
 source "$HOME/.config/fish/completions/abbrs.fish"
+
 starship init fish | source
 
+# if not added to path it throws an error at startup
+set -x PATH ~/.pyenv/bin $PATH
 pyenv init - | source
