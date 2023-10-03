@@ -40,6 +40,7 @@ set --export WINIT_X11_SCALE_FACTOR "1"
 
 fundle plugin 'edc/bass'
 fundle plugin 'tuvistavie/fish-fastdir'
+fundle plugin 'catppuccin/fish'
 
 fundle init
 

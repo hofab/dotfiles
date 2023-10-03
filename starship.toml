@@ -1,7 +1,10 @@
 add_newline = false
 
+palette = "catppuccin_latte"
+
 # Order of modules on prompt
 format = """\
+        $time\
         $directory\
         (↓ Source control - for right side ↓)\
         $git_branch\
@@ -22,10 +25,21 @@ format = """\
 
 # Generic prompt configurations
 [character]
-success_symbol = "[[](bg:#AFD700 fg:#3a3a3a)](fg:#AFD700)"
+success_symbol = "[[](bg:green fg:surface2)](fg:green)"
 error_symbol = "[[](bg:#ff3322 fg:#3a3a3a)](fg:#ff3322)"
 vicmd_symbol = "[[](bg:#6f6a70 fg:#3a3a3a)[](bg:#3a3a3a fg:#6f6a70)](bold bg:#6f6a70 fg:#ff3322)"
 format = "[[](bg:#3a3a3a)$symbol]($style)"
+# success_symbol = "[❯](green)"
+# error_symbol = "[❯](red)"
+# vimcmd_symbol = "[❮](green)"
+
+[time]
+disabled = false
+style = "bg:#6f6a70 fg:#EEEEEE"
+format = '[$time]($style)'
+time_format = '%m/%d/%R'
+utc_time_offset = '-5'
+time_range = '10:00:00-14:00:00'
 
 [line_break]
 disabled = true
@@ -37,7 +51,7 @@ read_only_style = "bg:#3a3a3a fg:#dadada"
 truncation_length = 1
 truncation_symbol = "/"
 fish_style_pwd_dir_length = 1
-format = "([[](bg:#3a3a3a fg:#3a3a3a)$read_only[](bg:#3a3a3a fg:#3a3a3a)]($read_only_style))[[](bg:#3a3a3a fg:#3a3a3a)$path]($style)"
+format = "([[](bg:#3a3a3a fg:#3a3a3a)$read_only[](bg:#3a3a3a fg:#3a3a3a)]($read_only_style))[[](bg:#3a3a3a fg:#6f6a70)$path]($style)"
 
 [directory.substitutions]
 "~/Downloads" = " "
@@ -49,7 +63,7 @@ symbol = ""
 style = "bg:#008700 fg:#dadada"
 # truncation_length = 4
 # truncation_symbol = ""
-format = "[[](bg:#3a3a3a fg:#008700)$symbol$branch[](bg:#3a3a3a fg:#008700)]($style)"
+format = "[[](bg:surface2 fg:#008700)$symbol$branch[](bg:surface2 fg:#008700)]($style)"
 
 [git_commit]
 style = "bg:#E58F73 fg:#111111"
@@ -69,7 +83,7 @@ am_or_rebase = "am/rebase"
 format = '\([[](bg:#3a3a3a fg:#E0B25D)$state($progress_current/$progress_total)[](bg:#3a3a3a fg:#E0B25D)]($style)\)'
 
 [git_status]
-style = "bg:#AF00AF fg:#EEEEEE"
+style = "bg:pink fg:base"
 stashed = "${count}"
 ahead = "ﲗ${count}"
 behind = "↡ ${count}"
@@ -80,7 +94,7 @@ renamed = "r${count}"
 modified = "${count}"
 staged = "⎆ ${count}"
 untracked = "⇪ ${count}"
-format = "([[](bg:#3a3a3a fg:#AF00AF)$all_status[](bg:#3a3a3a fg:#AF00AF)]($style))"
+format = "([[](bg:surface2 fg:pink)$all_status[](bg:surface2 fg:pink)]($style))"
 
 [status]
 disabled = false
@@ -93,8 +107,35 @@ format = "[$symbol$status]($style)"
 #
 # Note this will only work when the venv is inside the project and it will only
 # work in the directory that contains the venv dir but maybe this is ok?
-python_binary = ["./venv/bin/python", "python", "python3", "python2"]
+python_binary = ["./venv/bin/python", "python3", "python", "python2"]
 symbol =""
 
 [package]
 
+[palettes.catppuccin_latte]
+rosewater = "#dc8a78"
+flamingo = "#dd7878"
+pink = "#ea76cb"
+mauve = "#8839ef"
+red = "#d20f39"
+maroon = "#e64553"
+peach = "#fe640b"
+yellow = "#df8e1d"
+green = "#40a02b"
+teal = "#179299"
+sky = "#04a5e5"
+sapphire = "#209fb5"
+blue = "#1e66f5"
+lavender = "#7287fd"
+text = "#4c4f69"
+subtext1 = "#5c5f77"
+subtext0 = "#6c6f85"
+overlay2 = "#7c7f93"
+overlay1 = "#8c8fa1"
+overlay0 = "#9ca0b0"
+surface2 = "#acb0be"
+surface1 = "#bcc0cc"
+surface0 = "#ccd0da"
+base = "#EEEEEE"
+mantle = "#e6e9ef"
+crust = "#dce0e8"
