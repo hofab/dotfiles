@@ -3,8 +3,29 @@ extends c
 ## enum class
 # ec
 snippet ec
-	enum class ${0:name} : ${1:type}
-	{
-		${0}`!p snip.rv = t[1].upper()`
-	};
+enum class ${0:name} : ${1:type}
+{
+	`!p snip.rv = t[0].upper()`
+};
+endsnippet
+
+snippet header
+/*********************************************************************
+ * Copyright `date +%Y` UTIAS/SFL as an unpublished work.
+ * All Rights Reserved.
+ *
+ * The information contained herein is confidential
+ * property of UTIAS/SFL. The usage, copying, transfer or
+ * disclosure of such information is prohibited except
+ * by express written agreement with UTIAS/SFL.
+ *
+ * Title: Sample Application
+ * Description: a sample NSP client application
+ *
+**********************************************************************/
+/**
+ * @file ${1:`!p snip.rv = (snip.fn)`}
+ * @brief ${3:Brief description}
+ * @ingroup ${2:Groupname}
+ */
 endsnippet

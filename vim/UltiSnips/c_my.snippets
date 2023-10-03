@@ -1,27 +1,4 @@
 priority 0
-# WESCAM specific c templates
-snippet wifel "Wescam if statement"
-if (${1:!statement}) {
-    ${VISUAL:CODE}
-}
-else {
-    ${VISUAL:CODE}
-}
-endsnippet
-
-snippet wif "Wescam if statement"
-if (${1:!statement}) {
-    ${2:CODE}
-}
-endsnippet
-
-snippet wmlog "WESCAM moduleLogError"
-moduleLogError(${1:moduleAddr}, "${1:%s}\n"${1/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$2${1/([^%]|%%)*(%.)?.*/(?2:\);)/}
-endsnippet
-
-snippet swlog "WESCAM moduleLogError"
-moduleLogError(${1:moduleAddr}, "_LINE_: ${2:value}");
-endsnippet
 
 snippet func
 static ${1:void} ${2:foo}(${3:args}) {
@@ -88,26 +65,6 @@ endsnippet
 
 snippet lc
 /* ${1:Brief} */
-endsnippet
-
-snippet wpb "Wescam print binary"
-moduleLogError(11, "${1:binary}: %s", $1 ? "TRUE" : "FALSE");
-endsnippet
-
-snippet wpv "Wescam print var"
-moduleLogError(11, "${1:var}: %i", $1);
-endsnippet
-
-snippet wpt "Wescam print text"
-moduleLogError(11, "${1:text}");
-endsnippet
-
-snippet wpu "Wescam print Unity"
-moduleLogError(11, "${1:unity}: %+.3f", $1 / UNITY_FLOAT);
-endsnippet
-
-snippet uh "Wescam moduleLogAssert Unhandled Case"
-moduleAssert(${1:moduleAddr}, UNHANDLED_CASE);
 endsnippet
 
 snippet td "todo"
