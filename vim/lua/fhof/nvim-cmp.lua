@@ -5,9 +5,6 @@ local cmp = require('cmp')
 vim.o.completeopt = 'menu,menuone,noselect'
 
 cmp.setup({
-  completion = {
-      autocomplete = true
-  },
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
@@ -18,6 +15,11 @@ cmp.setup({
     end,
   },
   mapping = {
+	['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+	['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
+	['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+	['<Down>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+	['<Up>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
     ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
     ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
     ['<C-SPACE>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
@@ -73,10 +75,13 @@ require'lspconfig'.clangd.setup{
     "docker",
     "exec",
     "-i",
-    "clangd-test",
+    "gtesting",
     "clangd-12",
     "--background-index",
     },
+    -- cmd = {
+    --   "clangd",
+    -- },
     settings = {
     cpp = {
       analysis = {
@@ -88,43 +93,7 @@ require'lspconfig'.clangd.setup{
     },
     filetypes = { "c", "cpp", "objc", "objcpp" },
     -- on_init = function to handle changing offsetEncoding
-    root_dir = require('lspconfig/util').root_pattern("compile_commands.json", "compile_flags.txt"),
-    -- root_dir = function() return "/home/vivado/sfl/q8/libkvh" end,
-    --     -- return lspconfig.util.root_pattern('compile_commands.json')(fname)
-    --     -- print(dir_)
-    --     -- dir_.gsub(dir_, "fhof", "vivado")
-    --     -- return dir_
-    -- end,
-    -- root_dir = root_pattern("compile_commands.json", "compile_flags.txt", ".git") or dirname
---  capabilities = capabilities,
---  root_dir = function() return "/home/fhof/kepler/c/pch_reliable_boot" end
-    -- cwd = function(root_dir)
-    --     return root_dir.gsub(root_dir, "fhof", "vivado")
-    -- end,
-    -- handlers = {
-    -- ['textDocument/declaration'] = function(err, result, method, ...)
-          -- local uri = result.uri or result.targetUri
-          -- local fname = vim.uri_to_fname(uri)
-          -- for _, item in pairs(result) do
-              -- print("Uri: ", item.uri.gsub(item.uri, "vivado", "fhof"))
-              -- item.uri = item.uri.gsub(item.uri, "vivado", "fhof")
-          -- end
-          -- for _, item in pairs(result) do
-          --     print("Uri: ", item.uri)
-          -- end
-      -- don't include internal react definitions (react/index.d.ts)
-      -- print("HERE!!!!")
-      -- print("Testing: ", fname)
-      -- if vim.tbl_islist(result) then
-      --   local filter = function(v)
-      --     return string.match(v.targetUri, '%.d.ts') == nil
-      --   end
-      --   result = vim.tbl_filter(filter, result)
-      -- end
-      -- jump to use the original implementation in handlers.lua
-      -- vim.lsp.handlers['textDocument/declaration'](err, result, method, ...)
-    -- end
-    -- },
+    root_dir = require('lspconfig/util').root_pattern("compile_commands.json", "compile_flags.txt", ".root"),
     before_init = function(params)
         params.processId = vim.NIL
     end,
