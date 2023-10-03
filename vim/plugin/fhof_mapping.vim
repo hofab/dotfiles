@@ -95,3 +95,11 @@ noremap <silent><f9> :AsyncTask file-build<cr>
 
 " check no expandtab mapping
 noremap <LEADER>et :verbose set expandtab?<CR>
+
+" tmux navigator mappings
+let g:tmux_navigator_no_mappings = 1
+
+noremap <silent> <LEADER>h :<C-U>TmuxNavigateLeft<cr>
+noremap <silent> <LEADER>j :<C-U>TmuxNavigateDown<cr>
+noremap <silent> <LEADER>k :<C-U>TmuxNavigateUp<cr>
+noremap <silent> <LEADER>l :<C-U>TmuxNavigateRight<cr>

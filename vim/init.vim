@@ -237,6 +237,9 @@ Plug 'famiu/nvim-reload'
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
 
+" tmux vim navigation
+Plug 'christoomey/vim-tmux-navigator'
+
 "List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
