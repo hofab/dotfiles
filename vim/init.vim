@@ -237,9 +237,6 @@ Plug 'famiu/nvim-reload'
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
 
-" to prevent a blank line that apperared all of a sudden
-" probably can be removed during a new setup
-Plug 'lukas-reineke/indent-blankline.nvim'
 
 "List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -248,7 +245,7 @@ let g:python3_host_prog = '/usr/bin/python3'
 
 " had to add this as all of a sudden a tabline appeared and I don't know from where
 " also blankline.lua didn't appear to work for some reason so disabling the tablines here
-let g:indent_blankline_enabled = v:false
+" let g:indent_blankline_enabled = v:false
 
 " setup asynctask/run
 let g:asyncrun_open = 6
