@@ -6,7 +6,7 @@ syntax on
 colorscheme fhof
 
 "Convert tabs to spaces
-:set noexpandtab
+:set expandtab
 :set shiftwidth=4
 :set tabstop=4
 filetype plugin indent on
@@ -130,7 +130,7 @@ function! UpdateTags()
 endfunction
 autocmd BufWritePost *.cpp,*.h,*.c call UpdateTags()
 "set .h filetype as c, so that we can use C-snippets
-au BufRead,BufNewFile *.h setfiletype c
+au BufRead,BufNewFile *.h setfiletype cpp
 
 " make quickfix work
 function! <SID>AutoProjectRootCD()
@@ -237,19 +237,14 @@ Plug 'famiu/nvim-reload'
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
 
-
 "List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
 let g:python3_host_prog = '/usr/bin/python3'
 
-" had to add this as all of a sudden a tabline appeared and I don't know from where
-" also blankline.lua didn't appear to work for some reason so disabling the tablines here
-" let g:indent_blankline_enabled = v:false
-
 " setup asynctask/run
 let g:asyncrun_open = 6
-" to get the correct root directory for async, otherwise the quickfix didn't work
+"to get the correct root directory for async, otherwise the quickfix didn't work
 let g:rootmarkers = ['.root']
 
 " load lua folder
