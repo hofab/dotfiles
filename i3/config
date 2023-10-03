@@ -1,7 +1,4 @@
 # i3 config file (v4)
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-#disable title bar - apperas to be not doing anything :(
-set $new_window none
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -19,7 +16,7 @@ default_floating_border none
 
 # change borders
 bindsym $mod+u border none
-bindsym $mod+y border pixel 2
+bindsym $mod+y border pixel 1
 
 # is used in the bar {} block below.
 font pango:UbuntuMono Nerd Font Mono 12
@@ -147,15 +144,15 @@ set $ws6 6
 set $ws7 7
 set $ws8 8
 
-set $leftmon "DVI-I-2-1"
-set $midmon "DVI-I-3-2"
+set $leftmon "DVI-I-3-2"
+set $midmon "DVI-I-2-1"
 
 # Setup workspace default output
 workspace $ws1 output $leftmon
 workspace $ws3 output $leftmon
 workspace $ws2 output $midmon
 workspace $ws4 output $midmon
-workspace $ws5 output eDP-1
+# workspace $ws5 output eDP-1
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -206,9 +203,8 @@ for_window [class="qalculate-gtk"] floating enable border pixel 1
 #for_window [class="Xfburn"] floating enable
 
 bindsym $mod+n exec alacritty -t "floating_ala" -e fish -c "nnn -eE"
-bindsym $mod+p exec alacritty -e fish -c "tmux attach -d -t fhof"
-for_window [class="Alacritty" title="floating_ala"] floating enable, border pixel 1
-for_window [ title="notetaker_window" ] floating enable, border pixel 1
+for_window [class="Alacritty" title="floating_ala"] floating enable, border 1 resize set 2000 2000
+for_window [ title="notetaker_window" ] floating enable, border pixel 1 resize set 2000 2000
 bindsym $mod+Shift+n exec alacritty -t "notetaker_window" -e /home/fhof/dotfiles/scripts/notetaker
 
 # switch to workspace with urgent window automatically
@@ -245,9 +241,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+Shift+9 mode "$mode_screen"
 set $mode_screen screen (s) single, (d) dual, (t) triple
 mode "$mode_screen" {
-    bindsym s exec --no-startup-id ~/.config/i3/single, mode "default"
-    bindsym d exec --no-startup-id ~/.config/i3/dual, mode "default"
-    bindsym t exec --no-startup-id ~/.config/i3/triple, mode "default"
+    bindsym s exec --no-startup-id ~/.config/i3/single.sh, mode "default"
+    bindsym d exec --no-startup-id ~/.config/i3/dual.sh, mode "default"
+    bindsym t exec --no-startup-id ~/.config/i3/triple.sh, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -458,7 +454,6 @@ mode "$mode_gaps_outer" {
 }
 
 assign [title="main_term"] $ws2
-assign [title="teams"] $ws5
 
 # setup applications as desired
 #exec compton
@@ -466,5 +461,4 @@ assign [title="teams"] $ws5
 exec --no-startup-id bash -c '~/.config/i3/startup-monitors.sh'
 exec --no-startup-id i3-msg 'workspace $ws1; exec $(which firefox)'
 exec --no-startup-id i3-msg 'workspace $ws2; exec $(which alacritty) -t main_term'
-exec --no-startup-id i3-msg 'workspace $ws5; exec teams'
 exec_always nm-applet

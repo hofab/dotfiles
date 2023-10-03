@@ -11,12 +11,6 @@ separator= ""
 icons = "awesome4"
 
 [[block]]
-block = "pomodoro"
-notify_cmd = "notify-send '{msg}'"
-blocking_cmd = false
-
-
-[[block]]
 block = "disk_space"
 path = "/"
 info_type = "available"
