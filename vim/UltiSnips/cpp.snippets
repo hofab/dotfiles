@@ -29,3 +29,22 @@ snippet header
  * @ingroup ${2:Groupname}
  */
 endsnippet
+
+snippet cli
+int main(int argc, char **argv) {
+    int c;
+while ((c = getopt(argc, argv, "hc:")) != -1) {
+	switch (c) {
+	case 'f':
+		file = optarg;
+		break;
+
+	case 'h':
+		std::cout << "usage: lli -c <file>" << std::endl;
+		return 0;
+
+	default:
+		break;
+	}
+}
+endsnippet
