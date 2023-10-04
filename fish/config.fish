@@ -53,4 +53,5 @@ starship init fish | source
 
 # if not added to path it throws an error at startup
 set -x PATH ~/.pyenv/bin $PATH
+set -x PATH ~/.local/bin $PATH
 pyenv init - | source
