@@ -97,6 +97,7 @@ abbr --add sd       'exa -lR | rg -i'
 abbr --add sc       'rg -iu -tc'
 abbr --add sg       'gb -1000 | rg -i'
 abbr --add rsw      'rm /home/fhof/.local/share/nvim/swap/*'
+abbr --add rg       'rg -i'
 
 #merge history of several fish instances
 abbr --add mhi      'history --merge'
