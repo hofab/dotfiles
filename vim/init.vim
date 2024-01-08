@@ -93,44 +93,7 @@ if has("autocmd")
 " augroup END
 
 autocmd BufWritePre * :%s/\s\+$//e
-
-augroup cprog
-  " Remove all cprog autocommands
-  au!
-
-  " For *.c and *.h files set formatting of comments and set C-indenting on.
-  " For other files switch it off.
-  " Don't change the order, it's important that the line with * comes first.
-    autocmd BufRead,BufNewFile *       set formatoptions=tcql nocindent comments&
-    autocmd BufRead,BufNewFile *.c,*.h,*.cpp set formatoptions=croql cindent comments=sr:/*,mb:*,el:*/,://
-    set cino=:0,(0,c1
-augroup END
-
-autocmd BufWritePre * :%s/\s\+$//e
 endif
-
-" Automatically update the ctags file when a file is written
-function! DelTagOfFile(file)
-  let fullpath = a:file
-  let cwd = getcwd()
-  let tagfilename = cwd . "/tags"
-  let f = substitute(fullpath, cwd . "/", "", "")
-  let f = escape(f, './')
-  let cmd = 'sed -i "/' . f . '/d" "' . tagfilename . '"'
-  let resp = system(cmd)
-endfunction
-
-function! UpdateTags()
-  let f = expand("%:p")
-  let cwd = getcwd()
-  let tagfilename = cwd . "/tags"
-  let cmd = 'ctags -a -f ' . tagfilename . ' --c++-kinds=+p --fields=+iaS --extra=+q ' . '"' . f . '"'
-  call DelTagOfFile(f)
-  let resp = system(cmd)
-endfunction
-autocmd BufWritePost *.cpp,*.h,*.c call UpdateTags()
-"set .h filetype as c, so that we can use C-snippets
-au BufRead,BufNewFile *.h setfiletype cpp
 
 " make quickfix work
 function! <SID>AutoProjectRootCD()
