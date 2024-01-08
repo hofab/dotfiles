@@ -148,10 +148,15 @@ set $leftmon "DVI-I-3-2"
 set $midmon "DVI-I-2-1"
 
 # Setup workspace default output
-workspace $ws1 output $leftmon
-workspace $ws3 output $leftmon
-workspace $ws2 output $midmon
-workspace $ws4 output $midmon
+workspace $ws2 output $leftmon
+workspace $ws4 output $leftmon
+workspace $ws6 output $leftmon
+workspace $ws8 output $leftmon
+workspace $ws1 output $midmon
+workspace $ws3 output $midmon
+workspace $ws5 output $midmon
+workspace $ws7 output $midmon
+workspace $ws9 output $midmon
 # workspace $ws5 output eDP-1
 
 # switch to workspace
@@ -203,8 +208,8 @@ for_window [class="qalculate-gtk"] floating enable border pixel 1
 #for_window [class="Xfburn"] floating enable
 
 bindsym $mod+n exec alacritty -t "floating_ala" -e fish -c "nnn -eE"
-for_window [class="Alacritty" title="floating_ala"] floating enable, border 1 resize set 2000 2000
-for_window [ title="notetaker_window" ] floating enable, border pixel 1 resize set 2000 2000
+for_window [class="Alacritty" title="floating_ala"] floating enable, border pixel 1 resize set 2000 1500
+for_window [ title="notetaker_window" ] floating enable, border pixel 1 resize set 2000 1500
 bindsym $mod+Shift+n exec alacritty -t "notetaker_window" -e /home/fhof/dotfiles/scripts/notetaker
 
 # switch to workspace with urgent window automatically
