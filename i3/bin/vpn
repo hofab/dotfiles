@@ -6,7 +6,7 @@
 #
 
 CMD="$1"
-VPN_ID=$(nmcli con | grep ' vpn ' | cut -f 1 -d' ' | grep 'udp')
+VPN_ID=$(nmcli con | grep ' vpn ' | cut -f 1 -d' ' | grep '204-udp-1194$')
 echo "$VPN_ID"
 
 case "${CMD}" in
