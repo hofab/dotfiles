@@ -52,7 +52,7 @@ windows:
       layout: 3099,225x61,0,0{151x61,0,0[151x38,0,0,28,151x22,0,39{101x22,0,39,40,49x22,102,39,41}],73x61,152,0[73x38,152,0,35,73x12,152,39,38,73x9,152,52,39]}
       panes:
         # should start docker image in one pane or put docker to the work image?
-        - docker start gtesting; and docker attach gtesting
+        - docker start buildq8; and docker attach buildq8
         - cd ~/sfl-bkp/nspshell; and clear
         -
         -
