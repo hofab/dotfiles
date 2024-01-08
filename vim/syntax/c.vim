@@ -246,6 +246,7 @@ syn match cOperator "[.!~*&%<>^|=+-]"
 syn match cOperator "/[^/*=]"me=e-1
 syn match cOperator "/$"
 syn match cOperator "&&\|||"
+syn match cOperator "++\|--"
 
 " Preprocs
 syn keyword cDefined defined contained containedin=cDefine
@@ -264,7 +265,8 @@ syn match cDelimiter "[();\\]"
 syn match cBraces display "[{}]"
 syn match cBraces "[][]"
 syn match cSeperator "\>->\<\|.\<"
-syn match cComma    ","
+syn match cSeperator "\w>\|\*>"ms=s+1
+syn match cComma    ",\|::"
 
 " Booleans
 syn keyword cBoolean true false TRUE FALSE

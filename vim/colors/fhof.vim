@@ -24,7 +24,7 @@ hi Folded               ctermfg=252 ctermbg=240 guifg=#e4e4e4   guibg=#585858
 hi FoldColumn           ctermfg=7   ctermbg=8   guifg=#c0c0c0   guibg=#808080
 hi VertSplit            ctermfg=252 ctermbg=5   guifg=#af00af   guibg=#eeeeee
 hi LineNr               ctermfg=239 ctermbg=255 guifg=#aeaeae   guibg=#eeeeee
-hi Normal               ctermfg=239 ctermbg=NONE  guifg=#4e4e4e
+hi Normal               ctermfg=239 ctermbg=NONE  guifg=#4e4e4e guibg=#eeeeee
 hi Identifier           ctermfg=239 ctermbg=NONE  guifg=#4e4e4e
 hi Search               ctermfg=239 ctermbg=230 guifg=#aeaeae   guibg=#ffffdf
 set cursorline
@@ -56,6 +56,7 @@ hi Question             gui=NONE
 hi Delimiter            ctermfg=245             guifg=#8a8a8a
 hi Define               ctermfg=20              guifg=#0000d7       "#define
 hi OverLength           ctermfg=239 ctermbg=196 guifg=#aeaeae   guibg=#ff0000
+hi Operator             ctermfg=199             guifg=#ff00af
 
 " popup-colors
 hi Pmenu         ctermfg=0  ctermbg=117         guifg=#000000   guibg=#87d7ff
