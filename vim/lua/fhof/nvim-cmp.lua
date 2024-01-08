@@ -75,7 +75,7 @@ require'lspconfig'.clangd.setup{
     "docker",
     "exec",
     "-i",
-    "gtesting",
+    "buildq8",
     "clangd-12",
     "--background-index",
     },
