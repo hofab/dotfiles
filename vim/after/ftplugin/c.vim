@@ -1,0 +1,3 @@
+setlocal expandtab
+setlocal shiftwidth=8
+setlocal tabstop=8
