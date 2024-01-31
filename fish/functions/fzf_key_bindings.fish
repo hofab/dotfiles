@@ -1,1 +1,1 @@
-/home/fhof/dotfiles/vim/plugged/fzf/shell/key-bindings.fish
+/home/fhof/.fzf/shell/key-bindings.fish
