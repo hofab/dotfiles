@@ -21,3 +21,8 @@ else
     echo "No ssh connection available"
 fi
 ```
+
+## Execute command on remote while logging the output on local machine and follow the output
+```
+ssh -oHostKeyAlgorithms=+ssh-rsa <USER>@<SERVER> 'journalctl -fu <service>' | tee log.log & tail -f log.log
+```
