@@ -10,17 +10,19 @@ function ctemplate --description 'Create .cc/.h-files for a new "module"'
 
             echo "/**
  * @file $argv.h
- * @copyright Copyright 2023 Space Flight Laboratories
+ * @copyright Copyright 2024 Space Flight Laboratories
  * @ingroup <DUMMY>
  */
-#pragma once
+ #ifndef "$UPPER_ARGV"_H__
+ #define "$UPPER_ARGV"_H__
+ #endif
 
 ">$argv.h
             # create and write c-file
             touch $argv.cc
             echo "/**
  * @file $argv.cc
- * @copyright Copyright 2023 Space Flight Laboratories
+ * @copyright Copyright 2024 Space Flight Laboratories
  * @brief <DUMMY>
  */
 
