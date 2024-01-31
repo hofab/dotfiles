@@ -9,10 +9,16 @@ midmon_args="--mode 3840x2160 --scale 1x1 --pos 3840x0 --primary"
 # midmon_args_work="--mode 2560x1440 --scale 1x1 --pos 2560x0 --primary"
 
 if $(xrandr -q | grep -q DVI); then
-    # leftmon="DVI-I-2-2"
-    # midmon="DVI-I-1-1"
-    midmon="DVI-I-2-1"
-    leftmon="DVI-I-3-2"
+    if $(xrandr -q | grep -q "DVI-I-2-1" | grep -q "3840+0"); then
+        midmon="DVI-I-2-1"
+    else
+        leftmon="DVI-I-2-1"
+    fi
+    if $(xrandr -q | grep -q "DVI-I-3-2" | grep -q "0+0"); then
+        leftmon="DVI-I-3-2"
+    else
+        midmon="DVI-I-3-2"
+    fi
 fi
 
 xrandr \
