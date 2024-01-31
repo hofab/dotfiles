@@ -9,7 +9,8 @@ function nsssh --description 'SSH into the NorSat-flatsat'
     if ssh -oHostKeyAlgorithms=+ssh-rsa -o StrictHostKeyChecking=accept-new -o ConnectTimeout=5 root@$POBC_IP 'exit 0'
         ssh -oHostKeyAlgorithms=+ssh-rsa -o StrictHostKeyChecking=accept-new root@$POBC_IP
     else
-        ssh-keygen -f "/home/fhof/.ssh/known_hosts" -R $POBC_IP
-        ssh -oHostKeyAlgorithms=+ssh-rsa -o StrictHostKeyChecking=accept-new root@$POBC_IP
+        # ssh-keygen -f "/home/fhof/.ssh/known_hosts" -R $POBC_IP
+        # ssh -oHostKeyAlgorithms=+ssh-rsa -o StrictHostKeyChecking=accept-new root@$POBC_IP
+        echo "No connection"
     end
 end
