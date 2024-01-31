@@ -23,6 +23,9 @@ set --export GIT_EDITOR "nvim"
 
 set -g fish_term256 1
 
+# user specific configuration
+set --export USER_LOG_DIR "$HOME/sfl-bkp/logs"
+
 # nnn support editor
 set --export NNN_USE_EDITOR "1"
 set --export NNN_FCOLORS "04041947000080f600000000"
