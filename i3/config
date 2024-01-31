@@ -142,10 +142,10 @@ set $ws4 "4:異"
 set $ws5 "5:"
 set $ws6 6
 set $ws7 7
-set $ws8 8
+set $ws8 "8:"
 
-set $leftmon "DVI-I-3-2"
-set $midmon "DVI-I-2-1"
+set $leftmon "DVI-I-1-1"
+set $midmon "DVI-I-3-2"
 
 # Setup workspace default output
 workspace $ws2 output $leftmon
@@ -465,5 +465,5 @@ assign [title="main_term"] $ws2
 #exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id bash -c '~/.config/i3/startup-monitors.sh'
 exec --no-startup-id i3-msg 'workspace $ws1; exec $(which firefox)'
-exec --no-startup-id i3-msg 'workspace $ws2; exec $(which alacritty) -t main_term'
+exec --no-startup-id i3-msg 'workspace $ws2; exec $(which alacritty) -e tmuxinator start work -t main_term'
 exec_always nm-applet
