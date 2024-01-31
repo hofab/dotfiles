@@ -24,5 +24,5 @@ fi
 
 ## Execute command on remote while logging the output on local machine and follow the output
 ```
-ssh -oHostKeyAlgorithms=+ssh-rsa <USER>@<SERVER> 'journalctl -fu <service>' | tee log.log & tail -f log.log
+ssh -oHostKeyAlgorithms=+ssh-rsa <USER>@<SERVER> 'journalctl -fu <service>' | tee -a log.log & tail -f log.log
 ```
