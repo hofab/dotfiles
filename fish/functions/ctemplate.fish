@@ -13,9 +13,9 @@ function ctemplate --description 'Create .cc/.h-files for a new "module"'
  * @copyright Copyright 2024 Space Flight Laboratories
  * @ingroup <DUMMY>
  */
- #ifndef "$UPPER_ARGV"_H__
- #define "$UPPER_ARGV"_H__
- #endif
+#ifndef "$UPPER_ARGV"_H__
+#define "$UPPER_ARGV"_H__
+#endif
 
 ">$argv.h
             # create and write c-file
