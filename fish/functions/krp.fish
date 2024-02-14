@@ -17,9 +17,9 @@ function krp --description 'Kill -n 9 a process on the remote host given by work
     if test -n "$pid"
         # Kill the process on the remote machine using SSH
         eval $SSH_CMD $REMOTE "kill -9 '$pid'"
-        echo "Service '$service_name' killed on $REMOTE (PID: $pid)."
+        echo "Process '$service_name' killed on $REMOTE (PID: $pid)."
     else
-        echo "Service '$service_name' not found on $REMOTE."
+        echo "Process '$service_name' not found on $REMOTE."
     end
 end
 
