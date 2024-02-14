@@ -1,0 +1,3 @@
+[submodule "private-work-files"]
+	path = private-work-files
+	url = git@github.com:hofab/private-work-files.git
