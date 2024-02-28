@@ -1,1 +1,1 @@
-source "../../private-work-files/fish/work-config.fish"
+source ~/dotfiles/private-work-files/fish/work-config.fish
