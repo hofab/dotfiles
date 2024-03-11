@@ -5,7 +5,7 @@ function krp --description 'Kill -n 9 a process on the remote host given by work
         return 1
     end
 
-    source central-config.fish
+    source ~/.config/fish/functions/central-config.fish
 
     # set remote_host $argv[1]
     set service_name $argv[1]
