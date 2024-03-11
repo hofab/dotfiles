@@ -1,7 +1,7 @@
 " Using lua functions
 nnoremap <leader>f :vs<CR><C-W>l<cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>o <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <LEADER>t :tabe<CR><cmd>lua require('telescope.builtin').git_files()<cr>
+nnoremap <LEADER>t :call CheckGitRepository()<CR>
 
 " grep
 nnoremap <leader>rg :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
@@ -22,4 +22,17 @@ nnoremap <leader>cn :lua require('fhof.telescope').search_notes()<CR>
 
 " grep for word und cursor
 nnoremap <leader>cw :lua require('telescope.builtin').grep_string({silent = true, noremap = true})<CR>
+
+function! CheckGitRepository()
+    let current_dir = expand('%:p:h')
+
+    " Check if the directory is a Git repository
+    if system("git rev-parse --is-inside-work-tree") ==# "true\n"
+        " Directory is a Git repository
+        :tabe | execute "lua require('telescope.builtin').git_files()"
+    else
+        " Directory is not a Git repository
+        :tabe | execute "lua require('telescope.builtin').find_files()"
+    endif
+endfunction
 
