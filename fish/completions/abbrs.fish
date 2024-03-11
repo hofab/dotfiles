@@ -64,6 +64,8 @@ abbr --add grev     'git merge-base origin/master HEAD | git difftool --stdin'
 abbr --add gaifb    'git checkout integration/aifb'
 abbr --add gac      'git commit -m"((gbn) | string split '/' | string match -r ".*[0-9]")'
 abbr --add flc      'gfc -1' #show files of last commit
+# show age of last commit on branch git age branch
+abbr --add gba      'git for-each-ref --sort=committerdate refs/heads/ --format=\'%(HEAD)%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname)(%(color:green)%(committerdate:relative)%(color:reset))\''
 #shell shortcuts
 abbr --add c        'clear'
 abbr --add infi     '> file.txt 2>&1'
@@ -88,7 +90,7 @@ abbr --add ei       'nvim ~/dotfiles/i3/config'
 abbr --add et       'nvim ~/dotfiles/tmux.conf'
 abbr --add evrc     'nvim ~/dotfiles/vim/init.vim'
 abbr --add efc      'nvim ~/dotfiles/fish/config.fish'
-abbr --add efia     'nvim ~/dotfiles/fish/completions/abbrs.fish'
+abbr --add efa     'nvim ~/dotfiles/fish/completions/abbrs.fish'
 abbr --add evm      'nvim ~/dotfiles/vim/config/fhof_mapping.vim'
 abbr --add ecs      'nvim ~/dotfiles/vim/UltiSnips/c_my.snippets'
 abbr --add zd       'z ~/Downloads'
@@ -114,3 +116,6 @@ abbr --add ars      'set -e fish_user_abbreviations; set -e fish_initialized'
 
 # tmux dev environment start
 abbr --add tmx      'tmux attach -d -t fhof'
+
+# bang bang implementation for fish
+abbr --add !! --position anywhere --function last_history_item
