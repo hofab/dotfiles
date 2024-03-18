@@ -1,8 +1,8 @@
 function nsssh --description 'SSH into the NorSat-flatsat'
     if [ (count $argv) -gt 0 ]
-        set POBC_IP "192.168.208.$argv"
+        set POBC_IP "192.168.$argv"
     else
-        echo "nsssh <ip subaddress> e.g. nsssh 12 - 192.168.208.<12>"
+        echo "nsssh <ip subaddress> e.g. nsssh 12 - 192.168.<11.12>"
         exit
     end
 
