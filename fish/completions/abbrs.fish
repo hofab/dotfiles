@@ -64,6 +64,8 @@ abbr --add grev     'git merge-base origin/master HEAD | git difftool --stdin'
 abbr --add gaifb    'git checkout integration/aifb'
 abbr --add gac      'git commit -m"((gbn) | string split '/' | string match -r ".*[0-9]")'
 abbr --add flc      'gfc -1' #show files of last commit
+# apply clang-format to staged commit: https://clang.llvm.org/docs/ClangFormat.html
+abbr --add fc       'git diff -U0 --no-color --relative HEAD^ | clang-format-diff-18 -p1 -i'
 # show age of last commit on branch git age branch
 abbr --add gba      'git for-each-ref --sort=committerdate refs/heads/ --format=\'%(HEAD)%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname)(%(color:green)%(committerdate:relative)%(color:reset))\''
 #shell shortcuts
