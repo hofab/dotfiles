@@ -1,5 +1,6 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = "all", -- one of "all" or a list of languages
+  ignore_installed = {""}, -- List of parsers to ignore installing
   highlight = {
 -- highlighting messed up cSeperator/cOperator
 -- after some tinkering the ts defaults are still better
