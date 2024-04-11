@@ -144,7 +144,7 @@ set $ws6 6
 set $ws7 7
 set $ws8 "8:"
 
-set $leftmon "DVI-I-1-1"
+set $leftmon "DVI-I-2-1"
 set $midmon "DVI-I-3-2"
 
 # Setup workspace default output
