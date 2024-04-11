@@ -51,9 +51,9 @@ if filereadable("/usr/share/clang/clang-format.py")
     autocmd Filetype c,cpp imap <C-K> <c-o>:py3f /usr/share/clang/clang-format.py<cr>
 endif
 
-if filereadable("/usr/share/clang/clang-format-15/clang-format.py")
-    autocmd Filetype c,cpp map <LEADER>i :py3f /usr/share/clang/clang-format-16/clang-format.py<cr>
-    autocmd Filetype c,cpp imap <C-K> <c-o>:py3f /usr/share/clang/clang-format-16/clang-format.py<cr>
+if filereadable("/usr/share/clang/clang-format-18/clang-format.py")
+    autocmd Filetype c,cpp map <LEADER>i :py3f /usr/share/clang/clang-format-18/clang-format.py<cr>
+    autocmd Filetype c,cpp imap <C-K> <c-o>:py3f /usr/share/clang/clang-format-18/clang-format.py<cr>
 endif
 
 "" easymotion configuration
