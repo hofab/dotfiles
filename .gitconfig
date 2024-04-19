@@ -1,7 +1,5 @@
-
 [user]
     name = Fabian Hof
-    email = Fabian.Hof@l3t.com
 
 #################################
 # Core variables
@@ -54,6 +52,26 @@
     default = current
 [rebase]
     autosquash = true
-
 [branch]
     autosetuprebase = always
+
+#################################
+# diff
+#################################
+[core]
+    pager = delta --light
+
+[interactive]
+    diffFilter = delta --color-only --light
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+
+    # delta detects terminal colors automatically; set one of these to disable auto-detection
+    light = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
