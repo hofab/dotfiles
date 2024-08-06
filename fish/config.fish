@@ -5,6 +5,8 @@ set --export FZF_DEFAULT_COMMAND 'fd --type f'
 # set fish_right_prompt timezone
 set -g theme_date_timezone America/New_York
 
+set -g fish_browser /usr/bin/firefox
+
 # set path to fish completions
 set fish_complete_path ~/.config/fish/completions $fish_complete_path
 
