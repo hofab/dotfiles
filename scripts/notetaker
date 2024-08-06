@@ -1,13 +1,30 @@
 #!/bin/sh
 
-noteFilename="$HOME/Notes/note-$(date +%Y-%m-%d).md"
+NOTES_LOCATION="/Notes/work/"
+FORMATTED_DATE=$(date +%y-%m-%d)
+FORMATTED_MONTH=$(date +%y_%m)
+DIR_NAME="$HOME$NOTES_LOCATION$FORMATTED_MONTH"
 
-if [ ! -f $noteFilename ]; then
-  echo "# Notes for $(date +%Y-%m-%d)" > $noteFilename
+if [ ! -d $DIR_NAME ]; then
+    mkdir -p $DIR_NAME
+fi
+
+FILENAME="$HOME$NOTES_LOCATION$FORMATTED_MONTH/$FORMATTED_DATE.md"
+
+if [ ! -f $FILENAME ]; then
+  echo "# Notes for $FORMATTED_DATE" >> $FILENAME
+  echo "## Pomodoro" >> $FILENAME
+  echo "\`\`\`" >> $FILENAME
+  echo "     1h2h3h4h5h6h7h8h" >> $FILENAME
+  echo "    [                ]" >> $FILENAME
+  echo "\`\`\`" >> $FILENAME
+  echo "" >> $FILENAME
+  echo "## Tasks" >> $FILENAME
+  echo "- " >> $FILENAME
 fi
 
 nvim -c "norm Go" \
   -c "norm Go## $(date +%H:%M)" \
   -c "norm G2o" \
   -c "norm zz" \
-  -c "startinsert" $noteFilename
+  -c "startinsert" $FILENAME

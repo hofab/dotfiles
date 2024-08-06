@@ -144,8 +144,10 @@ set $ws6 6
 set $ws7 7
 set $ws8 "8:"
 
-set $leftmon "DVI-I-2-1"
-set $midmon "DVI-I-3-2"
+# set $leftmon "DVI-I-2-1"
+# set $midmon "DVI-I-3-2"
+set $midmon "DVI-I-2-1"
+set $leftmon "DVI-I-3-2"
 
 # Setup workspace default output
 workspace $ws2 output $leftmon
@@ -208,9 +210,8 @@ for_window [class="qalculate-gtk"] floating enable border pixel 1
 #for_window [class="Xfburn"] floating enable
 
 bindsym $mod+n exec alacritty -t "floating_ala" -e fish -c "nnn -eE"
-for_window [class="Alacritty" title="floating_ala"] floating enable, border pixel 1 resize set 2000 1500
-for_window [ title="notetaker_window" ] floating enable, border pixel 1 resize set 2000 1500
-bindsym $mod+Shift+n exec alacritty -t "notetaker_window" -e /home/fhof/dotfiles/scripts/notetaker
+for_window [class="Alacritty" title="floating_ala"] floating enable, border pixel 1 resize set 1000 1000
+for_window [ title="notetaker_window" ] floating enable, border pixel 1 resize set 1000 1000
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -244,11 +245,12 @@ bindsym $mod+x [urgent=latest] focus
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 bindsym $mod+Shift+9 mode "$mode_screen"
-set $mode_screen screen (s) single, (d) dual, (t) triple
+set $mode_screen screen (s) single, (d) dual, (t) triple, (w) work
 mode "$mode_screen" {
     bindsym s exec --no-startup-id ~/.config/i3/single.sh, mode "default"
     bindsym d exec --no-startup-id ~/.config/i3/dual.sh, mode "default"
     bindsym t exec --no-startup-id ~/.config/i3/triple.sh, mode "default"
+    bindsym w exec --no-startup-id ~/.config/i3/work.sh, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -262,6 +264,23 @@ mode "$mode_vpn" {
     bindsym d exec --no-startup-id ~/.config/i3/bin/vpn down, mode "default"
     bindsym o exec --no-startup-id ~/.config/i3/bin/vpn on, mode "default"
     bindsym f exec --no-startup-id ~/.config/i3/bin/vpn off, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# bindsym $mod+Shift+n exec alacritty -t "notetaker_window" -e /home/fhof/dotfiles/scripts/notetaker
+# Set shut down, restart and locking features
+bindsym $mod+Shift+n mode "$mode_notes"
+set $mode_notes Notes (y)esterday, (t)omorrow, (l)ast week, (n)ext week, (c)urrent, t(o)day
+mode "$mode_notes" {
+    bindsym y exec alacritty -t "notetaker_window" -e ~/.config/i3/select_notes.sh -y, mode "default"
+    bindsym t exec alacritty -t "notetaker_window" -e ~/.config/i3/select_notes.sh -t, mode "default"
+    bindsym l exec alacritty -t "notetaker_window" -e ~/.config/i3/select_notes.sh -l, mode "default"
+    bindsym n exec alacritty -t "notetaker_window" -e ~/.config/i3/select_notes.sh -n, mode "default"
+    bindsym c exec alacritty -t "notetaker_window" -e ~/.config/i3/select_notes.sh -c, mode "default"
+    bindsym o exec alacritty -t "notetaker_window" -e ~/.config/i3/select_notes.sh, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
