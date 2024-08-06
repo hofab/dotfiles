@@ -85,3 +85,5 @@ cfg.mak
 vim/plugged/*
 vim/autoload/*
 fish/fundle/**
+fish/themes
+fish/fish_variables
