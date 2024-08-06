@@ -96,9 +96,12 @@ noremap <silent><f9> :AsyncTask file-build<cr>
 " check no expandtab mapping
 noremap <LEADER>et :verbose set expandtab?<CR>
 
-" check no expandtab mapping
-noremap <LEADER>nt :tabe<CR> :NnnPicker<CR>
-noremap <LEADER>nf :vs<CR><C-W>l :NnnPicker<CR>
+"
+nnoremap <LEADER>nt :execute "tabe" \| execute "NnnPicker"<CR>
+nnoremap <LEADER>nf :vs<CR><C-W>l :NnnPicker<CR>
 
 " determine highlight group of text under cursor
 nnoremap <LEADER>hg :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") ."> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+" 4 spaces to tabs
+noremap <silent><f5> :%s/    /  /g<cr>

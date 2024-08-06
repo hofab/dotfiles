@@ -21,7 +21,7 @@ require('telescope').setup {
         },
         file_sorter = require('telescope.sorters').get_fzy_sorter,
         file_ignore_patterns = {},
-        generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
+        generic_sorter =  require'telescope.sorters'.get_fzy_sorter,
         path_display = {
             "shorten",
         },
@@ -50,7 +50,7 @@ require('telescope').setup {
     extensions = {
         fzy_native = {
             fuzzy = true,                    -- false will only do exact matching
-            override_generic_sorter = false,
+            override_generic_sorter = true,
             override_file_sorter = true,
             case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
                                              -- the default case_mode is "smart_case"

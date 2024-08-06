@@ -59,7 +59,8 @@ cmp.setup.cmdline(':', {
 })
 
 -- disable inline diagnostics
-vim.diagnostic.disable()
+vim.diagnostic.enable(false)
+vim.lsp.set_log_level("debug")
 
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -76,14 +77,27 @@ require'lspconfig'.clangd.setup{
     },
     cmd = {
     "docker",
-    "exec",
+    "run",
     "-i",
-    "buildq8",
-    "clangd-12",
+    "--rm",
+    "-u",
+    "vivado",
+    "-v",
+    "/home/vivado/sfl/:/home/vivado/sfl",
+    -- "/home/fhof/sfl/q8:/home/vivado/sfl/q8",
+    "clangd",
+    "/usr/bin/clangd-12",
     "--background-index",
+    "--fallback-style=none",
+    "--header-insertion=iwyu",
+    "--compile-commands-dir=/home/vivado/sfl/q8/sw/lli",
+    "--query-driver=/home/vivado/sfl/q8/toolchain/sysroots/x86_64-xiphossdk-linux/usr/bin/aarch64-xiphos-linux/aarch64-xiphos-linux-g++"
     },
     -- cmd = {
     --   "clangd",
+    --   -- "--path-mappings='/home/fhof/sfl/=/home/vivado/sfl/'",
+    -- -- "--path-mappings='/home/fhof/sfl/=/home/vivado/sfl/'"
+    --     "--path-mappings=/home/vivado/sfl/q8/lli=/home/vivado/sfl/q8/lli",
     -- },
     settings = {
     cpp = {

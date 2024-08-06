@@ -203,6 +203,9 @@ Plug 'skywind3000/asyncrun.vim'
 " tmux vim navigation
 Plug 'christoomey/vim-tmux-navigator'
 
+" Automatically adjusts shiftwidth and expandtab heuristically based on current file
+" Plug 'tpope/vim-sleuth'
+
 "List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
