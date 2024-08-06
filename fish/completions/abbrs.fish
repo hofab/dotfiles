@@ -6,7 +6,7 @@ abbr --add gstl     'git stash list'
 abbr --add gstp     'git stash pop'
 abbr --add gstd     'git stash drop'
 # see mjcarroll: https://github.com/mjcarroll/dotfiles/blob/master/git/.gitconfig
-abbr --add gsnap    'git stash save "snapshot: (date)"; and git stash apply "stash@{0}"'
+abbr --add gsnap    'git stash save "snapshot: date"; and git stash apply "stash@{0}"'
 abbr --add gsnaps   'git stash list --rg snapshot'
 abbr --add gco      'git checkout'
 abbr --add gnb      'git checkout -b fh/'
@@ -117,7 +117,8 @@ abbr --add drio     'docker run -it --rm --name="draw" -p 8080:8080 -p 8443:8443
 abbr --add ars      'set -e fish_user_abbreviations; set -e fish_initialized'
 
 # tmux dev environment start
-abbr --add tmx      'tmux attach -d -t fhof'
+abbr --add txw      'tmuxinator start work'
+abbr --add txb      'tmuxinator start break'
 
 # bang bang implementation for fish
 abbr --add !! --position anywhere --function last_history_item
