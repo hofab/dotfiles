@@ -1,0 +1,25 @@
+# /home/fhof/.config/tmuxinator/testing.yml
+
+name: break
+root: ~/
+
+windows:
+  - portfolio:
+      panes:
+        - cd ~/portfolio; and poetry python run portfolio
+  - ab:
+      panes:
+        - cd ~/private/auto-budget
+  - checker:
+      panes:
+        - cd ~/private/price_checker
+  - rnd1:
+      panes:
+        - cd ~
+  - rnd2:
+      panes:
+        - cd ~
+  - df:
+      panes:
+        - cd ~/dotfiles
+
