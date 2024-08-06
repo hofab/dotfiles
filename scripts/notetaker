@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NOTES_LOCATION="/Notes/work/"
-FORMATTED_DATE=$(date +%y-%m-%d)
+FORMATTED_DATE=$(date +%Y-%m-%d)
 FORMATTED_MONTH=$(date +%y_%m)
 DIR_NAME="$HOME$NOTES_LOCATION$FORMATTED_MONTH"
 
