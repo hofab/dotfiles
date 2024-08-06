@@ -12,12 +12,10 @@ echo "$VPN_ID"
 case "${CMD}" in
 
     on|up)
-        echo "UP"
-        nmcli con up id "${VPN_ID}"
+        nmcli con up id "${VPN_ID}" && mount -a
         ;;
 
     off|down)
-        echo "down"
         nmcli con down id "${VPN_ID}"
         ;;
 
