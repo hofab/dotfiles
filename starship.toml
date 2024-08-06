@@ -44,12 +44,10 @@ disabled = true
 
 [directory]
 style = "italic bg:#3a3a3a fg:#dadada"
-read_only = ""
-read_only_style = "bg:#3a3a3a fg:#dadada"
 truncation_length = 3
 truncation_symbol = "/"
 # fish_style_pwd_dir_length = 1
-format = "([$read_only[](bg:#3a3a3a fg:#3a3a3a)]($read_only_style))[[](bg:#3a3a3a fg:mauve)$path[](bg:#008700 fg:#3a3a3a)]($style)"
+format = "([[](bg:#3a3a3a fg:#3a3a3a)]($read_only_style))[[](bg:#3a3a3a fg:mauve)$path[](bg:#008700 fg:#3a3a3a)]($style)"
 
 [directory.substitutions]
 "~/Downloads" = " "
