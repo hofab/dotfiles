@@ -23,16 +23,42 @@ get_dates() {
     FORMATTED_MONTH=$(date +%y_%m)
 }
 
+create_note() {
+    local FILENAME=$1
+
+    # extract date from filename
+    DATE=$(echo "$FILENAME" | sed -n 's/.*\([0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}\).*/\1/p')
+
+    if [ ! -f $FILENAME ]; then
+      echo "# Notes for ${DATE}" >> $FILENAME
+      echo "## Pomodoro" >> $FILENAME
+      echo "\`\`\`" >> $FILENAME
+      echo "     1h2h3h4h5h6h7h8h" >> $FILENAME
+      echo "    [                ]" >> $FILENAME
+      echo "\`\`\`" >> $FILENAME
+      echo "" >> $FILENAME
+      echo "## Tasks" >> $FILENAME
+      echo "- " >> $FILENAME
+    fi
+}
+
 # Function to open the note file
 open_note() {
     local file=$1
 
-    if [ -f "$file" ]; then
-        # echo "Opening $file..."
+    if [ -f "${file}" ]; then
         # Replace 'nano' with your preferred text editor
         ${EDITOR_} "${file}"
     else
-        echo "Note file not found: $file"
+        # add input variable to create files as needed otherwise notetaker
+        # just creates the current days notes but we are opening an
+        # empty file
+        create_note "${file}"
+        if [ -f $file ]; then
+            ${EDITOR_} "${file}"
+        else
+            echo "File does not exist"
+        fi
     fi
 }
 
