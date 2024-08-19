@@ -1,0 +1,183 @@
+import = ["/home/fhof/.config/alacritty/catppuccin/catppuccin-latte.toml"]
+live_config_reload = true
+working_directory = "None"
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x666666"
+blue = "0x295fcc"
+cyan = "0x54ced6"
+green = "0x4ce64c"
+magenta = "0xb77ee0"
+red = "0xD6153A"
+white = "0x777777"
+yellow = "0xB19F32"
+
+[colors.cursor]
+cursor = "0xFF95F1"
+text = "0x0D0D0D"
+
+[colors.dim]
+black = "0x333333"
+blue = "0x295fcc"
+cyan = "0x66cccc"
+green = "0x4ce64c"
+magenta = "0xcc99cc"
+red = "0xff3334"
+white = "0xD0D0D0"
+yellow = "0xB19F32"
+
+[colors.normal]
+black = "0x000000"
+blue = "0x295fcc"
+cyan = "0x70c0ba"
+green = "0x44aa44"
+magenta = "0xAA22AA"
+red = "0xD6153A"
+white = "0xD0D0D0"
+yellow = "0xB19F32"
+
+[colors.primary]
+background = "0xEEEEEE"
+foreground = "0x0D0D0D"
+
+[colors.selection]
+background = "0xD0D0D0"
+text = "0xeeeeee"
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[debug]
+log_level = "Warn"
+persistent_logging = false
+print_events = false
+render_timer = false
+
+[env]
+TERM = "tmux-256color"
+WINIT_X11_SCALE_FACTOR = "1"
+
+[font]
+size = 25.0
+
+[font.bold]
+family = "UbuntuMono Nerd Font Mono"
+style = "Bold"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "UbuntuMono Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "UbuntuMono Nerd Font Mono"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "NumpadSubtract"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "Paste"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Copy"
+
+[[keyboard.bindings]]
+action = "ClearLogNotice"
+key = "L"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "L"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "PageUp"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "PageDown"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToTop"
+key = "Home"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "End"
+mode = "~Alt"
+mods = "Shift"
+
+[mouse]
+hide_when_typing = false
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+[scrolling]
+history = 10000
+multiplier = 10
+
+[selection]
+save_to_clipboard = false
+semantic_escape_chars = ''',│`|:"' ()[]{}<>	'''
+
+[shell]
+args = ["--login"]
+program = "/usr/bin/fish"
+
+[window]
+decorations = "full"
+dynamic_padding = false
+startup_mode = "Windowed"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.dimensions]
+columns = 0
+lines = 0
+
+[window.padding]
+x = 0
+y = 0
