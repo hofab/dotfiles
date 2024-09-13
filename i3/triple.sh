@@ -1,29 +1,25 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo "TRI-SCRIPT"
 
-midmon_args="--mode 3840x2160 --scale 1x1 --pos 0x0"
-leftmon_args="--mode 3840x2160 --scale 1x1 --pos 3840x0 --primary"
-
-# leftmon_args_work="--mode 2560x1440 --scale 1x1 --pos 0x0"
-# midmon_args_work="--mode 2560x1440 --scale 1x1 --pos 2560x0 --primary"
+source mon_config
 
 if $(xrandr -q | grep -q DVI); then
-    if $(xrandr -q | grep -q "DVI-I-2-1" | grep -q "3840+0"); then
-        leftmon="DVI-I-2-1"
+    if $(xrandr -q | grep -q $LEFT_MON | grep -q "3840+0"); then
+        midmon=$LEFT_MON
     else
-        midmon="DVI-I-2-1"
+        leftmon=$LEFT_MON
     fi
-    if $(xrandr -q | grep -q "DVI-I-3-2" | grep -q "0+0"); then
-        midmon="DVI-I-3-2"
+    if $(xrandr -q | grep -q $MID_MON | grep -q "0+0"); then
+        leftmon=$MID_MON
     else
-        leftmon="DVI-I-3-2"
+        midmon=$MID_MON
     fi
 fi
 
 xrandr \
-    --output $midmon $midmon_args \
-    --output $leftmon $leftmon_args \
+    --output $midmon $MID_MON_ARGS \
+    --output $leftmon $LEFT_MON_ARGS \
     --output eDP-1 --off
 
 # leftmon="DVI-I-2-1"
