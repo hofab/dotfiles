@@ -35,7 +35,7 @@ hi CursorLineNr         ctermfg=255 ctermbg=199 guifg=#eeeeee   guibg=#ff00af
 hi Comment              ctermfg=245             guifg=#8a8a8a
 hi Number               ctermfg=40              guifg=#00d700
 hi Search               ctermfg=0   ctermbg=214 guifg=#000000   guibg=#ffaf00
-hi Todo                             ctermbg=226                 guibg=#ffff00
+" hi Todo                             ctermbg=226                 guibg=#ffff00
 hi String               ctermfg=56              guifg=#B19F32
 hi def link Character String
 hi Type                 ctermfg=33              guifg=#0087ff                   gui=NONE

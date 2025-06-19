@@ -8,7 +8,7 @@ nnoremap <leader>rg :lua require('telescope.builtin').grep_string({ search = vim
 
 " git
 nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
-nnoremap <leader>gc :lua require('fhof.telescope').git_branches()<CR>
+nnoremap <leader>gs :lua require('fhof.telescope').git_branches()<CR>
 
 " check buffers
 nnoremap <leader>cb <cmd>lua require('telescope.builtin').buffers()<cr>
@@ -23,6 +23,12 @@ nnoremap <leader>cn :lua require('fhof.telescope').search_notes()<CR>
 " grep for word und cursor
 nnoremap <leader>cw :lua require('telescope.builtin').grep_string({silent = true, noremap = true})<CR>
 
+" check GNB
+nnoremap <leader>cg :lua require('fhof.telescope').search_gnb()<CR>
+
+" check mission
+nnoremap <leader>cm :lua require('fhof.telescope').search_mission()<CR>
+
 function! CheckGitRepository()
     let current_dir = expand('%:p:h')
 
@@ -35,4 +41,5 @@ function! CheckGitRepository()
         :tabe | execute "lua require('telescope.builtin').find_files()"
     endif
 endfunction
+
 

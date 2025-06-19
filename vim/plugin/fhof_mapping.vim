@@ -27,8 +27,8 @@ nmap <LEADER>v ciw<C-r>0<ESC>
 nnoremap <LEADER>cc "+yiw
 vnoremap <LEADER>cc "+y
 
-" <LEADER>p is occupied by vim-printer
-nnoremap <LEADER>pp :pu<CR>
+" overwrite the selection with contents of buffer 0
+vnoremap <LEADER>ow "0p
 
 nnoremap <LEADER>r *<ESC>:%s///g<left><left>
 nnoremap <LEADER>b :??t.<left><left><left>

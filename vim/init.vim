@@ -121,7 +121,6 @@ Plug 'nvim-treesitter/playground'
 " vim-telescope
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
@@ -134,16 +133,10 @@ Plug 'mbbill/undotree'
 "Plug 'ktchen14/cscope-auto'
 Plug 'dbakker/vim-projectroot'
 Plug 'tommcdo/vim-exchange'
-Plug 'kkoomen/vim-doge'
 
 " add print statement with stuff under cursor, couldn't make it work with normal vim mapping
 Plug 'meain/vim-printer'
-Plug 'guns/xterm-color-table.vim'
 Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
-
-" Plebvim lsp Plugins
-Plug 'tjdevries/nlua.nvim'
 
 " status bar
 Plug 'nvim-lualine/lualine.nvim'
@@ -154,14 +147,6 @@ Plug 'arkav/lualine-lsp-progress'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'folke/todo-comments.nvim'
-Plug 'JoosepAlviste/nvim-ts-context-commentstring'
-
-
-" refactoring from ThePrimagen
-Plug 'ThePrimeagen/refactoring.nvim'
-
-" nnn in vim
-Plug 'mcchrish/nnn.vim'
 
 " nvim looks
 Plug 'onsails/lspkind-nvim'
@@ -181,14 +166,14 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 " Plug 'hrsh7th/vim-vsnip'
 " Plug 'one-harsh/vscode-cpp-snippets'
 
+" use NNN
+Plug 'mcchrish/nnn.vim'
+
 " auto-pairs that works with compe
 Plug 'windwp/nvim-autopairs'
 
 " show key mappings if lost
 Plug 'folke/which-key.nvim'
-
-" colorizes rgb etc in files
-Plug 'norcalli/nvim-colorizer.lua'
 
 " better quick fix
 Plug 'kevinhwang91/nvim-bqf'
@@ -196,25 +181,13 @@ Plug 'kevinhwang91/nvim-bqf'
 " reload/restart functionality while running
 Plug 'famiu/nvim-reload'
 
-" async stuff
-Plug 'skywind3000/asynctasks.vim'
-Plug 'skywind3000/asyncrun.vim'
-
-" tmux vim navigation
-Plug 'christoomey/vim-tmux-navigator'
-
-" Automatically adjusts shiftwidth and expandtab heuristically based on current file
-" Plug 'tpope/vim-sleuth'
+" black integration for python
+Plug 'python/black'
 
 "List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
 let g:python3_host_prog = '/usr/bin/python3'
-
-" setup asynctask/run
-let g:asyncrun_open = 6
-"to get the correct root directory for async, otherwise the quickfix didn't work
-let g:rootmarkers = ['.root']
 
 " load lua folder
 lua require("fhof")
