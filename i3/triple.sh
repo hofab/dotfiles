@@ -2,33 +2,35 @@
 
 echo "TRI-SCRIPT"
 
-source mon_config
+. ~/.config/i3/mon_config
 
-if $(xrandr -q | grep -q DVI); then
-    if $(xrandr -q | grep -q $LEFT_MON | grep -q "3840+0"); then
-        midmon=$LEFT_MON
-    else
-        leftmon=$LEFT_MON
-    fi
-    if $(xrandr -q | grep -q $MID_MON | grep -q "0+0"); then
-        leftmon=$MID_MON
-    else
-        midmon=$MID_MON
+if [[ ! -n ${LEFT_MON} ]]; then
+    if [[ ! -n ${MID_MON} ]]; then
+        exit 0
     fi
 fi
 
-xrandr \
-    --output $midmon $MID_MON_ARGS \
-    --output $leftmon $LEFT_MON_ARGS \
-    --output eDP-1 --off
+if $(xrandr -q | grep -q DVI); then
+    if $(xrandr -q | grep -q ${LEFT_MON} | grep -q "3840+0"); then
+        midmon=${LEFT_MON}
+    else
+        leftmon=${LEFT_MON}
+    fi
+    if $(xrandr -q | grep -q ${MID_MON} | grep -q "0+0"); then
+        leftmon=${MID_MON}
+    else
+        midmon=${MID_MON}
+    fi
+fi
 
-# leftmon="DVI-I-2-1"
-# midmon="DVI-I-3-2"
-
-# xrandr \
-#     --output $leftmon $leftmon_args_work \
-#     --output $midmon $midmon_args_work \
-#     --output eDP-1 --off
+if [[ ! -z ${midmon} ]]; then
+    if [[ ! -z ${leftmon} ]]; then
+        xrandr \
+            --output $midmon $MID_MON_ARGS \
+            --output $leftmon $LEFT_MON_ARGS \
+            --output eDP-1 --off
+    fi
+fi
 
 
 

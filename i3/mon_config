@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 NOTEBOOK_MON="eDP-1"
 MID_MON="DVI-I-3-2"
 LEFT_MON="DVI-I-2-1"

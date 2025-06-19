@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-. mon_config.sh
+source ~/.config/i3/mon_config
 
 leftmon_args="--mode 3840x2160 --scale 1x1 --pos 0x0"
 
