@@ -40,21 +40,17 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 
 exec --no-startup-id pulseaudio
 exec --no-startup-id pa-applet
-bindsym $mod+Ctrl+m exec pavucontrol
+# bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
-
-# Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec nautilus
 # bindsym $mod+F3 exec ranger
-bindsym $mod+t exec --no-startup-id pkill picom
-bindsym $mod+Ctrl+t exec --no-startup-id picom -b
+# bindsym $mod+t exec --no-startup-id pkill picom
+# bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png"
 bindsym $mode+Ctrl+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
@@ -192,26 +188,18 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
-#assign [class="VirtualBox Manager"] $ws3
+assign [class="VirtualBox Manager"] $ws6
 
 # Open specific applications in floating mode
-#for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="qalculate-gtk"] floating enable border pixel 1
-#for_window [title="i3_help"] floating enable sticky enable border normal
-#for_window [class="Lightdm-settings"] floating enable
-#for_window [class="Lxappearance"] floating enable sticky enable border normal
-#for_window [title="MuseScore: Play Panel"] floating enable
-#for_window [class="octopi"] floating enable
-#for_window [class="Pamac-manager"] floating enable
-#for_window [class="Pavucontrol"] floating enable
-#for_window [class="(?i)System-config-printer.py"] floating enable border normal
-#for_window [class="Timeset-gui"] floating enable border normal
-#for_window [class="(?i)virtualbox"] floating enable border normal
-#for_window [class="Xfburn"] floating enable
 
 bindsym $mod+n exec alacritty -t "floating_ala" -e fish -c "nnn -eE"
-for_window [class="Alacritty" title="floating_ala"] floating enable, border pixel 1 resize set 1000 1000
-for_window [ title="notetaker_window" ] floating enable, border pixel 1 resize set 1000 1000
+for_window [class="Alacritty" title="floating_ala"] floating enable, border pixel 1 resize set 500 500
+# for_window [ title="notetaker_window" ] floating enable, border pixel 1 resize set 1500 1500
+# for_window [ title="notetaker_window" ] floating enable, border pixel 1, resize set 3440 1760, move position 200 200
+
+bindsym $mod+Shift+i exec wine '/home/fhof/.wine/drive_c/CrossWorks/bin/crossstudio.exe'; workspace $ws4
+bindsym $mod+Shift+p exec wine '/home/fhof/.wine/drive_c/Program Files/Rowley Associates Limited/CrossWorks for ARM 5.1/bin/crossstudio.exe'; workspace $ws4
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -228,8 +216,8 @@ bindsym XF86AudioLowerVolume exec ~/.config/i3/volume.sh DOWN
 bindsym XF86AudioMute exec ~/.config/i3/volume.sh MUTE
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec ~/.config/i3/brightness.sh UP
-bindsym XF86MonBrightnessDown exec ~/.config/i3/brightness.sh DOWN
+bindsym XF86MonBrightnessUp exec "~/.config/i3/brightness-wrapper.sh UP"
+bindsym XF86MonBrightnessDown exec "~/.config/i3/brightness-wrapper.sh DOWN"
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -245,12 +233,12 @@ bindsym $mod+x [urgent=latest] focus
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 bindsym $mod+Shift+9 mode "$mode_screen"
-set $mode_screen screen (s) single, (d) dual, (t) triple, (w) work
+set $mode_screen screen (s)ingle, (d)ual, (t)riple, (w)ork
 mode "$mode_screen" {
-    bindsym s exec --no-startup-id ~/.config/i3/single.sh, mode "default"
-    bindsym d exec --no-startup-id ~/.config/i3/dual.sh, mode "default"
-    bindsym t exec --no-startup-id ~/.config/i3/triple.sh, mode "default"
-    bindsym w exec --no-startup-id ~/.config/i3/work.sh, mode "default"
+    bindsym s exec --no-startup-id bash ~/.config/i3/single.sh, mode "default"
+    bindsym d exec --no-startup-id bash ~/.config/i3/dual.sh, mode "default"
+    bindsym t exec --no-startup-id bash ~/.config/i3/triple.sh, mode "default"
+    bindsym w exec --no-startup-id bash ~/.config/i3/work.sh, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -258,7 +246,7 @@ mode "$mode_screen" {
 }
 
 bindsym $mod+0 mode "$mode_vpn"
-set $mode_vpn vpn (u) up, (d) down, (o) on, (f) off
+set $mode_vpn vpn (u)p, (d)own, (o)n, o(f)f
 mode "$mode_vpn" {
     bindsym u exec --no-startup-id ~/.config/i3/bin/vpn up, mode "default"
     bindsym d exec --no-startup-id ~/.config/i3/bin/vpn down, mode "default"
@@ -271,9 +259,10 @@ mode "$mode_vpn" {
 }
 
 # bindsym $mod+Shift+n exec alacritty -t "notetaker_window" -e /home/fhof/dotfiles/scripts/notetaker
+for_window [title="notetaker_window"] exec --no-startup-id ~/.config/i3/resize_floating_window.sh
 # Set shut down, restart and locking features
 bindsym $mod+Shift+n mode "$mode_notes"
-set $mode_notes Notes (y)esterday, (t)omorrow, (l)ast week, (n)ext week, (c)urrent, t(o)day
+set $mode_notes Notes (s)earch, (y)esterday, (t)omorrow, (l)ast month, (n)ext month, (c)urrent, t(o)day
 mode "$mode_notes" {
     bindsym y exec alacritty -t "notetaker_window" -e ~/.config/i3/select_notes.sh -y, mode "default"
     bindsym t exec alacritty -t "notetaker_window" -e ~/.config/i3/select_notes.sh -t, mode "default"
@@ -281,6 +270,9 @@ mode "$mode_notes" {
     bindsym n exec alacritty -t "notetaker_window" -e ~/.config/i3/select_notes.sh -n, mode "default"
     bindsym c exec alacritty -t "notetaker_window" -e ~/.config/i3/select_notes.sh -c, mode "default"
     bindsym o exec alacritty -t "notetaker_window" -e ~/.config/i3/select_notes.sh, mode "default"
+    # ideally this should be search_notes, but for some reason it didn't work
+    # nvim "+lua vim.schedule(function() require('fhof.telescope').search_notes() end)"``
+    bindsym s exec alacritty -t "notetaker_window" -e fish -l -c 'cd ~/Notes && sleep 0.1 && nvim "+Telescope live_grep"', mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -328,22 +320,12 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
+#bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
-#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id nm-applet
-#exec --no-startup-id xfce4-power-manager
-#exec --no-startup-id pamac-tray
-#exec --no-startup-id clipit
+exec_always nm-applet
 exec --no-startup-id blueman-applet
-# exec_always --no-startup-id sbxkb
-#exec --no-startup-id start_conky_maia
-# exec --no-startup-id start_conky_green
-#exec --no-startup-id xautolock -time 10 -locker blurlock
-#exec_always --no-startup-id ff-theme-util
-#exec_always --no-startup-id fix_xcursor
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
