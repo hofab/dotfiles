@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-NOTEBOOK_MON="eDP-1"
-MID_MON="DVI-I-3-2"
-LEFT_MON="DVI-I-2-1"
+LEFT_MON_ARGS="--mode 3840x2160 --scale 1x1 --pos 0x0 --primary"
+RIGHT_MON_ARGS="--mode 3840x2160 --scale 1x1 --pos 3840x0"
 
-MID_MON_ARGS="--mode 3840x2160 --scale 1x1 --pos 0x0"
-LEFT_MON_ARGS="--mode 3840x2160 --scale 1x1 --pos 3840x0 --primary"
+leftmon_args_work="--mode 2560x1440 --scale 1x1 --pos 0x0 --primary"
+rightmon_args_work="--mode 2560x1440 --scale 1x1 --pos 2560x0"
 
-leftmon_args_work="--mode 2560x1440 --scale 1x1 --pos 0x0"
-midmon_args_work="--mode 2560x1440 --scale 1x1 --pos 2560x0 --primary"
+# Replace these with unique patterns from your monitors' EDIDs
+# Find them with: xrandr --prop | grep -A 10 "EDID:"
+LAPTOP_EDID_PATTER="00ffffffffffff000e6f031600000000"
+LEFT_EDID_PATTERN="00ffffffffffff0010ac96a14c4f4331"
+RIGHT_EDID_PATTERN="00ffffffffffff0010ac97a14c413031"
