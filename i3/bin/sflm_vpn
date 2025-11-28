@@ -1,0 +1,25 @@
+#!/bin/sh
+
+CMD="$1"
+echo "ARG=$CMD" >> /tmp/log.log
+date >> /tmp/log.log
+
+OPENVPN3="/usr/bin/openvpn3"  # Or whatever `which openvpn3` says
+
+case "${CMD}" in
+    on|up)
+        echo "ON" >> /tmp/log.log
+        # openvpn3 session-start --config sflm
+        "$OPENVPN3" session-manage --config sflm --resume>> /tmp/log.log 2>&1
+        ;;
+
+    off|down)
+        echo "OFF" >> /tmp/log.log
+        "$OPENVPN3" session-manage --config sflm --pause >> /tmp/log.log 2>&1
+        ;;
+
+    *)
+        echo "DEFAULT CASE" >> /tmp/log.log
+        nmcli con | egrep --color=NEVER '(NAME| vpn )' >> /tmp/log.log
+        ;;
+esac
