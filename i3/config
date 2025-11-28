@@ -245,13 +245,37 @@ mode "$mode_screen" {
     bindsym Escape mode "default"
 }
 
+# Top-level screen mode
 bindsym $mod+0 mode "$mode_vpn"
-set $mode_vpn vpn (u)p, (d)own, (o)n, o(f)f
+set $mode_vpn vpn (s)fl (u)ofT
 mode "$mode_vpn" {
-    bindsym u exec --no-startup-id ~/.config/i3/bin/vpn up, mode "default"
-    bindsym d exec --no-startup-id ~/.config/i3/bin/vpn down, mode "default"
+    # Submenu trigger
+    bindsym s mode "$mode_vpn_sflm"
+    bindsym u mode "$mode_vpn_uoft"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+set $mode_vpn_uoft uoft vpn (o)n, o(f)f
+mode "$mode_vpn_uoft" {
     bindsym o exec --no-startup-id ~/.config/i3/bin/vpn on, mode "default"
     bindsym f exec --no-startup-id ~/.config/i3/bin/vpn off, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+set $mode_vpn_sflm missions vpn (o)n, o(f)f
+mode "$mode_vpn_sflm" {
+
+    # might need that later, but keep it the other way for now
+    # whe have to call openvpn3 session-start --config sflm, then these work
+    # problem is that i3 launches a background process without the ability to start the browser to authenticate me
+    # bindsym o exec --no-startup-id alacritty -e ~/.config/i3/bin/sflm_vpn on, mode "default"
+    bindsym o exec --no-startup-id ~/.config/i3/bin/sflm_vpn on, mode "default"
+    bindsym f exec --no-startup-id ~/.config/i3/bin/sflm_vpn off, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
