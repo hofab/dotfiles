@@ -1,4 +1,3 @@
--- require("fhof.lsp-config")
 require("fhof.fzf")
 require("fhof.treesitter")
 require("fhof.comment")
