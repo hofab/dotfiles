@@ -115,8 +115,7 @@ autocmd BufEnter * call <SID>AutoProjectRootCD()
 call plug#begin('~/.config/nvim/plugged')
 " Neovim Tree shitter
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
+Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'main', 'do': ':TSUpdate'}
 
 " vim-telescope
 Plug 'nvim-telescope/telescope.nvim'
