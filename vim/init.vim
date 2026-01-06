@@ -186,7 +186,7 @@ Plug 'python/black'
 "List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python3_host_prog = '/home/fhof/.pyenv/versions/3.13.1/bin/python3'
 
 " load lua folder
 lua require("fhof")
