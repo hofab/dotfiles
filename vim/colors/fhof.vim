@@ -16,82 +16,112 @@ endif
 let colors_name = "fhof"
 
 set termguicolors
+set cursorline
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" COLORS
+" COLORS - Variable Definitions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi Folded               ctermfg=252 ctermbg=240 guifg=#e4e4e4   guibg=#585858
-hi FoldColumn           ctermfg=7   ctermbg=8   guifg=#c0c0c0   guibg=#808080
-hi VertSplit            ctermfg=252 ctermbg=5   guifg=#af00af   guibg=#eeeeee
-hi LineNr               ctermfg=239 ctermbg=255 guifg=#aeaeae   guibg=#eeeeee
-hi Normal               ctermfg=239 ctermbg=NONE  guifg=#4e4e4e guibg=#eeeeee
-hi Identifier           ctermfg=239 ctermbg=NONE  guifg=#4e4e4e
-hi Search               ctermfg=239 ctermbg=230 guifg=#aeaeae   guibg=#ffffdf
-set cursorline
-hi Cursor               ctermfg=8   ctermbg=199 guifg=#808080   guibg=#ff00af
-hi lCursor              ctermfg=8   ctermbg=199 guifg=#808080   guibg=#ff00af
-hi CursorLine                       ctermbg=253                 guibg=#dadada cterm=NONE
-hi CursorLineNr         ctermfg=255 ctermbg=199 guifg=#eeeeee   guibg=#ff00af
-hi Comment              ctermfg=245             guifg=#8a8a8a
-hi Number               ctermfg=40              guifg=#00d700
-hi Search               ctermfg=0   ctermbg=214 guifg=#000000   guibg=#ffaf00
-" hi Todo                             ctermbg=226                 guibg=#ffff00
-hi String               ctermfg=56              guifg=#B19F32
+" Color combinations
+let s:light_gray_on_dark =      'ctermfg=252    ctermbg=240     guifg=#d0d0d0 guibg=#585858'
+let s:white_on_gray =           'ctermfg=7      ctermbg=8       guifg=#c0c0c0 guibg=#808080'
+let s:light_gray_on_magenta =   'ctermfg=252    ctermbg=5       guifg=#d0d0d0 guibg=#af00af'
+let s:gray_on_offwhite =        'ctermfg=239    ctermbg=255     guifg=#aeaeae guibg=#eeeeee'
+let s:gray_on_pale_yellow =     'ctermfg=239    ctermbg=230     guifg=#aeaeae guibg=#ffffdf'
+let s:gray_on_pink =            'ctermfg=8      ctermbg=199     guifg=#808080 guibg=#ff00af'
+let s:offwhite_on_pink =        'ctermfg=255    ctermbg=199     guifg=#eeeeee guibg=#ff00af'
+let s:black_on_orange =         'ctermfg=0      ctermbg=214     guifg=#000000 guibg=#ffaf00'
+let s:gray_on_light_pink =      'ctermfg=8      ctermbg=199     guifg=#808080 guibg=#ffafff'
+let s:black_on_sky_blue =       'ctermfg=0      ctermbg=117     guifg=#000000 guibg=#87d7ff'
+let s:black_on_light_magenta =  'ctermfg=0      ctermbg=213     guifg=#000000 guibg=#ff87ff'
+let s:gray_on_red =             'ctermfg=239    ctermbg=196     guifg=#aeaeae guibg=#ff0000'
+
+" Foreground only colors
+let s:dark_gray =       'ctermfg=239    ctermbg=NONE guifg=#4e4e4e guibg=NONE'
+let s:medium_gray =     'ctermfg=245    ctermbg=NONE guifg=#8a8a8a guibg=NONE'
+let s:green =           'ctermfg=40     ctermbg=NONE guifg=#00d700 guibg=NONE'
+let s:gold =            'ctermfg=56     ctermbg=NONE guifg=#B19F32 guibg=NONE'
+let s:blue =            'ctermfg=33     ctermbg=NONE guifg=#0087ff guibg=NONE'
+let s:magenta =         'ctermfg=5      ctermbg=NONE guifg=#af00af guibg=NONE'
+let s:cyan_on_none =    'ctermfg=49     ctermbg=NONE guifg=#00ffaf guibg=NONE'
+let s:pink =            'ctermfg=199    ctermbg=NONE guifg=#ff00af guibg=NONE'
+let s:bright_blue =     'ctermfg=27     ctermbg=NONE guifg=#005fff guibg=NONE'
+let s:teal =            'ctermfg=73     ctermbg=NONE guifg=#5fafaf guibg=NONE'
+let s:orange =          'ctermfg=178    ctermbg=NONE guifg=#dfaf00 guibg=NONE'
+let s:dark_green =      'ctermfg=29     ctermbg=NONE guifg=#00875f guibg=NONE'
+let s:red =             'ctermfg=196    ctermbg=NONE guifg=#ff0000 guibg=NONE'
+let s:very_light_gray = 'ctermfg=255    ctermbg=NONE guifg=#a8a8a8 guibg=NONE'
+let s:dark_blue =       'ctermfg=20     ctermbg=NONE guifg=#0000d7 guibg=NONE'
+let s:none =            'ctermfg=4      ctermbg=NONE guifg=#eeeeee guibg=NONE'
+
+" Background only colors
+let s:bg_light_gray =   'ctermfg=NONE ctermbg=253 guifg=NONE guibg=#dadada'
+let s:bg_bright_green = 'ctermfg=NONE ctermbg=47  guifg=NONE guibg=#00ff5f'
+let s:bg_bright_cyan =  'ctermfg=NONE ctermbg=39  guifg=NONE guibg=#00afff'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" COLORS - Highlight Groups
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+exe 'hi list ' . s:pink
+exe 'hi Identifier ' . s:dark_gray
+exe 'hi Folded ' . s:light_gray_on_dark
+exe 'hi FoldColumn ' . s:white_on_gray
+exe 'hi VertSplit ' . s:light_gray_on_magenta
+exe 'hi LineNr ' . s:gray_on_offwhite
+exe 'hi Normal ' . s:dark_gray
+exe 'hi Search ' . s:black_on_orange
+exe 'hi Cursor ' . s:gray_on_pink
+exe 'hi lCursor ' . s:gray_on_pink
+exe 'hi CursorLine ' . s:bg_light_gray
+exe 'hi CursorLineNr ' . s:offwhite_on_pink
+exe 'hi Comment ' . s:medium_gray
+exe 'hi Number ' . s:green
+exe 'hi String ' . s:gold
 hi def link Character String
-hi Type                 ctermfg=33              guifg=#0087ff                   gui=NONE
-hi Boolean              ctermfg=5               guifg=#af00af
-hi Special              ctermfg=5               guifg=#af00af
-hi Error                            ctermbg=49  guifg=#e4e4e4    guibg=NONE
-hi ErrorMsg             ctermfg=49              guifg=#e4e4e4    guibg=NONE
-hi Statement            ctermfg=199             guifg=#ff00af                   gui=NONE
-hi Function             ctermfg=27              guifg=#005fff
-hi Macro                ctermfg=73              guifg=#5fafaf
-hi PreProc              ctermfg=178             guifg=#dfaf00
-hi Constant             ctermfg=29              guifg=#00875f
-hi ErrorMsg             ctermfg=196             guifg=#ff0000
-hi NonText              ctermfg=248             guifg=#F1F1F1
-hi MatchParen           ctermfg=8   ctermbg=199 guifg=#808080   guibg=#ffafff
-hi MoreMsg              gui=NONE
-hi Question             gui=NONE
-hi Delimiter            ctermfg=245             guifg=#8a8a8a
-hi Define               ctermfg=20              guifg=#0000d7       "#define
-hi OverLength           ctermfg=239 ctermbg=196 guifg=#aeaeae   guibg=#ff0000
-hi Operator             ctermfg=199             guifg=#ff00af
+exe 'hi Type ' . s:blue . ' gui=NONE'
+exe 'hi Boolean ' . s:magenta
+exe 'hi Special ' . s:magenta
+exe 'hi Error ctermfg=252 ctermbg=49 guifg=#d0d0d0 guibg=#00ffaf'
+exe 'hi ErrorMsg ' . s:red
+exe 'hi Statement ' . s:pink . ' gui=NONE'
+exe 'hi Function ' . s:bright_blue
+exe 'hi Macro ' . s:teal
+exe 'hi PreProc ' . s:pink
+exe 'hi Constant ' . s:dark_green
+exe 'hi NonText ' . s:medium_gray
+exe 'hi MatchParen ' . s:gray_on_light_pink
+exe 'hi MoreMsg gui=NONE'
+exe 'hi Question gui=NONE'
+exe 'hi Delimiter ' . s:medium_gray
+exe 'hi Define ' . s:dark_blue
+exe 'hi OverLength ' . s:gray_on_red
+exe 'hi Operator ' . s:pink
 
 " popup-colors
-hi Pmenu         ctermfg=0  ctermbg=117         guifg=#000000   guibg=#87d7ff
-hi PmenuSel      ctermfg=0  ctermbg=213         guifg=#000000   guibg=#ff87ff
+exe 'hi Pmenu ' . s:black_on_sky_blue
+exe 'hi PmenuSel ' . s:black_on_light_magenta
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " # C Pre Proccessor Statements
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" hi cInclude    ctermfg=178     "#include
-" hi cIncluded   ctermfg=28      "<file>
-hi cDefine     ctermfg=20                       guifg=#0000d7       "#define
-hi cPreCondit  ctermfg=5                        guifg=#af00af       "#if, #elif, #else, #endif
-" hi cPreProc    ctermfg=        "#error, #warning
-" hi cCppOut     ctermfg=        "#if 0
+exe 'hi cDefine ' . s:dark_blue
+exe 'hi cPreCondit ' . s:magenta
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " EXTENDED C SYNTAX
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi cOperator     ctermfg=199                    guifg=#ff00af
-hi cOperator     ctermfg=199                    guifg=#ff00af
-hi cDelimiter    ctermfg=245                    guifg=#8a8a8a
-hi cBraces       ctermfg=245                    guifg=#8a8a8a
-hi cEqual        ctermfg=199                    guifg=#ff00af
-hi cErrInBracket ctermfg=245                    guifg=#8a8a8a
-hi cErrInParen   ctermfg=245                    guifg=#8a8a8a
-hi cSeperator    ctermfg=245                    guifg=#8a8a8a
-hi cConstant     ctermfg=29                     guifg=#00875f
-
+exe 'hi cOperator ' . s:pink
+hi def link cDelimiter cSeperator
+exe 'hi cBraces ' . s:medium_gray
+exe 'hi cEqual ' . s:pink
+exe 'hi cErrInBracket ' . s:medium_gray
+exe 'hi cSeperator ' . s:medium_gray
+exe 'hi cConstant ' . s:dark_green
 hi def link cComma cSeperator
+hi def link cErrInParen cSeperator
 hi def link cMacro cFunction
 
-"PmenuSel	selected item  |hl-PmenuSel|
-"PmenuSbar	scrollbar  |hl-PmenuSbar|
-"PmenuThumb	thumb of the scrollbar  |hl-PmenuThumb|
-
 " custom tag colors
-" tags are defined in syntax/c.vim
-hi cTodo ctermbg=47                                             guibg=#00ff5f
-hi cNote ctermbg=39                                             guibg=#00afff
+exe 'hi cTodo ' . s:bg_bright_green
+exe 'hi cNote ' . s:bg_bright_cyan
+
+exe 'hi Whitespace ' . s:none
