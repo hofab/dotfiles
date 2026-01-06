@@ -1,21 +1,13 @@
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all", -- one of "all" or a list of languages
-  ignore_installed = {""}, -- List of parsers to ignore installing
-  highlight = {
--- highlighting messed up cSeperator/cOperator
--- after some tinkering the ts defaults are still better
-    -- enable = false,              -- false will disable the whole extension
-    enable = true,              -- false will disable the whole extension
-    use_languagetree = true,
---    disable = { "c" },  -- list of language that will be disabled
-    custom_captures = {
--- Highlight the @foo.bar capture group with the "Identifier" highlight group.
-      ["**@operator**"] = "Identifier",
-      ["@parent**"] = "Identifier",
-    },
-  },
-  languages = {
-      c = '// %s/',
-      cpp = '// %s/',
-  },
-}
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { 'cpp', 'c', 'python', 'markdown', 'bash', 'fish' },
+    callback = function()
+        vim.treesitter.start()
+        -- Treesitter folding
+        -- vim.wo.foldmethod = 'expr'
+        -- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+
+        -- Treesitter indentation
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end,
+})
+
