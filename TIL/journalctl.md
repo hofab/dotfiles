@@ -35,3 +35,7 @@ Tag objects: 0
 Entry array objects: 377
 Disk usage: 6.7M`
 ```
+
+## Look through all the logs for a certain module in fish shell
+Globbing is sometimes a pain in fish so this is something that works to go through all the logs and look for a service
+`ls system@*.journal | xargs -I {} journalctl --file={} --utc --output=short-iso -u <SERVICE_NAME>`
