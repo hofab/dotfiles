@@ -54,6 +54,16 @@ interval = 10
 chip = "*-isa-*"
 
 [[block]]
+block = "custom"
+command = '''bash -c '~/dotfiles/i3/mi_vpn.sh && echo "異"' '''
+interval = 1
+
+[[block]]
+block = "custom"
+command = '''bash -c '~/dotfiles/i3/uoft_vpn.sh && echo ""' '''
+interval = 1
+
+[[block]]
 block = "time"
 interval = 60
 format = " $timestamp.datetime(f:'%a %d/%m %R') "
