@@ -32,7 +32,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_run
+# bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show combi -modes combi -combi-modes "window#drun#run"
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -53,7 +54,8 @@ bindsym $mod+F3 exec nautilus
 # bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png"
-bindsym $mode+Ctrl+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym $mod+Ctrl+Down exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png"
+bindsym $mod+Ctrl+Up exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
@@ -140,21 +142,23 @@ set $ws6 6
 set $ws7 7
 set $ws8 "8:"
 
+include ~/.config/i3/monitors.conf
+
 # set $leftmon "DVI-I-2-1"
-# set $midmon "DVI-I-3-2"
-set $midmon "DVI-I-2-1"
-set $leftmon "DVI-I-3-2"
+# set $rightmon "DVI-I-3-2"
+# set $rightmon "DVI-I-2-1"
+# set $leftmon "DVI-I-3-2"
 
 # Setup workspace default output
 workspace $ws2 output $leftmon
 workspace $ws4 output $leftmon
 workspace $ws6 output $leftmon
 workspace $ws8 output $leftmon
-workspace $ws1 output $midmon
-workspace $ws3 output $midmon
-workspace $ws5 output $midmon
-workspace $ws7 output $midmon
-workspace $ws9 output $midmon
+workspace $ws1 output $rightmon
+workspace $ws3 output $rightmon
+workspace $ws5 output $rightmon
+workspace $ws7 output $rightmon
+workspace $ws9 output $rightmon
 # workspace $ws5 output eDP-1
 
 # switch to workspace
@@ -351,36 +355,37 @@ exec --no-startup-id nm-applet
 exec_always nm-applet
 exec --no-startup-id blueman-applet
 
-# Color palette used for the terminal ( ~/.Xresources file )
-# Colors are gathered based on the documentation:
-# https://i3wm.org/docs/userguide.html#xresources
-# Change the variable name at the place you want to match the color
-# of your terminal like this:
-# [example]
-# If you want your bar to have the same background color as your
-# terminal background change the line 362 from:
-# background #14191D
-# to:
-# background $term_background
-# Same logic applied to everything else.
-#set_from_resource $term_background #EEEEEE
-set_from_resource $term_foreground foreground
-set_from_resource $term_color0     color0
-set_from_resource $term_color1     color1
-set_from_resource $term_color2     color2
-set_from_resource $term_color3     color3
-set_from_resource $term_color4     color4
-set_from_resource $term_color5     color5
-set_from_resource $term_color6     color6
-set_from_resource $term_color7     color7
-set_from_resource $term_color8     color8
-set_from_resource $term_color9     color9
-set_from_resource $term_color10    color10
-set_from_resource $term_color11    color11
-set_from_resource $term_color12    color12
-set_from_resource $term_color13    color13
-set_from_resource $term_color14    color14
-set_from_resource $term_color15    color15
+# catppuccin-latte
+set $rosewater #dc8a78
+set $flamingo #dd7878
+set $pink #ea76cb
+# set $mauve #8839ef
+set $red #d20f39
+set $maroon #e64553
+set $peach #fe640b
+set $yellow #df8e1d
+set $green #40a02b
+set $teal #179299
+set $sky #04a5e5
+set $sapphire #209fb5
+set $blue #1e66f5
+set $lavender #7287fd
+# set $text #4c4f69
+set $subtext1 #5c5f77
+set $subtext0 #6c6f85
+set $overlay2 #7c7f93
+set $overlay1 #8c8fa1
+set $overlay0 #9ca0b0
+set $surface2 #acb0be
+set $surface1 #bcc0cc
+set $surface0 #ccd0da
+# set $base #eff1f5
+set $mantle #e6e9ef
+set $crust #dce0e8
+# adjusted to personal overwrite
+set $mauve #af00af
+set $text #0D0D0D
+set $base #EEEEEE
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
@@ -390,26 +395,24 @@ bar {
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
     tray_output primary
-    tray_output eDP1
+    tray_output eDP1-1
 
     bindsym button4 nop
     bindsym button5 nop
-#   font xft:URWGothic-Book 11
     strip_workspace_numbers yes
 
-    font pango:UbuntuMono Nerd Font Mono 10
+    font pango:UbuntuMono Nerd Font Mono 12
 
     colors {
-        background #EEEEEE
-        statusline #EEEEEE
+        background $base
+        statusline $base
         separator  #454947
 
-#                      border  backgr. text
-        focused_workspace  #0D0D0D #af00af #EEEEEE
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #af00af #EEEEEE #0D0D0D
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
+        # target           border bg        text
+        focused_workspace  $base  $mauve    $base
+        active_workspace   $base  $surface2 $text
+        inactive_workspace $base  $base     $text
+        urgent_workspace   $base  $red      $crust
     }
 }
 
@@ -418,13 +421,21 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #af00af #80FFF9 #FDF6E3
-  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
-  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000
+# client.focused          #556064 #af00af #80FFF9 #FDF6E3
+# client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
+# client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
+# client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
+# client.placeholder      #000000 #0c0c0c #ffffff #000000
+#
+# client.background       #80FFF9
 
-  client.background       #80FFF9
+  # target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $baselll
 
 #############################
 ### settings for i3-gaps: ###
@@ -488,7 +499,24 @@ assign [title="main_term"] $ws2
 # setup applications as desired
 #exec compton
 #exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
-exec --no-startup-id bash -c '~/.config/i3/startup-monitors.sh'
+# exec --no-startup-id bash -c '~/.config/i3/startup-monitors.sh'
 exec --no-startup-id i3-msg 'workspace $ws1; exec $(which firefox)'
 exec --no-startup-id i3-msg 'workspace $ws2; exec $(which alacritty) -e tmuxinator start work -t main_term'
 exec_always nm-applet
+
+for_window [window_role="About"] floating enable
+for_window [window_role="Organizer"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="page-info"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="toolbox"] floating enable
+for_window [window_role="webconsole"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+
+# Test floating rofi
+for_window [class="RofiFloat"] floating enable
+
+

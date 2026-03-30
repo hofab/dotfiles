@@ -2,7 +2,7 @@
 
 # Configuration
 EXEC="brightness.sh"
-DISPLAY_NAME="eDP-1"
+DISPLAY_NAME="eDP-1-1"
 STEP="0.1"
 
 # assume that both scripts are in the same path

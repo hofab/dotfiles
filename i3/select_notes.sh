@@ -12,15 +12,24 @@ get_dates() {
     YESTERDAYS_MONTH=$(date -d "yesterday" +%y_%m)
     TOMORROW=$(date -d "tomorrow" +%Y-%m-%d)
     TOMORROWS_MONTH=$(date -d "tomorrow" +%y_%m)
+    LAST_MONTH=$(date -d "-1 month" +%Y-%m)
+    NEXT_MONTH=$(date -d "+1 month" +%Y-%m)
 
     # Calculate this week's Monday
-    THIS_MONDAY=$(date -d "last monday" +%Y-%m-%d)
-    # Calculate last week's Monday
-    LAST_MONDAY=$(date -d "last monday - 7 days" +%Y-%m-%d)
-    # Calculate next week's Monday
-    NEXT_MONDAY=$(date -d "next monday" +%Y-%m-%d)
+    DAY_OF_WEEK=$(date +%u)  # Monday = 1, Sunday = 7
+    if [ "$DAY_OF_WEEK" -gt 1 ]; then
+        # If today is after Monday, calculate the previous Monday
+        THIS_MONDAY=$(date -d "this monday - 7 days" +%Y-%m-%d)
+    else
+        # If today is Monday or earlier, use this Monday
+        THIS_MONDAY=$(date -d "this monday" +%Y-%m-%d)
+    fi
 
-    FORMATTED_MONTH=$(date +%y_%m)
+    # Calculate last week's Monday
+    LAST_MONDAY=$(date -d "${THIS_MONDAY} - 7 days" +%Y-%m-%d)
+
+    # Calculate next week's Monday
+    NEXT_MONDAY=$(date -d "${THIS_MONDAY} + 7 days" +%Y-%m-%d)
 }
 
 create_note() {
@@ -31,12 +40,6 @@ create_note() {
 
     if [ ! -f $FILENAME ]; then
       echo "# Notes for ${DATE}" >> $FILENAME
-      echo "## Pomodoro" >> $FILENAME
-      echo "\`\`\`" >> $FILENAME
-      echo "     1h2h3h4h5h6h7h8h" >> $FILENAME
-      echo "    [                ]" >> $FILENAME
-      echo "\`\`\`" >> $FILENAME
-      echo "" >> $FILENAME
       echo "## Tasks" >> $FILENAME
       echo "- " >> $FILENAME
     fi
@@ -45,6 +48,7 @@ create_note() {
 # Function to open the note file
 open_note() {
     local file=$1
+    echo "${file}"
 
     if [ -f "${file}" ]; then
         # Replace 'nano' with your preferred text editor
@@ -74,13 +78,13 @@ case $1 in
         open_note "${NOTES_LOCATION}/${TOMORROWS_MONTH}/${TOMORROW}.md"
         ;;
     -l)
-        open_note "${TODO_LOCATION}/todo_${LAST_MONDAY}.md"
+        open_note "${TODO_LOCATION}/${LAST_MONTH}.md"
         ;;
     -n)
-        open_note "${TODO_LOCATION}/todo_${NEXT_MONDAY}.md"
+        open_note "${TODO_LOCATION}/${NEXT_MONTH}.md"
         ;;
     -c)
-        open_note "${TODO_LOCATION}/todo_${THIS_MONDAY}.md"
+        open_note "${TODO_LOCATION}/${TODAYS_MONTH}.md"
         ;;
     "")
         open_note "${NOTES_LOCATION}/${TODAYS_MONTH}/${TODAY}.md"
@@ -89,9 +93,9 @@ case $1 in
         echo "Usage: $0 {-y | -t | -l | -n | -c}"
         echo "  -y    Open yesterday's notes"
         echo "  -t    Open tomorrow's notes"
-        echo "  -l    Open last week's notes (Monday)"
-        echo "  -n    Open next week's notes (Monday)"
-        echo "  -c    Open this week's notes (Monday)"
+        echo "  -l    Open last month's notes"
+        echo "  -n    Open next month's notes"
+        echo "  -c    Open this month's notes"
         ;;
 esac
 

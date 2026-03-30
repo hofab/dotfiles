@@ -11,7 +11,7 @@ echo "$RIGHT_MON" >> /tmp/log.log
 
 xrandr --output ${LEFT_MON} --off \
     --output ${RIGHT_MON} --off \
-    --output eDP-1 --mode 2560x1600 --pos 0x0 --primary
+    --output ${LAPTOP} --mode 2560x1600 --pos 0x0 --primary
 
 # --output DVI-I-2-2 --off --output DVI-I-1-1 --off
 
