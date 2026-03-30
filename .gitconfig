@@ -1,5 +1,4 @@
 [user]
-    name = Fabian Hof
 
 #################################
 # Core variables
@@ -77,3 +76,9 @@
     colorMoved = default
 [init]
 	defaultBranch = master
+
+#################################
+# absorb
+#################################
+[absorb]
+    maxStack=1000
