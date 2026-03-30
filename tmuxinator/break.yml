@@ -6,7 +6,7 @@ root: ~/
 windows:
   - portfolio:
       panes:
-        - cd ~/portfolio; and poetry python run portfolio
+        - cd ~/portfolio; and poetry run python portfolio.py
   - ab:
       panes:
         - cd ~/private/auto-budget
