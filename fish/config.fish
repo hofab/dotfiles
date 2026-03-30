@@ -1,5 +1,5 @@
 set -g Z_SCRIPT_PATH /usr/local/bin/z
-set -U FZF_FIND_FILE_COMMAND 'rg --files --hidden --smartcase --glob --height=15 "!.git/*"'
+set -U FZF_FIND_FILE_COMMAND 'rg --no-ignore --files --hidden --smartcase --glob --height=40 "!.git/*"'
 set --export FZF_DEFAULT_COMMAND 'fd --type f'
 
 # set fish_right_prompt timezone
@@ -59,4 +59,18 @@ starship init fish | source
 # if not added to path it throws an error at startup
 set -x PATH ~/.pyenv/bin $PATH
 set -x PATH ~/.local/bin $PATH
+
 pyenv init - | source
+
+# set mouse sensitivity
+# both don't really work
+# see https://wiki.archlinux.org/title/Mouse_acceleration
+#xinput --set-float-prop "Logitech M510" 361 1.0
+#xinput --set-prop 18 'libinput Accel Speed' 1.0
+
+
+zoxide init fish | source
+
+# prevent poetry completion errors
+# poetry completions fish > ~/.config/fish/completions/poetry.fish
+# sed -i.bak -E "s/'([a-z]*[[:blank:]][a-z]*)''''/\1'/g" ~/.config/fish/completions/poetry.fish
