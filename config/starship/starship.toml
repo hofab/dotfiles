@@ -1,5 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+right_format = """$time"""
+
 format = """
 [](mauve)\
 $os\
@@ -12,19 +14,10 @@ $git_status\
 [](fg:yellow bg:green)\
 $c\
 $rust\
-$golang\
-$nodejs\
-$php\
-$java\
-$kotlin\
-$haskell\
 $python\
 [](fg:green bg:sapphire)\
 $conda\
-[](fg:sapphire bg:lavender)\
-$time\
 [ ](fg:lavender)\
-$cmd_duration\
 $line_break\
 $character"""
 
@@ -143,11 +136,11 @@ ignore_base = false
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:lavender"
-format = '[[  $time ](fg:crust bg:lavender)]($style)'
+style = "bg:subtext1"
+format = '[[$time](fg:text bg:subtext1)]($style)'
 
 [line_break]
-disabled = true
+disabled = false
 
 [character]
 disabled = false
@@ -184,7 +177,8 @@ blue = "#1e66f5"
 lavender = "#7287fd"
 # text = "#4c4f69"
 text = "#0D0D0D"
-subtext1 = "#5c5f77"
+# subtext1 = "#5c5f77"
+subtext1 = "#EEEEEE"
 subtext0 = "#6c6f85"
 overlay2 = "#7c7f93"
 overlay1 = "#8c8fa1"
