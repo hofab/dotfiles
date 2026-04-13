@@ -1,0 +1,41 @@
+# services.yaml
+
+- Infrastructure:
+    - Proxmox (pve):
+        icon: proxmox.png
+        href: http://192.168.2.108:8006/
+        description: Proxmox VE (pve)
+    - Proxmox (proxmox):
+        icon: proxmox.png
+        href: http://192.168.2.152:8006/
+        description: Proxmox VE (proxmox)
+    - Nginx Proxy Manager (npm):
+        icon: nginx-proxy-manager.png
+        href: http://192.168.2.178:81/
+        description: Reverse proxy manager
+    - Homepage:
+        icon: homepage.png
+        href: http://192.168.2.221:3000/
+        description: Dashboard
+
+- Apps:
+    - Vaultwarden:
+        icon: vaultwarden.png
+        href: http://192.168.2.129/
+        description: Password manager
+    - Paperless-ngx:
+        icon: paperless-ngx.png
+        href: http://192.168.2.187/
+        description: Document management
+    - Immich:
+        icon: immich.png
+        href: http://192.168.2.240/
+        description: Photo backup
+    - Actual Budget:
+        icon: actual-budget.png
+        href: http://192.168.2.139/
+        description: Budgeting
+    - changedetection.io:
+        icon: changedetection-io.png
+        href: http://192.168.2.194:5000/
+        description: Website change monitor
