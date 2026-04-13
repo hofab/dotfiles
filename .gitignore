@@ -85,5 +85,5 @@ cfg.mak
 config/nvim/plugged/**
 config/fish/fundle/**
 config/fish/themes
-config/fish/fish_variables
+config/fish/fish_variables*
 config/fish/plugged
