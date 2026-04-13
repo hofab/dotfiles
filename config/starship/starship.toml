@@ -1,83 +1,170 @@
-add_newline = false
+"$schema" = 'https://starship.rs/config-schema.json'
 
-palette = "catppuccin_latte"
+format = """
+[](mauve)\
+$os\
+$username\
+[](bg:pink fg:mauve)\
+$directory\
+[](bg:yellow fg:pink)\
+$git_branch\
+$git_status\
+[](fg:yellow bg:green)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:green bg:sapphire)\
+$conda\
+[](fg:sapphire bg:lavender)\
+$time\
+[ ](fg:lavender)\
+$cmd_duration\
+$line_break\
+$character"""
 
-# Order of modules on prompt
-format = """\
-        $time\
-        $directory\
-        $git_branch\
-        $git_status\
-        $python\
-        \n$status\
-        $character\
-    """
+palette = 'catppuccin_latte'
 
-# Generic prompt configurations
-[character]
-success_symbol = "[](fg:green)"
-error_symbol = "[[](bg:#ff3322 fg:#3a3a3a)](fg:#ff3322)"
-format = "[[](bg:#3a3a3a)$symbol]($style)"
-# success_symbol = "[](green)"
-# error_symbol = "[❯](red)"
-# vimcmd_symbol = "[❮](green)"
+[os]
+disabled = false
+style = "bg:mauve fg:crust"
+
+[os.symbols]
+Windows = ""
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+AOSC = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:mauve fg:crust"
+style_root = "bg:mauve fg:crust"
+format = '[ $user]($style)'
+
+[directory]
+style = "bg:pink fg:crust"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:yellow"
+format = '[[ $symbol $branch ](fg:crust bg:yellow)]($style)'
+
+[git_status]
+style = "bg:yellow"
+format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[c]
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[php]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[java]
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[python]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:crust bg:green)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:sapphire"
+format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
+
+[conda]
+symbol = "  "
+style = "fg:crust bg:sapphire"
+format = '[$symbol$environment ]($style)'
+ignore_base = false
 
 [time]
 disabled = false
-style = "bg:mauve fg:base"
-format = '[$time]($style)'
-time_format = '%m/%d/%R'
-utc_time_offset = '-5'
+time_format = "%R"
+style = "bg:lavender"
+format = '[[  $time ](fg:crust bg:lavender)]($style)'
 
 [line_break]
 disabled = true
 
-[directory]
-style = "italic bg:#3a3a3a fg:#dadada"
-truncation_length = 3
-truncation_symbol = "/"
-# fish_style_pwd_dir_length = 1
-format = "([[](bg:#3a3a3a fg:#3a3a3a)]($read_only_style))[[](bg:#3a3a3a fg:mauve)$path[](bg:#008700 fg:#3a3a3a)]($style)"
-
-[directory.substitutions]
-"~/Downloads" = " "
-"~/projects" = " "
-"~" = " "
-
-[git_branch]
-symbol = ""
-style = "bg:#008700 fg:#dadada"
-# truncation_length = 4
-# truncation_symbol = ""
-format = "[$symbol$branch[](bg:pink fg:#008700)]($style)"
-
-[git_status]
-style = "bg:pink fg:text"
-stashed = "${count}"
-ahead = "ﲗ${count}"
-behind = "↡ ${count}"
-diverged = "↔ ${ahead_count} ${behind_count}"
-conflicted = "≠${count}"
-deleted = "${count}"
-renamed = "r${count}"
-modified = "${count}"
-staged = "⎆ ${count}"
-untracked = "⇪ ${count}"
-format = "([(bg:text fg:pink)$all_status[](fg:pink)]($style))"
-
-[status]
+[character]
 disabled = false
-symbol = ""
-style = "bg:#3a3a3a fg:#ff3322"
-format = "[$symbol$status]($style)"
+success_symbol = '[❯](bold fg:green)'
+error_symbol = '[❯](bold fg:red)'
+vimcmd_symbol = '[❮](bold fg:green)'
+vimcmd_replace_one_symbol = '[❮](bold fg:lavender)'
+vimcmd_replace_symbol = '[❮](bold fg:lavender)'
+vimcmd_visual_symbol = '[❮](bold fg:yellow)'
 
-# [python]
-# # Display the version of python from inside a local venv.
-# #
-# # Note this will only work when the venv is inside the project and it will only
-# # work in the directory that contains the venv dir but maybe this is ok?
-# python_binary = ["./venv/bin/python", "python3", "python", "python2"]
-# symbol =""
+[cmd_duration]
+show_milliseconds = true
+format = " in $duration "
+style = "bg:lavender"
+disabled = false
+show_notifications = true
+min_time_to_notify = 45000
 
 [palettes.catppuccin_latte]
 rosewater = "#dc8a78"
@@ -87,7 +174,7 @@ pink = "#ea76cb"
 mauve = "#af00af"
 red = "#d20f39"
 maroon = "#e64553"
-peach = "#fe640b"
+peach = "#FF95F1"
 yellow = "#df8e1d"
 green = "#40a02b"
 teal = "#179299"
@@ -95,7 +182,8 @@ sky = "#04a5e5"
 sapphire = "#209fb5"
 blue = "#1e66f5"
 lavender = "#7287fd"
-text = "#4c4f69"
+# text = "#4c4f69"
+text = "#0D0D0D"
 subtext1 = "#5c5f77"
 subtext0 = "#6c6f85"
 overlay2 = "#7c7f93"
@@ -104,71 +192,6 @@ overlay0 = "#9ca0b0"
 surface2 = "#acb0be"
 surface1 = "#bcc0cc"
 surface0 = "#ccd0da"
-base = "#EEEEEE"
+base = "#eff1f5"
 mantle = "#e6e9ef"
 crust = "#dce0e8"
-
-[python]
-python_binary = ".venv/bin/python"
-symbol =""
-
-[custom.uv-version]
-description = "The currently installed version of uv"
-shell = "bash"
-detect_files = [
-  ".python-version",
-  "Pipfile",
-  "__init__.py",
-  "pylock.toml",
-  "pyproject.toml",
-  "requirements.txt",
-  "setup.py",
-  "tox.ini",
-  "uv.lock",
-]
-style = "bold fg:#dffe7c"
-symbol = "by"
-command = '''
-if ! command -v uv >/dev/null; then
-  exit 1
-fi
-
-uv_version=$(uv --version | awk '{print $2}')
-
-emoji=⚡️
-printf "%s v%s"     "$emoji" "$uv_version"
-'''
-format = "$symbol [($output )]($style)"
-
-[custom.uv-lock]
-description = "Symbol representing the state of the lock file"
-shell = "bash"
-style = "bold fg:#cf67e2"
-detect_files = [
-  ".python-version",
-  "Pipfile",
-  "__init__.py",
-  "pylock.toml",
-  "pyproject.toml",
-  "requirements.txt",
-  "setup.py",
-  "tox.ini",
-  "uv.lock",
-]
-command = '''
-if ! command -v uv >/dev/null; then
-  exit 1
-fi
-
-suffix=""
-if uv lock --check-exists >/dev/null; test $? -eq 2; then
-  suffix="?"
-elif uv lock --check >/dev/null; test $? -eq 2; then
-  suffix="!"
-fi
-
-if [ -n "$suffix" ]; then
-  printf ["$suffix"]
-fi
-'''
-format = "[($output )]($style)"
