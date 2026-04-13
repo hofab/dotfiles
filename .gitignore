@@ -82,9 +82,8 @@ build/*
 ###################
 cfg.mak
 .clang-format
-vim/plugged/*
-vim/autoload/*
-fish/fundle/**
-fish/themes
-fish/fish_variables
-fish/functions/_*
+config/nvim/plugged/**
+config/fish/fundle/**
+config/fish/themes
+config/fish/fish_variables
+config/fish/plugged
