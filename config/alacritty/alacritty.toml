@@ -1,4 +1,4 @@
-import = ["/home/fhof/.config/alacritty/catppuccin/catppuccin-latte.toml"]
+import = ["/home/fhof/.config/alacritty/themes/catppuccin-latte.toml"]
 live_config_reload = true
 working_directory = "None"
 
