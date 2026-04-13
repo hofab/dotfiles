@@ -51,8 +51,9 @@ source "$HOME/.config/fish/completions/abbrs.fish"
 starship init fish | source
 
 # if not added to path it throws an error at startup
-set -x PATH ~/.pyenv/bin $PATH
-set -x PATH ~/.local/bin $PATH
+fish_add_path ~/.pyenv/bin
+fish_add_path ~/.local/bin
+fish_add_path ~/.cargo/bin
 
 pyenv init - | source
 
