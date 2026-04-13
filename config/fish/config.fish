@@ -43,13 +43,7 @@ set --export BAT_THEME "ansi"
 #alacritty scalling to be consistent
 set --export WINIT_X11_SCALE_FACTOR "1"
 
-fundle plugin 'edc/bass'
-fundle plugin 'tuvistavie/fish-fastdir'
-fundle plugin 'catppuccin/fish'
-
-fundle init
-
-source "$HOME/sfl-bkp/git-subrepo/.fish.rc"
+# source "$HOME/sfl-bkp/git-subrepo/.fish.rc"
 
 # if not loaded remove surrounding if and restart fish
 source "$HOME/.config/fish/completions/abbrs.fish"
