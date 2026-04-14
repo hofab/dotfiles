@@ -66,15 +66,31 @@ open_note() {
     fi
 }
 
+create_dir() {
+    local dir=$1
+    # Source - https://stackoverflow.com/a/59839
+    # Posted by Grundlefleck, modified by community. See post 'Timeline' for change history
+    # Retrieved 2026-04-14, License - CC BY-SA 4.0
+
+    if [ ! -d "${dir}" ]; then
+        mkdir -p ${dir}
+    fi
+}
+
 # Get the dates
 get_dates
+
+#create base directory for todo
+create_dir "${TODO_LOCATION}"
 
 # Check the input argument
 case $1 in
     -y)
+        create_dir "${NOTES_LOCATION}/${YESTERDAYS_MONTH}"
         open_note "${NOTES_LOCATION}/${YESTERDAYS_MONTH}/${YESTERDAY}.md"
         ;;
     -t)
+        create_dir "${NOTES_LOCATION}/${TOMORROWS_MONTH}"
         open_note "${NOTES_LOCATION}/${TOMORROWS_MONTH}/${TOMORROW}.md"
         ;;
     -l)
@@ -87,6 +103,7 @@ case $1 in
         open_note "${TODO_LOCATION}/${TODAYS_MONTH}.md"
         ;;
     "")
+        create_dir "${NOTES_LOCATION}/${TODAYS_MONTH}"
         open_note "${NOTES_LOCATION}/${TODAYS_MONTH}/${TODAY}.md"
         ;;
     *)
