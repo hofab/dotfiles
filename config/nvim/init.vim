@@ -53,9 +53,6 @@ set signcolumn=no
 nnoremap Q <nop>
 nnoremap K <nop>
 
-" Always show a ctags list
-"nnoremap <C-]> g<C-]>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UNDO
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -65,15 +62,6 @@ if has('persistent_undo')
     set undolevels=1000
     set undoreload=10000
 endif
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" AUTOCOMPLETE
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"if has('wildmenu')
-""    set wildmode=list:longest,full
-"    set wildignore+=*.a,*.o,*.orig,*~
-"    set wildmenu
-"    set wildmode=longest,list
-"endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MOUSE
@@ -185,8 +173,6 @@ Plug 'python/black'
 
 "List ends here. Plugins become visible to Vim after this call.
 call plug#end()
-
-let g:python3_host_prog = '/home/fhof/.pyenv/versions/3.13.1/bin/python3'
 
 " load lua folder
 lua require("fhof")
