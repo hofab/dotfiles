@@ -69,3 +69,7 @@ zoxide init fish | source
 # prevent poetry completion errors
 # poetry completions fish > ~/.config/fish/completions/poetry.fish
 # sed -i.bak -E "s/'([a-z]*[[:blank:]][a-z]*)''''/\1'/g" ~/.config/fish/completions/poetry.fish
+
+# use rip instead of rm to have some chance of recovery
+set -x GRAVEYARD "$HOME/.local/share/graveyard"
+# alias rm='rip'
