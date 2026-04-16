@@ -71,14 +71,14 @@ abbr --add gba      'git for-each-ref --sort=committerdate refs/heads/ --format=
 #shell shortcuts
 abbr --add c        'clear'
 abbr --add infi     '> file.txt 2>&1'
-abbr --add rr       'rm -ir'
-abbr --add rd       'rm -id'
-abbr --add rf       'rm -rf'
-abbr --add rA       'rm -rf *'
-abbr --add ll       'exa -l'
-abbr --add lll      '..; and exa -l'
-abbr --add lr       'exa -lR'
-abbr --add la       'exa -la'
+abbr --add rr       'rip -ir'
+abbr --add rd       'rip -id'
+abbr --add rf       'rip -rf'
+abbr --add rA       'rip -rf *'
+abbr --add ll       'eza -l'
+abbr --add lll      '..; and eza -l'
+abbr --add lr       'eza -lR'
+abbr --add la       'eza -la'
 
 #ninja shortcuts
 abbr --add nc       'ninja clean'
@@ -92,7 +92,7 @@ abbr --add ei       'nvim ~/dotfiles/i3/config'
 abbr --add et       'nvim ~/dotfiles/tmux.conf'
 abbr --add evrc     'nvim ~/dotfiles/vim/init.vim'
 abbr --add efc      'nvim ~/dotfiles/fish/config.fish'
-abbr --add efa     'nvim ~/dotfiles/fish/completions/abbrs.fish'
+abbr --add efa      'nvim ~/dotfiles/fish/completions/abbrs.fish'
 abbr --add evm      'nvim ~/dotfiles/vim/config/fhof_mapping.vim'
 abbr --add ecs      'nvim ~/dotfiles/vim/UltiSnips/c_my.snippets'
 abbr --add zd       'z ~/Downloads'
@@ -100,7 +100,7 @@ abbr --add o        'nvim'
 abbr --add sd       'exa -lR | rg -i'
 abbr --add sc       'rg -iu -tc'
 abbr --add sg       'gb -1000 | rg -i'
-abbr --add rsw      'rm /home/fhof/.local/share/nvim/swap/*'
+abbr --add rsw      'rip /home/fhof/.local/share/nvim/swap/*'
 abbr --add rg       'rg -i'
 
 #merge history of several fish instances
@@ -118,7 +118,9 @@ abbr --add ars      'set -e fish_user_abbreviations; set -e fish_initialized'
 
 # tmux dev environment start
 abbr --add txw      'tmuxinator start work'
+abbr --add txsw     'tmuxinator stop work'
 abbr --add txb      'tmuxinator start break'
+abbr --add txsb     'tmuxinator stop break'
 
 # bang bang implementation for fish
 abbr --add !! --position anywhere --function last_history_item
