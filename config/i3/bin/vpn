@@ -1,25 +1,29 @@
-#!/bin/sh
-#
-# Looks for a vpn conenction and allows it to be brought up/down
-# from the command line. This assumes that there is only one
-# vpn connection present in the list.
-#
+#!/bin/bash
 
 CMD="$1"
-VPN_ID=$(nmcli con | grep ' vpn ' | cut -f 1 -d' ' | grep '204-udp-1194$')
-echo "$VPN_ID"
+OVPN=$(which openvpn3)
+CONFIG="sflm"
 
 case "${CMD}" in
-
     on|up)
-        nmcli con up id "${VPN_ID}" && mount -a
+        # Check status and start if needed
+        SESSION_OUTPUT=$("${OVPN}" sessions-list 2>/dev/null)
+
+        if echo "${SESSION_OUTPUT}" | grep -q "No sessions available"; then
+            "${OVPN}" session-start --config "${CONFIG}"
+        else
+            STATUS=$(echo "${SESSION_OUTPUT}" | grep "Status:" | sed 's/.*Status:[[:space:]]*//')
+            if echo "${STATUS}" | grep -qi "paused"; then
+                "${OVPN}" session-manage --config "${CONFIG}" --resume
+            fi
+        fi
         ;;
 
     off|down)
-        nmcli con down id "${VPN_ID}"
+        "${OVPN}" session-manage --config "${CONFIG}" --pause
         ;;
 
-    *)
-        nmcli con | egrep --color=NEVER '(NAME| vpn )'
+    status)
+        "${OVPN}" sessions-list
         ;;
 esac

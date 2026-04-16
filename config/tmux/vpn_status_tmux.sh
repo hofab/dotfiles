@@ -1,5 +1,5 @@
 #!/bin/bash
 
-if /path/to/your/vpn_script.sh; then
+if $HOME/.config/i3/vpn_status.sh; then
     echo "[VPN]"
 fi
