@@ -332,9 +332,8 @@ mode "resize" {
 #bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
-exec --no-startup-id nm-applet
-exec_always nm-applet
-exec --no-startup-id blueman-applet
+#exec --no-startup-id nm-applet
+#exec_always nm-applet
 
 # catppuccin-latte
 set $rosewater #dc8a78
@@ -382,7 +381,7 @@ bar {
     bindsym button5 nop
     strip_workspace_numbers yes
 
-    font pango:UbuntuMono Nerd Font Mono 12
+    font pango:UbuntuMono Nerd Font Mono 10
 
     colors {
         background $base
@@ -486,4 +485,5 @@ for_window [window_type="menu"] floating enable
 # Test floating rofi
 for_window [class="RofiFloat"] floating enable
 
+exec_always --no-startup-id pkill dunst; dunst &
 
