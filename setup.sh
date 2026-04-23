@@ -14,6 +14,8 @@ ln -sf ~/dotfiles/config/tmux.conf ~/.tmux.conf
 
 ln -sf ~/dotfiles/config/nvim ~/.config/nvim
 
+ln -sf ~/dotfiles/scripts/mount_network_drive.sh ~/.local/bin/
+
 # setup python environment for nvim
 curl -LsSf https://astral.sh/uv/install.sh | sh
 source $HOME/.local/bin/env.fish
