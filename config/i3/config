@@ -58,6 +58,8 @@ bindsym $mod+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(da
 bindsym $mod+Ctrl+Down exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png"
 bindsym $mod+Ctrl+Up exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym $mod+Ctrl+m exec --no-startup-id "$HOME/.local/bin/mount_network_drive.sh"
+
 
 # focus_follows_mouse no
 
