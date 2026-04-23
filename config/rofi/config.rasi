@@ -1,1 +1,7 @@
-@theme "catppuccin-default"
+configuration {
+    modi: "window,drun,run";
+    show-icons: true;
+    display-combi: "combi";
+}
+
+@theme "~/.config/rofi/mytheme.rasi"

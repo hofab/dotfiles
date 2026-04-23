@@ -65,7 +65,7 @@
     normal-background:           rgba ( 238, 238, 238, 63 % );
     lightfg:                     rgba ( 188, 188, 188, 100 % );
 
-    selected-normal-background:  rgba ( 255, 149, 241, 33 % );
+    selected-normal-background:  rgba ( 208, 208, 208, 33 % );
     border-color:                @foreground;
 
     spacing:                     2;
