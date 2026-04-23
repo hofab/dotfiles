@@ -47,6 +47,7 @@ set --export WINIT_X11_SCALE_FACTOR "1"
 
 # if not loaded remove surrounding if and restart fish
 source "$HOME/.config/fish/completions/abbrs.fish"
+source "$HOME/.config/fish/aliases.fish"
 
 starship init fish | source
 
@@ -72,4 +73,3 @@ zoxide init fish | source
 
 # use rip instead of rm to have some chance of recovery
 set -x GRAVEYARD "$HOME/.local/share/graveyard"
-# alias rm='rip'
