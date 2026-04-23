@@ -87,3 +87,4 @@ config/fish/fundle/**
 config/fish/themes
 config/fish/fish_variables*
 config/fish/plugged
+config/i3/monitors.conf
