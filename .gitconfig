@@ -14,21 +14,23 @@
 # Merge and Diff
 #################################
 [diff]
-    tool = meld
+    tool = nvimdiff
     algorithm = patience
+[difftool "nvimdiff"]
+    cmd = nvim -d "$LOCAL" "$REMOTE"
 [difftool]
-    prompt = no
-[difftool "meld"]
-    cmd = meld "$LOCAL" "$REMOTE"
-
+    prompt = false
 [merge]
-    tool = meld
+    tool = nvimdiff
     algorithm = patience
     renamelimit = 4096
+
+[mergetool "nvimdiff"]
+    cmd = nvim -d "$LOCAL" "$BASE" "$REMOTE" "$MERGED" -c '$wincmd w' -c 'wincmd J'
+
 [mergetool]
-    prompt = no
-[mergetool "meld"]
-    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+    prompt = false
+    keepBackup = false
 
 #################################
 # Pretty formatting
