@@ -96,9 +96,8 @@ noremap <silent><f9> :AsyncTask file-build<cr>
 " check no expandtab mapping
 noremap <LEADER>et :verbose set expandtab?<CR>
 
-"
-nnoremap <LEADER>nt :execute "tabe" \| execute "NnnPicker"<CR>
-nnoremap <LEADER>nf :vs<CR><C-W>l :NnnPicker<CR>
+" open File Explorere Yazi
+nnoremap <LEADER>n :Yazi<CR>
 
 " determine highlight group of text under cursor
 nnoremap <LEADER>hg :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") ."> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>

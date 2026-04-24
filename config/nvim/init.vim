@@ -153,8 +153,8 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 " Plug 'hrsh7th/vim-vsnip'
 " Plug 'one-harsh/vscode-cpp-snippets'
 
-" use NNN
-Plug 'mcchrish/nnn.vim'
+" Alternative file explorer
+Plug 'mikavilpas/yazi.nvim'
 
 " auto-pairs that works with compe
 Plug 'windwp/nvim-autopairs'
