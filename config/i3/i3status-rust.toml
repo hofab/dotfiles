@@ -1,7 +1,7 @@
 icons_format = "{icon}"
 
 [theme]
-theme = "modern"
+theme = "ctp-latte"
 [theme.overrides]
 idle_bg = "#EEEEEE"
 idle_fg = "#0D0D0D"
