@@ -394,7 +394,7 @@ bar {
         focused_workspace  $base  $mauve    $base
         active_workspace   $base  $surface2 $text
         inactive_workspace $base  $base     $text
-        urgent_workspace   $base  $red      $crust
+        urgent_workspace   $base  $pink     $text
     }
 }
 
@@ -405,7 +405,7 @@ bindsym $mod+m bar mode toggle
 client.focused           $lavender $base $text  $rosewater $lavender
 client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
 client.unfocused         $overlay0 $base $text  $rosewater $overlay0
-client.urgent            $peach    $base $peach $overlay0  $peach
+client.urgent            $peach    $base $peach $mauve     $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $baselll
 
