@@ -68,6 +68,7 @@ abbr --add flc      'gfc -1' #show files of last commit
 abbr --add fc       'git diff -U0 --no-color --relative HEAD^ | clang-format-diff-18 -p1 -i'
 # show age of last commit on branch git age branch
 abbr --add gba      'git for-each-ref --sort=committerdate refs/heads/ --format=\'%(HEAD)%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname)(%(color:green)%(committerdate:relative)%(color:reset))\''
+abbr --add gld      'git log -1 --format="%B"'
 #shell shortcuts
 abbr --add c        'clear'
 abbr --add infi     '> file.txt 2>&1'
