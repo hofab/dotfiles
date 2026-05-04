@@ -16,8 +16,8 @@ RIGHT_MON=$(get_output_by_edid_pattern "$RIGHT_EDID_PATTERN")
 LAPTOP=$(get_output_by_edid_pattern "$LAPTOP_EDID_PATTERN")
 
 # Fallback to defaults if not found
-LEFT_MON="${LEFT_MON:-DP-1-7}"
-RIGHT_MON="${RIGHT_MON:-DP-1-8}"
+LEFT_MON="${LEFT_MON:-DP-4-2}"
+RIGHT_MON="${RIGHT_MON:-DP-4-1-5}"
 LAPTOP="${LAPTOP:-eDP-1}"
 
 # Generate i3 config fragment

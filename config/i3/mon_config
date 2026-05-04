@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-LEFT_MON_ARGS="--mode 3840x2160 --scale 1x1 --pos 0x0 --primary"
-RIGHT_MON_ARGS="--mode 3840x2160 --scale 1x1 --pos 3840x0"
+LEFT_MON_ARGS="--mode 3840x2160 --scale 1x1 --pos 0x0 --primary --brightness 1.0"
+RIGHT_MON_ARGS="--mode 3840x2160 --scale 1x1 --pos 3840x0 --brightness 1.0"
 # LAPTOP_MON_ARGS="--mode 3840x2400 --primary --scale 1x1 --pos 0x0"
 LAPTOP_MON_ARGS="--output eDP-1 --auto --pos 0x0"
 
