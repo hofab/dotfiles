@@ -13,12 +13,12 @@ icons = "awesome4"
 [[block]]
 block = "disk_space"
 path = "/"
-info_type = "available"
+info_type = "free"
 alert_unit = "GB"
 interval = 20
 warning = 20.0
 alert = 10.0
-format = " $icon / $available.eng(w:2) "
+format = " $icon {$used.eng(w:2)}/{$total.eng(w:2)}"
 
 [[block]]
 block = "memory"
@@ -35,6 +35,7 @@ format_alt = " $icon $frequency $boost "
 
 [[block]]
 block = "sound"
+driver = "pipewire"
 show_volume_when_muted = true
 
 [[block]]
@@ -55,12 +56,7 @@ chip = "*-isa-*"
 
 [[block]]
 block = "custom"
-command = '''bash -c '~/dotfiles/i3/mi_vpn.sh && echo "異"' '''
-interval = 1
-
-[[block]]
-block = "custom"
-command = '''bash -c '~/dotfiles/i3/uoft_vpn.sh && echo ""' '''
+command = '''bash -c '~/dotfiles/i3/vpn_status.sh && echo "[VPN]"' '''
 interval = 1
 
 [[block]]

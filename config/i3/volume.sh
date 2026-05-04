@@ -3,16 +3,9 @@
 set -e
 
 if [ "$1" = 'UP' ]; then
-    for i in `pacmd list-sinks | grep "index:" | cut -b12-`; do
-        pactl set-sink-volume "$i" "+4%";
-    done
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 4%+
 elif [ "$1" = 'DOWN' ]; then
-    for i in `pacmd list-sinks | grep "index:" | cut -b12-`; do
-        pactl set-sink-volume "$i" "-4%";
-    done
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 4%-
 else # Mute
-    for i in `pacmd list-sinks | grep "index:" | cut -b12-`; do
-        pactl set-sink-mute "$i" toggle
-    done
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 fi
-
