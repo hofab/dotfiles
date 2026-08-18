@@ -1,9 +1,25 @@
 #!/usr/bin/env bash
 
-source ~/.config/i3/mon_config
-source ~/.config/i3/get_edid.sh
+# helper functions
+get_script_dir() {
+    local script_path
+    script_path="$(readlink -f "${BASH_SOURCE[1]}" 2>/dev/null || readlink -f "$0" 2>/dev/null)"
+
+    if [ -n "$script_path" ]; then
+        dirname "$script_path"
+    else
+        pwd
+    fi
+}
+# extract script dir
+SCRIPT_DIR="$(get_script_dir)"
+
+. ${SCRIPT_DIR}/mon_config
+source ${SCRIPT_DIR}/get_edid.sh
 
 xrandr  --output ${LEFT_MON} --off \
         --output ${RIGHT_MON} --off \
         --output ${LAPTOP} ${LAPTOP_MON_ARGS}
+
+source ${SCRIPT_DIR}../../scripts/set_mouse_speed.sh
 

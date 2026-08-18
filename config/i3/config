@@ -39,17 +39,15 @@ bindsym $mod+d exec --no-startup-id ~/.config/i3/rofi_launcher.sh
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
-
-exec --no-startup-id pulseaudio
-exec --no-startup-id pa-applet
+# exec --no-startup-id pulseaudio
+# exec --no-startup-id pa-applet
 # bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
 
 # Start Applications
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec firefox
-bindsym $mod+F3 exec nautilus
+bindsym $mod+F3 exec thunar
 # bindsym $mod+F3 exec ranger
 # bindsym $mod+t exec --no-startup-id pkill picom
 # bindsym $mod+Ctrl+t exec --no-startup-id picom -b
@@ -460,9 +458,7 @@ mode "$mode_gaps_outer" {
 assign [title="main_term"] $ws2
 
 # setup applications as desired
-#exec compton
-#exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
-# exec --no-startup-id bash -c '~/.config/i3/startup-monitors.sh'
+exec --no-startup-id bash -c '~/dorfiles/scripts/set_mouse_speed.sh'
 exec --no-startup-id i3-msg 'workspace $ws1; exec $(which firefox)'
 exec --no-startup-id i3-msg 'workspace $ws2; exec $(which alacritty) -e tmuxinator start work -t main_term'
 exec_always nm-applet

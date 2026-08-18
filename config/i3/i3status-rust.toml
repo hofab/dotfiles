@@ -56,7 +56,7 @@ chip = "*-isa-*"
 
 [[block]]
 block = "custom"
-command = '''bash -c '~/dotfiles/i3/vpn_status.sh && echo "[VPN]"' '''
+command = '''bash -c '~/dotfiles/config/i3/vpn_status.sh && echo "[VPN]"' '''
 interval = 1
 
 [[block]]
