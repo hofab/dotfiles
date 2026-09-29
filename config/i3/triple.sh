@@ -29,7 +29,7 @@ fi
 sleep 5
 
 source ${SCRIPT_DIR}/fix_workspaces.sh
-source ${SCRIPT_DIR}../../scripts/set_mouse_speed.sh
+source ${SCRIPT_DIR}/../../scripts/set_mouse_speed.sh
 
 
 

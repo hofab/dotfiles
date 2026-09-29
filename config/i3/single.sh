@@ -17,9 +17,15 @@ SCRIPT_DIR="$(get_script_dir)"
 . ${SCRIPT_DIR}/mon_config
 source ${SCRIPT_DIR}/get_edid.sh
 
-xrandr  --output ${LEFT_MON} --off \
-        --output ${RIGHT_MON} --off \
-        --output ${LAPTOP} ${LAPTOP_MON_ARGS}
+# turn off every connected output except the laptop panel
+OTHER_OUTPUTS=$(xrandr --query | awk '/ connected/{print $1}' | grep -v "^${LAPTOP}$")
 
-source ${SCRIPT_DIR}../../scripts/set_mouse_speed.sh
+XRANDR_ARGS=(--fb 3840x2400 --output "${LAPTOP}" ${LAPTOP_MON_ARGS})
+for out in ${OTHER_OUTPUTS}; do
+    XRANDR_ARGS+=(--output "${out}" --off)
+done
 
+echo "${XRANDR_ARGS[@]}"
+xrandr "${XRANDR_ARGS[@]}"
+
+source ${SCRIPT_DIR}/../../scripts/set_mouse_speed.sh
