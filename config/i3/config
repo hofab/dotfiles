@@ -32,8 +32,6 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start program launcher
-# bindsym $mod+d exec --no-startup-id dmenu_run
-# bindsym $mod+d exec --no-startup-id rofi -show combi -modes combi -combi-modes "window#drun#run"
 bindsym $mod+d exec --no-startup-id ~/.config/i3/rofi_launcher.sh
 
 ################################################################################################
@@ -192,9 +190,6 @@ assign [class="VirtualBox Manager"] $ws6
 
 # Open specific applications in floating mode
 for_window [class="qalculate-gtk"] floating enable border pixel 1
-
-bindsym $mod+n exec alacritty -t "floating_ala" -e fish -c "nnn -eE"
-for_window [class="Alacritty" title="floating_ala"] floating enable, border pixel 1 resize set 500 500
 
 bindsym $mod+Shift+i exec wine '/home/fhof/.wine/drive_c/CrossWorks/bin/crossstudio.exe'; workspace $ws4
 bindsym $mod+Shift+p exec wine '/home/fhof/.wine/drive_c/Program Files/Rowley Associates Limited/CrossWorks for ARM 5.1/bin/crossstudio.exe'; workspace $ws4
