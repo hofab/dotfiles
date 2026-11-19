@@ -174,5 +174,8 @@ Plug 'python/black'
 "List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
+" Select diff algorithm
+set diffopt+=algorithm:patience
+
 " load lua folder
 lua require("fhof")
