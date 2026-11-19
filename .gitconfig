@@ -29,7 +29,7 @@
     renamelimit = 4096
 
 [mergetool "fugitive"]
-    cmd = nvim -f -c "Gvdiffsplit!" "$MERGED"
+    cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
 
 [mergetool]
     prompt = false
@@ -88,5 +88,3 @@
 #################################
 [absorb]
     maxStack=1000
-[mergetool "fugitive"]
-	cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
