@@ -43,7 +43,7 @@ set --export BAT_THEME "ansi"
 #alacritty scalling to be consistent
 set --export WINIT_X11_SCALE_FACTOR "1"
 
-# source "$HOME/sfl-bkp/git-subrepo/.fish.rc"
+source "$HOME/work/git-subrepo/.fish.rc"
 
 # if not loaded remove surrounding if and restart fish
 source "$HOME/.config/fish/completions/abbrs.fish"
