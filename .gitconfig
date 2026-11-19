@@ -16,20 +16,25 @@
 [diff]
     tool = nvimdiff
     algorithm = patience
+
 [difftool "nvimdiff"]
     cmd = nvim -d "$LOCAL" "$REMOTE"
+
 [difftool]
     prompt = false
+
 [merge]
-	tool = fugitive
+    tool = fugitive
+    conflictStyle = zdiff3
     renamelimit = 4096
 
-[mergetool "nvimdiff"]
-    cmd = nvim -d "$LOCAL" "$BASE" "$REMOTE" "$MERGED" -c '$wincmd w' -c 'wincmd J'
+[mergetool "fugitive"]
+    cmd = nvim -f -c "Gvdiffsplit!" "$MERGED"
 
 [mergetool]
     prompt = false
     keepBackup = false
+
 
 #################################
 # Pretty formatting
