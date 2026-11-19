@@ -22,7 +22,6 @@
     prompt = false
 [merge]
 	tool = fugitive
-    algorithm = patience
     renamelimit = 4096
 
 [mergetool "nvimdiff"]
